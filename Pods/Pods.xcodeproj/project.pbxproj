@@ -1,0 +1,1695 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		05C1C6C0B246E3C5FDF06B2A0BB63F0D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F237A0A6C091116E047DD3F287B5FB2 /* View.swift */; };
+		067B84F7E9EFBEAFDC824931CAAD2051 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4CEA89EA6054F927ABC90930A414F /* Align.swift */; };
+		0F4314919991F1AE535EBE1780CA8A46 /* JWSwiftTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BDAB9D39721924A2DC1D5CFEFEE7F3 /* JWSwiftTools-dummy.m */; };
+		1174F471D2E42154C4310DA4E2608907 /* SortingAndFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6DA2E21D8FF56DF8C2AD54E4BCB028 /* SortingAndFiltering.swift */; };
+		1431619A2565DD8EAB817240E078707C /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2EBEBE8A1C0F2A8CB927B47B73B83 /* LayoutProxy.swift */; };
+		187E43AB5753EE3F463F37EC363F62F3 /* Pods-Tik TalkTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA369D7649DF48579E0FFEE1A38F0F9 /* Pods-Tik TalkTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C8ACC075D27258897188CE506C7879F /* MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B4FF2B78AE7BE3209A8B71F22B311 /* MapKit.swift */; };
+		1D5720A29D3F488D3C2AC0B1B720DFCA /* Pods-Tik TalkUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3EE30C5CF45A59A34C1B43EC443C4BD /* Pods-Tik TalkUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		212A3B2BA3D9452FF8DEF62169DD538C /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CB972A9F8EBC8748E652BB39A2276 /* Sequences.swift */; };
+		21CE3722E685BA8BF7ABDBFDA120A834 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBA4A4A9608385C914FEC5B9B1C95B5 /* Session.swift */; };
+		2285AF196F3071C6E382E8F00FBDB65E /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3CCEFF7ADD80D618BBF147D81E5B8 /* UI.swift */; };
+		22B60CFF6E57EB6DF8CCA5D2CAC3178C /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8261285937FC7389D4DD73E53B0A8D3 /* Priority.swift */; };
+		248834D324A53BDEFCF8F8844E24BC03 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454B7542583E4AD040D165132579F44 /* Representation.swift */; };
+		275CC0218A6DAB6653C4E04E6D914922 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		29FEADDF2086FDEA7D5BA87DD23B08C6 /* pb_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E8523332F68EC895D849D14E33DDA2 /* pb_decode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3886D8E920666AF0855EF4B95D961DA8 /* AssociatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA21593E03863ADCAB98AB9399D6E0B /* AssociatedList.swift */; };
+		392F2CF142BAA751AC1BB61D8B757D98 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B60C6A7C1ADAF2E4598EC0A60169815 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = F3B0303B36B8CF3AEAB6348A6B6A89F4 /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc -fno-objc-arc"; }; };
+		3F2391D80C5AE124D6E13AD3FABFFE01 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40476DDBF38AE672065ACF370CDDAE2 /* Constrain.swift */; };
+		468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFC3F377684F2C6BC71FFB6E1AEDB98 /* nanopb-dummy.m */; };
+		4B22390067A2BC9CA14D32D323E8306E /* Pods-Tik Talk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCCA364DECF56E67F7EF9622569F3F4D /* Pods-Tik Talk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DA432023E6EF3AC96E7A1170DC9FD70 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC02824B6CE035DF4328EFC357B925 /* Process.swift */; };
+		4E7EBD32177A38E648D2095CFA802B0B /* Pods-Tik Talk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0AF980C1CE1E793512C98406B3515 /* Pods-Tik Talk-dummy.m */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 696215D091E5C54E35B8EB44FCBFC957 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = AA5702F638499808D3919C9A61476FB9 /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
+		5572B18901B045D396E1217136833DE9 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA00DD5FA08087A20DE8C1BAEE5AD5F /* Standard.swift */; };
+		55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DE409714CF6ADD8C0677DFD50496256 /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
+		56EBA0C77344F63CA6A36265A6496A71 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97EFF2B6257407332B4A190CBD6B65 /* LayoutSupport.swift */; };
+		5CAA19E0EB7CA9EB6047A3E43EC1FC8F /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFB2F83CAD9DA294E279CC3CB5F841 /* ConstraintGroup.swift */; };
+		5F5D3FB5718F4673DC293DA7D97EF046 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3FF4D1C29D198A195178C3D682BC1 /* Compound.swift */; };
+		62EC44B05F844CB86CCEF17C08163A06 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0E3B5773D784C41100BC1F3110C202 /* Layout.swift */; };
+		66867EE0BA9AC5F4E4D1C62BFD5206CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		697414FCC3C6F8176768FFDDEC73A108 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61C792B8C053FD120132F2450B5710 /* Expression.swift */; };
+		6FBD4B684936450BD7CD0155347BB4EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		74BD0664EEC77366D314DA22DD4E721F /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AFB24F814221E0F12B3A891A54E59A /* Size.swift */; };
+		7965A04590F67375EC65249F774B3F6B /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552D2F37FAB09B032776C31B29061EE /* Distribute.swift */; };
+		7F2AF1BC6DF597BF9A75B20C55B2DAF6 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC257949216EAE7F13FB80BAB739F30 /* LocationHandler.swift */; };
+		806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E23A27255F5B33187D75A066AC42A /* pb_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1DF60475299FFDF7F389D3DFDD891 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82069B08275F8D08D7725D438218B494 /* SwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 96CE0CF427E7DAC90FB012DB6EFFE40B /* SwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85B46569D643A566F6B37CA8547F9012 /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537B448AA96203CF67D7017661AD9C3 /* RandomGenerators.swift */; };
+		88B21B225B2D6BFAB3F50B88495299F1 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C68BB88E0E8B15302930145AF7F8AB /* Point.swift */; };
+		90C54C4C27AF08F84EC0EA5F1E537F6D /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257FC6C4A6074DF20AE7963473C49CE4 /* Collections.swift */; };
+		93CDC91EDBC4505E78A89B835DB6F4B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		9B71D4856DF9CFE5715EDF4E5B3B2844 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C05B2AB65EDFF27473B25786479ECD /* ViewUtils.swift */; };
+		9C7E8D85506FA06C506A330B200FCEE7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C650DE5CDC3CC94536D9DA7A61279E /* Context.swift */; };
+		9FC65EDD767AA0EFCDB840B97447CC2F /* Pods-Tik TalkTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD63130E6B8550D65025457E8D3DBC7 /* Pods-Tik TalkTests-dummy.m */; };
+		A084DDD7233A950676D60FCB4FA8BE74 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62F40A1484DDA4327AE6B6EC62363C /* Edges.swift */; };
+		A67286FF819C5C943D027E9C40DF456D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BEAF107AEF2002093C9A7A834872A /* Extensions.swift */; };
+		A7BD4B74A484170A23FF6C7611A11B40 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC4DEBB7ADB3F1100E63FB97B40057B /* Property.swift */; };
+		A8387330BDCC8B4B86B98E917833D98D /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 7E5E48DA5E86805999EBEB2122D8EAD3 /* Info.plist */; };
+		A9CC82424B51A7850ADAC7BA0054E627 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27871015F4E15EA1B072F476F247CB53 /* CoreData.swift */; };
+		AA3D1F317A26DC638BF3709D4EA2D59B /* Session-Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5E413004C1942B794BEBDD1991F0B /* Session-Structure.swift */; };
+		AE7ACD648B84D1C8645049118FE42D54 /* Cartography-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7D511C7EE8B22E616AD53FCD237E81 /* Cartography-dummy.m */; };
+		BBC28BB223B29258B482087733B794E3 /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39A49BF3230D2237F077FD2595F406 /* UIKit.swift */; };
+		BE091C331E2AA61756FFCC8813B68D5F /* Pods-Tik TalkUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D2928824B79E3ED92AC855C277E267 /* Pods-Tik TalkUITests-dummy.m */; };
+		C2E2993258D9072061A389E518053F8B /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D5A972A14E0C469DADC90EF3FC53F /* Constraint.swift */; };
+		C3055C1231EFEA6D78CEBCA9C73007B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		C42D504B66A104612BFEB73BDB037D91 /* LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CA307CFDF749D4F57C0591B8C7219 /* LifeCycle.swift */; };
+		C9E0667D29A1BDA9F8A54FCB295D3B23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		CD587D5E28B0428E3B4163F1604D26BF /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02C77B101289EA8C64BAE5CCA9D18A /* Edge.swift */; };
+		DBC0D8FEB6A8101C977332E8BC16E641 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B17C16534B4AE876CE1D412D14888E4 /* Dimension.swift */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D5440084CAD06A0F93D6BEF6673955 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E181395E73163EB702FCE9A21403D67B /* pb_encode.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EA16006EF0E1BA00ADC501FC9D4F18B /* pb_encode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E29509AD29AE6AC0CE323818BF650D35 /* CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E98A0042331A0848B4E14AD770D2A /* CloudKit.swift */; };
+		EB6157C2600A3068A1589B9CE565CBD6 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49077702A486A1F60C52EBA028CFEC27 /* Messages.swift */; };
+		EE074566F72934DC4B1443F01367221F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993345B5DAD48C1924484F89A5F3BDF /* Operators.swift */; };
+		F54517BC887E605B6BC4C0DE89480C9D /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE2A52E0D0D6D8157C405A7D9CB6EB /* Miscellaneous.swift */; };
+		F5FCFBCDEED31A77EF29B31E2910719D /* JWSwiftTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F19159A72719994F102CB49916834553 /* JWSwiftTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 5121BBEF65FEE9F60EA042B2FB564229 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0CD9D070FB8CF18ED05EEB687C960AF /* nanopb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B0F92D9B96BDD29C05A26A285EB8E /* GoogleToolboxForMac-dummy.m */; };
+		FC27B916EC313A166CE2704745CB14C0 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723015C6AF365EF19E842B4CD60E4643 /* Coefficients.swift */; };
+		FE4D13CA6A4999D13875761E5100C1A0 /* Cartography-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B839940612A112DE688C80F891831C69 /* Cartography-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EB449EA2D8963237C3F1298D21E24AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 544212980401A6DA7806F65EAD8C6637;
+			remoteInfo = Cartography;
+		};
+		697B4BC1DE5AD6298D189DB5C9DB5032 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4DD95323C54A78F879DAB0F1508B8E7;
+			remoteInfo = nanopb;
+		};
+		A18BD4ED5673FEEABC898821F454B213 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
+			remoteInfo = GoogleToolboxForMac;
+		};
+		D0CD99F0B97BA0C36921134BAEA65C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94661F6C63961243FF34AC531A7EAF36;
+			remoteInfo = JWSwiftTools;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05AFB24F814221E0F12B3A891A54E59A /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
+		0AA1DF60475299FFDF7F389D3DFDD891 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		0B60C6A7C1ADAF2E4598EC0A60169815 /* pb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
+		0CD4CEA89EA6054F927ABC90930A414F /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
+		0DE809259E831E594BABB51502736E5D /* Pods-Tik TalkUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik TalkUITests-resources.sh"; sourceTree = "<group>"; };
+		0F6B4FF2B78AE7BE3209A8B71F22B311 /* MapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapKit.swift; path = SwiftTools/MapKit.swift; sourceTree = "<group>"; };
+		13E8523332F68EC895D849D14E33DDA2 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
+		1D2CDA78EBA8D9F8E733B5B4ABEEAFC3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DA00DD5FA08087A20DE8C1BAEE5AD5F /* Standard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Standard.swift; path = SwiftTools/Standard.swift; sourceTree = "<group>"; };
+		1E39A49BF3230D2237F077FD2595F406 /* UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKit.swift; path = SwiftTools/UIKit.swift; sourceTree = "<group>"; };
+		2372098BCBECDBE49BFB5C4B9E3A9520 /* Pods-Tik TalkTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik TalkTests-resources.sh"; sourceTree = "<group>"; };
+		2454B7542583E4AD040D165132579F44 /* Representation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Representation.swift; path = SwiftTools/Representation.swift; sourceTree = "<group>"; };
+		24BDAB9D39721924A2DC1D5CFEFEE7F3 /* JWSwiftTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWSwiftTools-dummy.m"; sourceTree = "<group>"; };
+		257FC6C4A6074DF20AE7963473C49CE4 /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = SwiftTools/Collections.swift; sourceTree = "<group>"; };
+		265CB972A9F8EBC8748E652BB39A2276 /* Sequences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequences.swift; path = SwiftTools/Sequences.swift; sourceTree = "<group>"; };
+		26D6094F013697F9271C73DE3AC81211 /* Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cartography.xcconfig; sourceTree = "<group>"; };
+		27871015F4E15EA1B072F476F247CB53 /* CoreData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = SwiftTools/Extensions/CoreData.swift; sourceTree = "<group>"; };
+		2AC257949216EAE7F13FB80BAB739F30 /* LocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationHandler.swift; path = SwiftTools/LocationHandler.swift; sourceTree = "<group>"; };
+		2AF56AD51AEFD74184309CFFEDA87CDB /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = nanopb.modulemap; sourceTree = "<group>"; };
+		2B17C16534B4AE876CE1D412D14888E4 /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
+		2D59C1AC4884B604B796EDFF68B6D5CB /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		2FD4561B8B1FF3506460683BF2EFBA87 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		333D918EBD738F9B30380B011CA7AED9 /* Pods-Tik Talk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tik Talk.modulemap"; sourceTree = "<group>"; };
+		334E98A0042331A0848B4E14AD770D2A /* CloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKit.swift; path = SwiftTools/Extensions/CloudKit.swift; sourceTree = "<group>"; };
+		34371D8041D1BE3D688CA360F9505F7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		346A9F0D7E7CC6B100A33676FE7342CC /* Pods-Tik Talk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik Talk-resources.sh"; sourceTree = "<group>"; };
+		34EE2A52E0D0D6D8157C405A7D9CB6EB /* Miscellaneous.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Miscellaneous.swift; path = SwiftTools/Extensions/Miscellaneous.swift; sourceTree = "<group>"; };
+		36D2515D353B80218219CEB73789ECE5 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		398B156CA2211EE7348084FB173CD517 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		3A0109BCCA7675BBAF8B728F7F0212C2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		3A61F2A239AB1F413E706F44E65418D0 /* Pods-Tik TalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik TalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		3B541A4C7C43B67FCDEEB6A35BAC67EC /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
+		3D0D5A972A14E0C469DADC90EF3FC53F /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Cartography/Constraint.swift; sourceTree = "<group>"; };
+		3F0B0F92D9B96BDD29C05A26A285EB8E /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		400C37EE682FE78DEE20CB30EF91D30E /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
+		4572A580ABAA7F1619F56675183614E6 /* Pods_Tik_TalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tik_TalkUITests.framework; path = "Pods-Tik TalkUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D5440084CAD06A0F93D6BEF6673955 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		47D3A69C2035308F2EBB2C0FC4DFABCA /* Pods-Tik TalkTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tik TalkTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		49077702A486A1F60C52EBA028CFEC27 /* Messages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Messages.swift; path = SwiftTools/Messages.swift; sourceTree = "<group>"; };
+		4C02C77B101289EA8C64BAE5CCA9D18A /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
+		4DE409714CF6ADD8C0677DFD50496256 /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
+		4F237A0A6C091116E047DD3F287B5FB2 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
+		5121BBEF65FEE9F60EA042B2FB564229 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		515625F5568FC0DE82F82DDB73AFAD27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5338408643BE388DBBBCCF0AA8D6BED4 /* Pods-Tik Talk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tik Talk-acknowledgements.plist"; sourceTree = "<group>"; };
+		5476DD0BE5D94DA29DF90F0320776822 /* Pods_Tik_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tik_Talk.framework; path = "Pods-Tik Talk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		576124F1AEE32EDE66389D8B1CDDFFF7 /* Pods-Tik TalkUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik TalkUITests-frameworks.sh"; sourceTree = "<group>"; };
+		617B6FD11C8BDE9E04F6BE51026AFD4E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6382D6B39C0E5B99220C8C7A4F6EB3A1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		696215D091E5C54E35B8EB44FCBFC957 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		6D97EFF2B6257407332B4A190CBD6B65 /* LayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutSupport.swift; path = Cartography/LayoutSupport.swift; sourceTree = "<group>"; };
+		6E709A2FAC7C97836BF9DA867786D0FD /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		71838C58E582D998C87B76482BE8B928 /* Pods-Tik Talk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tik Talk-acknowledgements.markdown"; sourceTree = "<group>"; };
+		723015C6AF365EF19E842B4CD60E4643 /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
+		748804A41931A105C57A5708A973FA15 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79FEBAFBF634F07BBC92B40A4740B587 /* Pods-Tik TalkUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tik TalkUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7A382DE5AEBB414F0ED8B7C513646D90 /* Pods-Tik Talk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik Talk-frameworks.sh"; sourceTree = "<group>"; };
+		7D51BADF19C31F42BAF234509920C4EC /* Pods-Tik Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik Talk.debug.xcconfig"; sourceTree = "<group>"; };
+		7E5E48DA5E86805999EBEB2122D8EAD3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftTools/Info.plist; sourceTree = "<group>"; };
+		7E6DA2E21D8FF56DF8C2AD54E4BCB028 /* SortingAndFiltering.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortingAndFiltering.swift; path = SwiftTools/SortingAndFiltering.swift; sourceTree = "<group>"; };
+		833CA307CFDF749D4F57C0591B8C7219 /* LifeCycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LifeCycle.swift; path = SwiftTools/LifeCycle.swift; sourceTree = "<group>"; };
+		8537B448AA96203CF67D7017661AD9C3 /* RandomGenerators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomGenerators.swift; path = SwiftTools/RandomGenerators.swift; sourceTree = "<group>"; };
+		85D2928824B79E3ED92AC855C277E267 /* Pods-Tik TalkUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tik TalkUITests-dummy.m"; sourceTree = "<group>"; };
+		88A1495105B814C1367C19860AD116E4 /* Pods-Tik TalkTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tik TalkTests.modulemap"; sourceTree = "<group>"; };
+		8B553116A4764B36ACC48DB71979124C /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWSwiftTools.framework; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB5E413004C1942B794BEBDD1991F0B /* Session-Structure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Session-Structure.swift"; path = "SwiftTools/Session-Structure.swift"; sourceTree = "<group>"; };
+		8D7D511C7EE8B22E616AD53FCD237E81 /* Cartography-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cartography-dummy.m"; sourceTree = "<group>"; };
+		8DC4DEBB7ADB3F1100E63FB97B40057B /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
+		8EA16006EF0E1BA00ADC501FC9D4F18B /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
+		909BCE8466785464258CC5A16603B6D0 /* Pods-Tik TalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik TalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91DEBDC4F90D35DA65F168C580D05593 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cartography.framework; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938AC17DE4FBF486486E8A38330E222F /* JWSwiftTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWSwiftTools-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96CE0CF427E7DAC90FB012DB6EFFE40B /* SwiftTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftTools.h; path = SwiftTools/SwiftTools.h; sourceTree = "<group>"; };
+		97C05B2AB65EDFF27473B25786479ECD /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
+		98C650DE5CDC3CC94536D9DA7A61279E /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
+		9A2DE4976059D8EF2517D7C921E1BD74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA369D7649DF48579E0FFEE1A38F0F9 /* Pods-Tik TalkTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tik TalkTests-umbrella.h"; sourceTree = "<group>"; };
+		A1C0AF980C1CE1E793512C98406B3515 /* Pods-Tik Talk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tik Talk-dummy.m"; sourceTree = "<group>"; };
+		A21CE535E23F1CA3DF394C542D5AB87D /* Pods-Tik TalkUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tik TalkUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A3EE30C5CF45A59A34C1B43EC443C4BD /* Pods-Tik TalkUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tik TalkUITests-umbrella.h"; sourceTree = "<group>"; };
+		A8261285937FC7389D4DD73E53B0A8D3 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
+		A85A04D7567BEF14A054857C42345F1A /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
+		AA5702F638499808D3919C9A61476FB9 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
+		AAAFB2F83CAD9DA294E279CC3CB5F841 /* ConstraintGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintGroup.swift; path = Cartography/ConstraintGroup.swift; sourceTree = "<group>"; };
+		AB10308EE4AEB1E6E0C76C9CA2E15D7B /* JWSwiftTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JWSwiftTools.modulemap; sourceTree = "<group>"; };
+		AF1A00A209E14C08A444181B63DCAC8B /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44A315B58A002FD1FBF81DF8BC58BE6 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B6EC02824B6CE035DF4328EFC357B925 /* Process.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Process.swift; path = SwiftTools/Process.swift; sourceTree = "<group>"; };
+		B839940612A112DE688C80F891831C69 /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
+		BCA21593E03863ADCAB98AB9399D6E0B /* AssociatedList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedList.swift; path = SwiftTools/AssociatedList.swift; sourceTree = "<group>"; };
+		BD2BE90AB7D7927E22A54AC54DA1EF44 /* Pods-Tik TalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik TalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BEBA4A4A9608385C914FEC5B9B1C95B5 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = SwiftTools/Session.swift; sourceTree = "<group>"; };
+		BED3FF4D1C29D198A195178C3D682BC1 /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
+		C40476DDBF38AE672065ACF370CDDAE2 /* Constrain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrain.swift; path = Cartography/Constrain.swift; sourceTree = "<group>"; };
+		C59E23A27255F5B33187D75A066AC42A /* pb_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
+		C8057264ECC6513F6A96AFEE82E1B6BC /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cartography.modulemap; sourceTree = "<group>"; };
+		C8E3DB12D85F3B38C544745422BE2FB6 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		CA3FFE7DD4496284ED5AE4EDF5AF729B /* Pods-Tik TalkTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tik TalkTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CB0BEAF107AEF2002093C9A7A834872A /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
+		CC62F40A1484DDA4327AE6B6EC62363C /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
+		CCCA364DECF56E67F7EF9622569F3F4D /* Pods-Tik Talk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tik Talk-umbrella.h"; sourceTree = "<group>"; };
+		D0CD9D070FB8CF18ED05EEB687C960AF /* nanopb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-umbrella.h"; sourceTree = "<group>"; };
+		D24388EFA5FDD967E42AD219512AA4AC /* Pods-Tik TalkTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tik TalkTests-frameworks.sh"; sourceTree = "<group>"; };
+		D552D2F37FAB09B032776C31B29061EE /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
+		D7B3CCEFF7ADD80D618BBF147D81E5B8 /* UI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UI.swift; path = SwiftTools/UI.swift; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D993345B5DAD48C1924484F89A5F3BDF /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = SwiftTools/Operators.swift; sourceTree = "<group>"; };
+		DAB2EBEBE8A1C0F2A8CB927B47B73B83 /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
+		DC61C792B8C053FD120132F2450B5710 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
+		DC9058137F9283EE6B7B35B0140D0BFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD63130E6B8550D65025457E8D3DBC7 /* Pods-Tik TalkTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tik TalkTests-dummy.m"; sourceTree = "<group>"; };
+		DE9C6578D01F6C51325A304C63087856 /* JWSwiftTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWSwiftTools.xcconfig; sourceTree = "<group>"; };
+		DEDCF0A3056A069E0E057755D583840B /* Pods-Tik TalkUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tik TalkUITests.modulemap"; sourceTree = "<group>"; };
+		E0096F33F0DC99B66A143757D603A391 /* Pods_Tik_TalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tik_TalkTests.framework; path = "Pods-Tik TalkTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35E01E50A5D93C6B6ACC144E459D9D6 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		E3E9A713DD6218629E507C32C7E30F97 /* Pods-Tik TalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik TalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F0C68BB88E0E8B15302930145AF7F8AB /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
+		F19159A72719994F102CB49916834553 /* JWSwiftTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWSwiftTools-umbrella.h"; sourceTree = "<group>"; };
+		F31D2AA899D116EF764CFFEB45FB8EAF /* Pods-Tik Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tik Talk.release.xcconfig"; sourceTree = "<group>"; };
+		F3B0303B36B8CF3AEAB6348A6B6A89F4 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
+		FD0E3B5773D784C41100BC1F3110C202 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = SwiftTools/Layout.swift; sourceTree = "<group>"; };
+		FDFC3F377684F2C6BC71FFB6E1AEDB98 /* nanopb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "nanopb-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		528E6EEDFDA3EC34D7BF1FEAD9A3550B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66867EE0BA9AC5F4E4D1C62BFD5206CB /* Foundation.framework in Frameworks */,
+				93CDC91EDBC4505E78A89B835DB6F4B1 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A4AAE12E09D29DA5F684C9BD8B5FE3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FBD4B684936450BD7CD0155347BB4EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DB2864604FE540A35615DBF22DFDFF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E0667D29A1BDA9F8A54FCB295D3B23 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9208E35E27B9288A5186CF1567929ADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275CC0218A6DAB6653C4E04E6D914922 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		971041836592E28ADEEDA495A96A62A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8C17651126BBC87CE966D2A8A9A2A57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3055C1231EFEA6D78CEBCA9C73007B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00224D2D86B44C2117A2FDF49B35113A /* encode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = encode;
+			sourceTree = "<group>";
+		};
+		15D490D5961E9C465FB8F1FFE55096EB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				617B6FD11C8BDE9E04F6BE51026AFD4E /* Info.plist */,
+				AB10308EE4AEB1E6E0C76C9CA2E15D7B /* JWSwiftTools.modulemap */,
+				DE9C6578D01F6C51325A304C63087856 /* JWSwiftTools.xcconfig */,
+				24BDAB9D39721924A2DC1D5CFEFEE7F3 /* JWSwiftTools-dummy.m */,
+				938AC17DE4FBF486486E8A38330E222F /* JWSwiftTools-prefix.pch */,
+				F19159A72719994F102CB49916834553 /* JWSwiftTools-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JWSwiftTools";
+			sourceTree = "<group>";
+		};
+		216FACB3AFD7F13613A07311878A1314 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6382D6B39C0E5B99220C8C7A4F6EB3A1 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23C9962D768397974278763F8757C3D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD6611A5D5ACA4C2519CA55FD300538D /* Cartography */,
+				DD6DE88DB56922F72DA781E995EE0D73 /* Firebase */,
+				EE93A8B194CFA08398AC9C0A5697BCE5 /* FirebaseAnalytics */,
+				FB6726897B521723CB74D47A19A74E98 /* FirebaseCore */,
+				9A8253701D42CB600F984469B77EC933 /* FirebaseInstanceID */,
+				77CCA4EEEBA5696DEC75F9729D7771B7 /* GoogleToolboxForMac */,
+				56A69F8966E421FA480FA6565CC1A871 /* JWSwiftTools */,
+				43FC4CFDF0F18ADF41D6AED3628B1DC4 /* nanopb */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3A7097AE07DAE75AAEDBAF0BDD9E049F /* Pods-Tik Talk */ = {
+			isa = PBXGroup;
+			children = (
+				DC9058137F9283EE6B7B35B0140D0BFE /* Info.plist */,
+				333D918EBD738F9B30380B011CA7AED9 /* Pods-Tik Talk.modulemap */,
+				71838C58E582D998C87B76482BE8B928 /* Pods-Tik Talk-acknowledgements.markdown */,
+				5338408643BE388DBBBCCF0AA8D6BED4 /* Pods-Tik Talk-acknowledgements.plist */,
+				A1C0AF980C1CE1E793512C98406B3515 /* Pods-Tik Talk-dummy.m */,
+				7A382DE5AEBB414F0ED8B7C513646D90 /* Pods-Tik Talk-frameworks.sh */,
+				346A9F0D7E7CC6B100A33676FE7342CC /* Pods-Tik Talk-resources.sh */,
+				CCCA364DECF56E67F7EF9622569F3F4D /* Pods-Tik Talk-umbrella.h */,
+				7D51BADF19C31F42BAF234509920C4EC /* Pods-Tik Talk.debug.xcconfig */,
+				F31D2AA899D116EF764CFFEB45FB8EAF /* Pods-Tik Talk.release.xcconfig */,
+			);
+			name = "Pods-Tik Talk";
+			path = "Target Support Files/Pods-Tik Talk";
+			sourceTree = "<group>";
+		};
+		3AF51916E032E6665B4E254629F173ED /* Pods-Tik TalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A2DE4976059D8EF2517D7C921E1BD74 /* Info.plist */,
+				88A1495105B814C1367C19860AD116E4 /* Pods-Tik TalkTests.modulemap */,
+				CA3FFE7DD4496284ED5AE4EDF5AF729B /* Pods-Tik TalkTests-acknowledgements.markdown */,
+				47D3A69C2035308F2EBB2C0FC4DFABCA /* Pods-Tik TalkTests-acknowledgements.plist */,
+				DDD63130E6B8550D65025457E8D3DBC7 /* Pods-Tik TalkTests-dummy.m */,
+				D24388EFA5FDD967E42AD219512AA4AC /* Pods-Tik TalkTests-frameworks.sh */,
+				2372098BCBECDBE49BFB5C4B9E3A9520 /* Pods-Tik TalkTests-resources.sh */,
+				9CA369D7649DF48579E0FFEE1A38F0F9 /* Pods-Tik TalkTests-umbrella.h */,
+				909BCE8466785464258CC5A16603B6D0 /* Pods-Tik TalkTests.debug.xcconfig */,
+				3A61F2A239AB1F413E706F44E65418D0 /* Pods-Tik TalkTests.release.xcconfig */,
+			);
+			name = "Pods-Tik TalkTests";
+			path = "Target Support Files/Pods-Tik TalkTests";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		43FC4CFDF0F18ADF41D6AED3628B1DC4 /* nanopb */ = {
+			isa = PBXGroup;
+			children = (
+				0B60C6A7C1ADAF2E4598EC0A60169815 /* pb.h */,
+				F3B0303B36B8CF3AEAB6348A6B6A89F4 /* pb_common.c */,
+				C59E23A27255F5B33187D75A066AC42A /* pb_common.h */,
+				AA5702F638499808D3919C9A61476FB9 /* pb_decode.c */,
+				13E8523332F68EC895D849D14E33DDA2 /* pb_decode.h */,
+				4DE409714CF6ADD8C0677DFD50496256 /* pb_encode.c */,
+				8EA16006EF0E1BA00ADC501FC9D4F18B /* pb_encode.h */,
+				8BF89B3B65787F1BFA62504E58406904 /* decode */,
+				00224D2D86B44C2117A2FDF49B35113A /* encode */,
+				ACD09B3F4EADFAE67FDA89E378753A23 /* Support Files */,
+			);
+			name = nanopb;
+			path = nanopb;
+			sourceTree = "<group>";
+		};
+		49023D892628E941D9897DB10B181C30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A0109BCCA7675BBAF8B728F7F0212C2 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C74BF452A20DD8D296F17514ED60975 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8E3DB12D85F3B38C544745422BE2FB6 /* FirebaseCore.framework */,
+				E35E01E50A5D93C6B6ACC144E459D9D6 /* FirebaseCoreDiagnostics.framework */,
+				36D2515D353B80218219CEB73789ECE5 /* FirebaseNanoPB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53F66C030CF5ABC38332E33BDF9B2E0D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6E709A2FAC7C97836BF9DA867786D0FD /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		56A69F8966E421FA480FA6565CC1A871 /* JWSwiftTools */ = {
+			isa = PBXGroup;
+			children = (
+				BCA21593E03863ADCAB98AB9399D6E0B /* AssociatedList.swift */,
+				334E98A0042331A0848B4E14AD770D2A /* CloudKit.swift */,
+				257FC6C4A6074DF20AE7963473C49CE4 /* Collections.swift */,
+				27871015F4E15EA1B072F476F247CB53 /* CoreData.swift */,
+				7E5E48DA5E86805999EBEB2122D8EAD3 /* Info.plist */,
+				FD0E3B5773D784C41100BC1F3110C202 /* Layout.swift */,
+				833CA307CFDF749D4F57C0591B8C7219 /* LifeCycle.swift */,
+				2AC257949216EAE7F13FB80BAB739F30 /* LocationHandler.swift */,
+				0F6B4FF2B78AE7BE3209A8B71F22B311 /* MapKit.swift */,
+				49077702A486A1F60C52EBA028CFEC27 /* Messages.swift */,
+				34EE2A52E0D0D6D8157C405A7D9CB6EB /* Miscellaneous.swift */,
+				D993345B5DAD48C1924484F89A5F3BDF /* Operators.swift */,
+				B6EC02824B6CE035DF4328EFC357B925 /* Process.swift */,
+				8537B448AA96203CF67D7017661AD9C3 /* RandomGenerators.swift */,
+				2454B7542583E4AD040D165132579F44 /* Representation.swift */,
+				265CB972A9F8EBC8748E652BB39A2276 /* Sequences.swift */,
+				BEBA4A4A9608385C914FEC5B9B1C95B5 /* Session.swift */,
+				8CB5E413004C1942B794BEBDD1991F0B /* Session-Structure.swift */,
+				7E6DA2E21D8FF56DF8C2AD54E4BCB028 /* SortingAndFiltering.swift */,
+				1DA00DD5FA08087A20DE8C1BAEE5AD5F /* Standard.swift */,
+				96CE0CF427E7DAC90FB012DB6EFFE40B /* SwiftTools.h */,
+				D7B3CCEFF7ADD80D618BBF147D81E5B8 /* UI.swift */,
+				1E39A49BF3230D2237F077FD2595F406 /* UIKit.swift */,
+				15D490D5961E9C465FB8F1FFE55096EB /* Support Files */,
+			);
+			name = JWSwiftTools;
+			path = JWSwiftTools;
+			sourceTree = "<group>";
+		};
+		6C03A41814FB4235133C5435F3EB3872 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7097AE07DAE75AAEDBAF0BDD9E049F /* Pods-Tik Talk */,
+				3AF51916E032E6665B4E254629F173ED /* Pods-Tik TalkTests */,
+				709024E921CE92C8BB6F48002DFFD2E2 /* Pods-Tik TalkUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		709024E921CE92C8BB6F48002DFFD2E2 /* Pods-Tik TalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				515625F5568FC0DE82F82DDB73AFAD27 /* Info.plist */,
+				DEDCF0A3056A069E0E057755D583840B /* Pods-Tik TalkUITests.modulemap */,
+				79FEBAFBF634F07BBC92B40A4740B587 /* Pods-Tik TalkUITests-acknowledgements.markdown */,
+				A21CE535E23F1CA3DF394C542D5AB87D /* Pods-Tik TalkUITests-acknowledgements.plist */,
+				85D2928824B79E3ED92AC855C277E267 /* Pods-Tik TalkUITests-dummy.m */,
+				576124F1AEE32EDE66389D8B1CDDFFF7 /* Pods-Tik TalkUITests-frameworks.sh */,
+				0DE809259E831E594BABB51502736E5D /* Pods-Tik TalkUITests-resources.sh */,
+				A3EE30C5CF45A59A34C1B43EC443C4BD /* Pods-Tik TalkUITests-umbrella.h */,
+				BD2BE90AB7D7927E22A54AC54DA1EF44 /* Pods-Tik TalkUITests.debug.xcconfig */,
+				E3E9A713DD6218629E507C32C7E30F97 /* Pods-Tik TalkUITests.release.xcconfig */,
+			);
+			name = "Pods-Tik TalkUITests";
+			path = "Target Support Files/Pods-Tik TalkUITests";
+			sourceTree = "<group>";
+		};
+		77CCA4EEEBA5696DEC75F9729D7771B7 /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				A2D40526F3521B71280093D9C409D27C /* Defines */,
+				BB902A3332BC4655ACCC66F7420A2137 /* NSData+zlib */,
+				8BBA3942CD9A27240C2BBA3307EDEE96 /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				23C9962D768397974278763F8757C3D2 /* Pods */,
+				B132454FC2376D59B2456103575B9923 /* Products */,
+				6C03A41814FB4235133C5435F3EB3872 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8BBA3942CD9A27240C2BBA3307EDEE96 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B44A315B58A002FD1FBF81DF8BC58BE6 /* GoogleToolboxForMac.modulemap */,
+				398B156CA2211EE7348084FB173CD517 /* GoogleToolboxForMac.xcconfig */,
+				3F0B0F92D9B96BDD29C05A26A285EB8E /* GoogleToolboxForMac-dummy.m */,
+				2D59C1AC4884B604B796EDFF68B6D5CB /* GoogleToolboxForMac-prefix.pch */,
+				0AA1DF60475299FFDF7F389D3DFDD891 /* GoogleToolboxForMac-umbrella.h */,
+				34371D8041D1BE3D688CA360F9505F7A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		8BF89B3B65787F1BFA62504E58406904 /* decode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = decode;
+			sourceTree = "<group>";
+		};
+		9A8253701D42CB600F984469B77EC933 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				49023D892628E941D9897DB10B181C30 /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		A2D40526F3521B71280093D9C409D27C /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				696215D091E5C54E35B8EB44FCBFC957 /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		ACD09B3F4EADFAE67FDA89E378753A23 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D2CDA78EBA8D9F8E733B5B4ABEEAFC3 /* Info.plist */,
+				2AF56AD51AEFD74184309CFFEDA87CDB /* nanopb.modulemap */,
+				A85A04D7567BEF14A054857C42345F1A /* nanopb.xcconfig */,
+				FDFC3F377684F2C6BC71FFB6E1AEDB98 /* nanopb-dummy.m */,
+				400C37EE682FE78DEE20CB30EF91D30E /* nanopb-prefix.pch */,
+				D0CD9D070FB8CF18ED05EEB687C960AF /* nanopb-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/nanopb";
+			sourceTree = "<group>";
+		};
+		B132454FC2376D59B2456103575B9923 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91DEBDC4F90D35DA65F168C580D05593 /* Cartography.framework */,
+				AF1A00A209E14C08A444181B63DCAC8B /* GoogleToolboxForMac.framework */,
+				8B553116A4764B36ACC48DB71979124C /* JWSwiftTools.framework */,
+				2FD4561B8B1FF3506460683BF2EFBA87 /* nanopb.framework */,
+				5476DD0BE5D94DA29DF90F0320776822 /* Pods_Tik_Talk.framework */,
+				E0096F33F0DC99B66A143757D603A391 /* Pods_Tik_TalkTests.framework */,
+				4572A580ABAA7F1619F56675183614E6 /* Pods_Tik_TalkUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB902A3332BC4655ACCC66F7420A2137 /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				45D5440084CAD06A0F93D6BEF6673955 /* GTMNSData+zlib.h */,
+				5121BBEF65FEE9F60EA042B2FB564229 /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		D66CC9328E7D4C900D930406DB6C2360 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8057264ECC6513F6A96AFEE82E1B6BC /* Cartography.modulemap */,
+				26D6094F013697F9271C73DE3AC81211 /* Cartography.xcconfig */,
+				8D7D511C7EE8B22E616AD53FCD237E81 /* Cartography-dummy.m */,
+				3B541A4C7C43B67FCDEEB6A35BAC67EC /* Cartography-prefix.pch */,
+				B839940612A112DE688C80F891831C69 /* Cartography-umbrella.h */,
+				748804A41931A105C57A5708A973FA15 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cartography";
+			sourceTree = "<group>";
+		};
+		DD6DE88DB56922F72DA781E995EE0D73 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				53F66C030CF5ABC38332E33BDF9B2E0D /* Core */,
+			);
+			name = Firebase;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		EE93A8B194CFA08398AC9C0A5697BCE5 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				216FACB3AFD7F13613A07311878A1314 /* Frameworks */,
+			);
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		FB6726897B521723CB74D47A19A74E98 /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				4C74BF452A20DD8D296F17514ED60975 /* Frameworks */,
+			);
+			name = FirebaseCore;
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		FD6611A5D5ACA4C2519CA55FD300538D /* Cartography */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4CEA89EA6054F927ABC90930A414F /* Align.swift */,
+				723015C6AF365EF19E842B4CD60E4643 /* Coefficients.swift */,
+				BED3FF4D1C29D198A195178C3D682BC1 /* Compound.swift */,
+				C40476DDBF38AE672065ACF370CDDAE2 /* Constrain.swift */,
+				3D0D5A972A14E0C469DADC90EF3FC53F /* Constraint.swift */,
+				AAAFB2F83CAD9DA294E279CC3CB5F841 /* ConstraintGroup.swift */,
+				98C650DE5CDC3CC94536D9DA7A61279E /* Context.swift */,
+				2B17C16534B4AE876CE1D412D14888E4 /* Dimension.swift */,
+				D552D2F37FAB09B032776C31B29061EE /* Distribute.swift */,
+				4C02C77B101289EA8C64BAE5CCA9D18A /* Edge.swift */,
+				CC62F40A1484DDA4327AE6B6EC62363C /* Edges.swift */,
+				DC61C792B8C053FD120132F2450B5710 /* Expression.swift */,
+				CB0BEAF107AEF2002093C9A7A834872A /* Extensions.swift */,
+				DAB2EBEBE8A1C0F2A8CB927B47B73B83 /* LayoutProxy.swift */,
+				6D97EFF2B6257407332B4A190CBD6B65 /* LayoutSupport.swift */,
+				F0C68BB88E0E8B15302930145AF7F8AB /* Point.swift */,
+				A8261285937FC7389D4DD73E53B0A8D3 /* Priority.swift */,
+				8DC4DEBB7ADB3F1100E63FB97B40057B /* Property.swift */,
+				05AFB24F814221E0F12B3A891A54E59A /* Size.swift */,
+				4F237A0A6C091116E047DD3F287B5FB2 /* View.swift */,
+				97C05B2AB65EDFF27473B25786479ECD /* ViewUtils.swift */,
+				D66CC9328E7D4C900D930406DB6C2360 /* Support Files */,
+			);
+			name = Cartography;
+			path = Cartography;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3DE2E7182C09790BEA90C5FCCD17BFCF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B22390067A2BC9CA14D32D323E8306E /* Pods-Tik Talk-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4547B9AF8085A499AA35614798F8F9E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */,
+				392F2CF142BAA751AC1BB61D8B757D98 /* pb.h in Headers */,
+				806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */,
+				29FEADDF2086FDEA7D5BA87DD23B08C6 /* pb_decode.h in Headers */,
+				E181395E73163EB702FCE9A21403D67B /* pb_encode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A7917572BD692C88E43C20B6663D6C3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FCFBCDEED31A77EF29B31E2910719D /* JWSwiftTools-umbrella.h in Headers */,
+				82069B08275F8D08D7725D438218B494 /* SwiftTools.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B76E3C8ECE3F7DF2415A7B81A35A18F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187E43AB5753EE3F463F37EC363F62F3 /* Pods-Tik TalkTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D61697CB2E38DF820930164AECF9F07F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D5720A29D3F488D3C2AC0B1B720DFCA /* Pods-Tik TalkUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66E0C3AA6C50C06CA3BC63165901BDD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE4D13CA6A4999D13875761E5100C1A0 /* Cartography-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */,
+				541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */,
+				DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */;
+			buildPhases = (
+				63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */,
+				F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */,
+				FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleToolboxForMac;
+			productName = GoogleToolboxForMac;
+			productReference = AF1A00A209E14C08A444181B63DCAC8B /* GoogleToolboxForMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3B4977E3A5A5DE5C69C6AE67EAF33BAA /* Pods-Tik Talk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31E95AB3E21B56F5A6DBFDC3381024E /* Build configuration list for PBXNativeTarget "Pods-Tik Talk" */;
+			buildPhases = (
+				5901D6ABC382717D898BF64702BF6193 /* Sources */,
+				7DB2864604FE540A35615DBF22DFDFF5 /* Frameworks */,
+				3DE2E7182C09790BEA90C5FCCD17BFCF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B4900B686722EF06768A651C7F4CCBA /* PBXTargetDependency */,
+				46CC141DF3650CD2940C72842E572DB1 /* PBXTargetDependency */,
+				FB4FA04F3428C4B9630148A27E2FC225 /* PBXTargetDependency */,
+				4E4015C49046980E41AD22B5D5D335C4 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tik Talk";
+			productName = "Pods-Tik Talk";
+			productReference = 5476DD0BE5D94DA29DF90F0320776822 /* Pods_Tik_Talk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		544212980401A6DA7806F65EAD8C6637 /* Cartography */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4640A3FD22DAF78390468CA450BB29DA /* Build configuration list for PBXNativeTarget "Cartography" */;
+			buildPhases = (
+				F8A87B475BE2E0CA1FFEC5F03DEDB801 /* Sources */,
+				7A4AAE12E09D29DA5F684C9BD8B5FE3B /* Frameworks */,
+				E66E0C3AA6C50C06CA3BC63165901BDD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cartography;
+			productName = Cartography;
+			productReference = 91DEBDC4F90D35DA65F168C580D05593 /* Cartography.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		791FC41AE7C177362B8ADB9345C8107D /* Pods-Tik TalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C07C91D4A9B8E7218D14BF72C80E401F /* Build configuration list for PBXNativeTarget "Pods-Tik TalkTests" */;
+			buildPhases = (
+				98EBE1408B5B72C27BD89C2DC7DFA664 /* Sources */,
+				9208E35E27B9288A5186CF1567929ADE /* Frameworks */,
+				8B76E3C8ECE3F7DF2415A7B81A35A18F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tik TalkTests";
+			productName = "Pods-Tik TalkTests";
+			productReference = E0096F33F0DC99B66A143757D603A391 /* Pods_Tik_TalkTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94661F6C63961243FF34AC531A7EAF36 /* JWSwiftTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9736CFDBB216C770752FDCA8A9B3D1B /* Build configuration list for PBXNativeTarget "JWSwiftTools" */;
+			buildPhases = (
+				9CEC8403E81759CE0D6AE9CE3EE79375 /* Sources */,
+				528E6EEDFDA3EC34D7BF1FEAD9A3550B /* Frameworks */,
+				6A7917572BD692C88E43C20B6663D6C3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JWSwiftTools;
+			productName = JWSwiftTools;
+			productReference = 8B553116A4764B36ACC48DB71979124C /* JWSwiftTools.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B43BDC8F268174E1D82DA422D0C9670F /* Pods-Tik TalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F641A270D3F894A6F1CAC4B14F5F23 /* Build configuration list for PBXNativeTarget "Pods-Tik TalkUITests" */;
+			buildPhases = (
+				178841C07835D14EFF47AFE13192DD00 /* Sources */,
+				A8C17651126BBC87CE966D2A8A9A2A57 /* Frameworks */,
+				D61697CB2E38DF820930164AECF9F07F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tik TalkUITests";
+			productName = "Pods-Tik TalkUITests";
+			productReference = 4572A580ABAA7F1619F56675183614E6 /* Pods_Tik_TalkUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F118B0FA84AC9116AB2E480C302C3999 /* Build configuration list for PBXNativeTarget "nanopb" */;
+			buildPhases = (
+				238527BE8D494586023F2A2B8A60D242 /* Sources */,
+				971041836592E28ADEEDA495A96A62A2 /* Frameworks */,
+				4547B9AF8085A499AA35614798F8F9E4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nanopb;
+			productName = nanopb;
+			productReference = 2FD4561B8B1FF3506460683BF2EFBA87 /* nanopb.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B132454FC2376D59B2456103575B9923 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				544212980401A6DA7806F65EAD8C6637 /* Cartography */,
+				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
+				94661F6C63961243FF34AC531A7EAF36 /* JWSwiftTools */,
+				E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */,
+				3B4977E3A5A5DE5C69C6AE67EAF33BAA /* Pods-Tik Talk */,
+				791FC41AE7C177362B8ADB9345C8107D /* Pods-Tik TalkTests */,
+				B43BDC8F268174E1D82DA422D0C9670F /* Pods-Tik TalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		178841C07835D14EFF47AFE13192DD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE091C331E2AA61756FFCC8813B68D5F /* Pods-Tik TalkUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		238527BE8D494586023F2A2B8A60D242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */,
+				3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */,
+				54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */,
+				55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5901D6ABC382717D898BF64702BF6193 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E7EBD32177A38E648D2095CFA802B0B /* Pods-Tik Talk-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */,
+				F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98EBE1408B5B72C27BD89C2DC7DFA664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC65EDD767AA0EFCDB840B97447CC2F /* Pods-Tik TalkTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEC8403E81759CE0D6AE9CE3EE79375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3886D8E920666AF0855EF4B95D961DA8 /* AssociatedList.swift in Sources */,
+				E29509AD29AE6AC0CE323818BF650D35 /* CloudKit.swift in Sources */,
+				90C54C4C27AF08F84EC0EA5F1E537F6D /* Collections.swift in Sources */,
+				A9CC82424B51A7850ADAC7BA0054E627 /* CoreData.swift in Sources */,
+				A8387330BDCC8B4B86B98E917833D98D /* Info.plist in Sources */,
+				0F4314919991F1AE535EBE1780CA8A46 /* JWSwiftTools-dummy.m in Sources */,
+				62EC44B05F844CB86CCEF17C08163A06 /* Layout.swift in Sources */,
+				C42D504B66A104612BFEB73BDB037D91 /* LifeCycle.swift in Sources */,
+				7F2AF1BC6DF597BF9A75B20C55B2DAF6 /* LocationHandler.swift in Sources */,
+				1C8ACC075D27258897188CE506C7879F /* MapKit.swift in Sources */,
+				EB6157C2600A3068A1589B9CE565CBD6 /* Messages.swift in Sources */,
+				F54517BC887E605B6BC4C0DE89480C9D /* Miscellaneous.swift in Sources */,
+				EE074566F72934DC4B1443F01367221F /* Operators.swift in Sources */,
+				4DA432023E6EF3AC96E7A1170DC9FD70 /* Process.swift in Sources */,
+				85B46569D643A566F6B37CA8547F9012 /* RandomGenerators.swift in Sources */,
+				248834D324A53BDEFCF8F8844E24BC03 /* Representation.swift in Sources */,
+				212A3B2BA3D9452FF8DEF62169DD538C /* Sequences.swift in Sources */,
+				AA3D1F317A26DC638BF3709D4EA2D59B /* Session-Structure.swift in Sources */,
+				21CE3722E685BA8BF7ABDBFDA120A834 /* Session.swift in Sources */,
+				1174F471D2E42154C4310DA4E2608907 /* SortingAndFiltering.swift in Sources */,
+				5572B18901B045D396E1217136833DE9 /* Standard.swift in Sources */,
+				2285AF196F3071C6E382E8F00FBDB65E /* UI.swift in Sources */,
+				BBC28BB223B29258B482087733B794E3 /* UIKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8A87B475BE2E0CA1FFEC5F03DEDB801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067B84F7E9EFBEAFDC824931CAAD2051 /* Align.swift in Sources */,
+				AE7ACD648B84D1C8645049118FE42D54 /* Cartography-dummy.m in Sources */,
+				FC27B916EC313A166CE2704745CB14C0 /* Coefficients.swift in Sources */,
+				5F5D3FB5718F4673DC293DA7D97EF046 /* Compound.swift in Sources */,
+				3F2391D80C5AE124D6E13AD3FABFFE01 /* Constrain.swift in Sources */,
+				C2E2993258D9072061A389E518053F8B /* Constraint.swift in Sources */,
+				5CAA19E0EB7CA9EB6047A3E43EC1FC8F /* ConstraintGroup.swift in Sources */,
+				9C7E8D85506FA06C506A330B200FCEE7 /* Context.swift in Sources */,
+				DBC0D8FEB6A8101C977332E8BC16E641 /* Dimension.swift in Sources */,
+				7965A04590F67375EC65249F774B3F6B /* Distribute.swift in Sources */,
+				CD587D5E28B0428E3B4163F1604D26BF /* Edge.swift in Sources */,
+				A084DDD7233A950676D60FCB4FA8BE74 /* Edges.swift in Sources */,
+				697414FCC3C6F8176768FFDDEC73A108 /* Expression.swift in Sources */,
+				A67286FF819C5C943D027E9C40DF456D /* Extensions.swift in Sources */,
+				1431619A2565DD8EAB817240E078707C /* LayoutProxy.swift in Sources */,
+				56EBA0C77344F63CA6A36265A6496A71 /* LayoutSupport.swift in Sources */,
+				88B21B225B2D6BFAB3F50B88495299F1 /* Point.swift in Sources */,
+				22B60CFF6E57EB6DF8CCA5D2CAC3178C /* Priority.swift in Sources */,
+				A7BD4B74A484170A23FF6C7611A11B40 /* Property.swift in Sources */,
+				74BD0664EEC77366D314DA22DD4E721F /* Size.swift in Sources */,
+				05C1C6C0B246E3C5FDF06B2A0BB63F0D /* View.swift in Sources */,
+				9B71D4856DF9CFE5715EDF4E5B3B2844 /* ViewUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46CC141DF3650CD2940C72842E572DB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = A18BD4ED5673FEEABC898821F454B213 /* PBXContainerItemProxy */;
+		};
+		4E4015C49046980E41AD22B5D5D335C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = nanopb;
+			target = E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */;
+			targetProxy = 697B4BC1DE5AD6298D189DB5C9DB5032 /* PBXContainerItemProxy */;
+		};
+		9B4900B686722EF06768A651C7F4CCBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cartography;
+			target = 544212980401A6DA7806F65EAD8C6637 /* Cartography */;
+			targetProxy = 1EB449EA2D8963237C3F1298D21E24AB /* PBXContainerItemProxy */;
+		};
+		FB4FA04F3428C4B9630148A27E2FC225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JWSwiftTools;
+			target = 94661F6C63961243FF34AC531A7EAF36 /* JWSwiftTools */;
+			targetProxy = D0CD99F0B97BA0C36921134BAEA65C42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		17A30002C4D48538901DA8B330F5205D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE9C6578D01F6C51325A304C63087856 /* JWSwiftTools.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JWSwiftTools/JWSwiftTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JWSwiftTools/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JWSwiftTools/JWSwiftTools.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JWSwiftTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1BA3410E9FF31C39313027681DBE4679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85A04D7567BEF14A054857C42345F1A /* nanopb.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/nanopb/nanopb.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = nanopb;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1D30AB27679606AB534A729974B3E7DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 398B156CA2211EE7348084FB173CD517 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		307EB22C699FE90350983C6FBC8111B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 909BCE8466785464258CC5A16603B6D0 /* Pods-Tik TalkTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik TalkTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_TalkTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		33F8F7AAAA85E50D89ADDD29179D4D1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		377BA761EB4965549AC51D313107CE20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE9C6578D01F6C51325A304C63087856 /* JWSwiftTools.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JWSwiftTools/JWSwiftTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JWSwiftTools/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JWSwiftTools/JWSwiftTools.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JWSwiftTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3C7603FCA3FD3DD4760B85324A928D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3DF9C8A15DB712735750D95D45A7E465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85A04D7567BEF14A054857C42345F1A /* nanopb.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/nanopb/nanopb.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = nanopb;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4922AEC8B0B4A63443E9D7771C405E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A61F2A239AB1F413E706F44E65418D0 /* Pods-Tik TalkTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik TalkTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_TalkTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4B7CED9CC80CE898BC137C6462C48B21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD2BE90AB7D7927E22A54AC54DA1EF44 /* Pods-Tik TalkUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik TalkUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_TalkUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B1CCDD3850BA8A651FEE4B5B5701C69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D51BADF19C31F42BAF234509920C4EC /* Pods-Tik Talk.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik Talk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik Talk/Pods-Tik Talk.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_Talk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7219D836395E3FC609579BC8FFDB9EF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3E9A713DD6218629E507C32C7E30F97 /* Pods-Tik TalkUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik TalkUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_TalkUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA43C13AEDBF96B3C1DE52C629FBEC9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D6094F013697F9271C73DE3AC81211 /* Cartography.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C126BEED6939CA2C1E08284B2DF001E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 398B156CA2211EE7348084FB173CD517 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DAFEB9AD91EF13A99946C5FD7749F92C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D6094F013697F9271C73DE3AC81211 /* Cartography.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDA31B2058D1BFF441DF032D23171FC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F31D2AA899D116EF764CFFEB45FB8EAF /* Pods-Tik Talk.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tik Talk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tik Talk/Pods-Tik Talk.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tik_Talk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C7603FCA3FD3DD4760B85324A928D53 /* Debug */,
+				33F8F7AAAA85E50D89ADDD29179D4D1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4640A3FD22DAF78390468CA450BB29DA /* Build configuration list for PBXNativeTarget "Cartography" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA43C13AEDBF96B3C1DE52C629FBEC9C /* Debug */,
+				DAFEB9AD91EF13A99946C5FD7749F92C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68F641A270D3F894A6F1CAC4B14F5F23 /* Build configuration list for PBXNativeTarget "Pods-Tik TalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7CED9CC80CE898BC137C6462C48B21 /* Debug */,
+				7219D836395E3FC609579BC8FFDB9EF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9736CFDBB216C770752FDCA8A9B3D1B /* Build configuration list for PBXNativeTarget "JWSwiftTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17A30002C4D48538901DA8B330F5205D /* Debug */,
+				377BA761EB4965549AC51D313107CE20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C07C91D4A9B8E7218D14BF72C80E401F /* Build configuration list for PBXNativeTarget "Pods-Tik TalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				307EB22C699FE90350983C6FBC8111B4 /* Debug */,
+				4922AEC8B0B4A63443E9D7771C405E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C126BEED6939CA2C1E08284B2DF001E0 /* Debug */,
+				1D30AB27679606AB534A729974B3E7DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D31E95AB3E21B56F5A6DBFDC3381024E /* Build configuration list for PBXNativeTarget "Pods-Tik Talk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1CCDD3850BA8A651FEE4B5B5701C69 /* Debug */,
+				FDA31B2058D1BFF441DF032D23171FC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F118B0FA84AC9116AB2E480C302C3999 /* Build configuration list for PBXNativeTarget "nanopb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF9C8A15DB712735750D95D45A7E465 /* Debug */,
+				1BA3410E9FF31C39313027681DBE4679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

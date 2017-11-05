@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1515AC1772098B23171542 /* Pods_Tik_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC59A7F1A8B26F34EFA2E60D /* Pods_Tik_Talk.framework */; };
+		65E3C6059CE56AB44B52922F /* Pods_Tik_TalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5E612CC6DCAFAEC6243941 /* Pods_Tik_TalkUITests.framework */; };
 		8B0AB6171FAF7D8A00B43B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */; };
 		8B0AB6191FAF7D8A00B43B37 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6181FAF7D8A00B43B37 /* FirstViewController.swift */; };
 		8B0AB61B1FAF7D8A00B43B37 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB61A1FAF7D8A00B43B37 /* SecondViewController.swift */; };
@@ -15,6 +17,7 @@
 		8B0AB6231FAF7D8A00B43B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0AB6211FAF7D8A00B43B37 /* LaunchScreen.storyboard */; };
 		8B0AB62E1FAF7D8A00B43B37 /* Tik_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB62D1FAF7D8A00B43B37 /* Tik_TalkTests.swift */; };
 		8B0AB6391FAF7D8A00B43B37 /* Tik_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */; };
+		F7F6F87729D1C0E74564A224 /* Pods_Tik_TalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11E14CDF9D4E9681B9A54EA6 /* Pods-Tik TalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik TalkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BD41C9EF36F160DBC9FC68A /* Pods-Tik TalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik TalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4982F8AFB516734E36F2B19D /* Pods-Tik Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik Talk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0AB6131FAF7D8A00B43B37 /* Tik Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tik Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B0AB6181FAF7D8A00B43B37 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		8B0AB6341FAF7D8A00B43B37 /* Tik TalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tik TalkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tik_TalkUITests.swift; sourceTree = "<group>"; };
 		8B0AB63A1FAF7D8A00B43B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tik_TalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF820D540263B1845E19A8D0 /* Pods-Tik Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik Talk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk.release.xcconfig"; sourceTree = "<group>"; };
+		CC0D0C4CD60EDAA03AF80B6E /* Pods-Tik TalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik TalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC59A7F1A8B26F34EFA2E60D /* Pods_Tik_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tik_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5FA3FC41D8829D1BB0F1092 /* Pods-Tik TalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik TalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE5E612CC6DCAFAEC6243941 /* Pods_Tik_TalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tik_TalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1515AC1772098B23171542 /* Pods_Tik_Talk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F6F87729D1C0E74564A224 /* Pods_Tik_TalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E3C6059CE56AB44B52922F /* Pods_Tik_TalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635B7DBE1E1E5689CBA68548 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4982F8AFB516734E36F2B19D /* Pods-Tik Talk.debug.xcconfig */,
+				BF820D540263B1845E19A8D0 /* Pods-Tik Talk.release.xcconfig */,
+				2BD41C9EF36F160DBC9FC68A /* Pods-Tik TalkTests.debug.xcconfig */,
+				D5FA3FC41D8829D1BB0F1092 /* Pods-Tik TalkTests.release.xcconfig */,
+				11E14CDF9D4E9681B9A54EA6 /* Pods-Tik TalkUITests.debug.xcconfig */,
+				CC0D0C4CD60EDAA03AF80B6E /* Pods-Tik TalkUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B289F8378686A9017C76FAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC59A7F1A8B26F34EFA2E60D /* Pods_Tik_Talk.framework */,
+				B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */,
+				EE5E612CC6DCAFAEC6243941 /* Pods_Tik_TalkUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B0AB60A1FAF7D8A00B43B37 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				8B0AB62C1FAF7D8A00B43B37 /* Tik TalkTests */,
 				8B0AB6371FAF7D8A00B43B37 /* Tik TalkUITests */,
 				8B0AB6141FAF7D8A00B43B37 /* Products */,
+				635B7DBE1E1E5689CBA68548 /* Pods */,
+				6B289F8378686A9017C76FAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B0AB63D1FAF7D8A00B43B37 /* Build configuration list for PBXNativeTarget "Tik Talk" */;
 			buildPhases = (
+				57DB96356B386CA50F428D83 /* [CP] Check Pods Manifest.lock */,
 				8B0AB60F1FAF7D8A00B43B37 /* Sources */,
 				8B0AB6101FAF7D8A00B43B37 /* Frameworks */,
 				8B0AB6111FAF7D8A00B43B37 /* Resources */,
+				ED67833BD41A8BCA62C8AB43 /* [CP] Embed Pods Frameworks */,
+				1218B2D580A37B6733488B6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B0AB6401FAF7D8A00B43B37 /* Build configuration list for PBXNativeTarget "Tik TalkTests" */;
 			buildPhases = (
+				86C815949AF36D86A98BC7D2 /* [CP] Check Pods Manifest.lock */,
 				8B0AB6251FAF7D8A00B43B37 /* Sources */,
 				8B0AB6261FAF7D8A00B43B37 /* Frameworks */,
 				8B0AB6271FAF7D8A00B43B37 /* Resources */,
+				879CEBFBEC4E3B91CF37B2E1 /* [CP] Embed Pods Frameworks */,
+				400FA6C321FE1EC778285CD7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B0AB6431FAF7D8A00B43B37 /* Build configuration list for PBXNativeTarget "Tik TalkUITests" */;
 			buildPhases = (
+				5DF671055F3CD3B680422FB9 /* [CP] Check Pods Manifest.lock */,
 				8B0AB6301FAF7D8A00B43B37 /* Sources */,
 				8B0AB6311FAF7D8A00B43B37 /* Frameworks */,
 				8B0AB6321FAF7D8A00B43B37 /* Resources */,
+				A8E1E0922F4C51CD005D60C7 /* [CP] Embed Pods Frameworks */,
+				0C2821208308C3D8E9FF0922 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2821208308C3D8E9FF0922 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1218B2D580A37B6733488B6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		400FA6C321FE1EC778285CD7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57DB96356B386CA50F428D83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DF671055F3CD3B680422FB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86C815949AF36D86A98BC7D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		879CEBFBEC4E3B91CF37B2E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik TalkTests/Pods-Tik TalkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8E1E0922F4C51CD005D60C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED67833BD41A8BCA62C8AB43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B0AB60F1FAF7D8A00B43B37 /* Sources */ = {
@@ -428,6 +615,7 @@
 		};
 		8B0AB63E1FAF7D8A00B43B37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4982F8AFB516734E36F2B19D /* Pods-Tik Talk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +631,7 @@
 		};
 		8B0AB63F1FAF7D8A00B43B37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF820D540263B1845E19A8D0 /* Pods-Tik Talk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +647,7 @@
 		};
 		8B0AB6411FAF7D8A00B43B37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD41C9EF36F160DBC9FC68A /* Pods-Tik TalkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +665,7 @@
 		};
 		8B0AB6421FAF7D8A00B43B37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5FA3FC41D8829D1BB0F1092 /* Pods-Tik TalkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +683,7 @@
 		};
 		8B0AB6441FAF7D8A00B43B37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11E14CDF9D4E9681B9A54EA6 /* Pods-Tik TalkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +700,7 @@
 		};
 		8B0AB6451FAF7D8A00B43B37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC0D0C4CD60EDAA03AF80B6E /* Pods-Tik TalkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
