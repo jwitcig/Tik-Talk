@@ -90,14 +90,18 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JWSwiftTools/JWSwiftTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Protobuf/Protobuf.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/leveldb-library/leveldb.framework"
   install_framework "$BUILT_PRODUCTS_DIR/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JWSwiftTools/JWSwiftTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Protobuf/Protobuf.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/leveldb-library/leveldb.framework"
   install_framework "$BUILT_PRODUCTS_DIR/nanopb/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

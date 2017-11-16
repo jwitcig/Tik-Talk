@@ -1,43 +1,97 @@
 PODS:
   - Cartography (2.0.0)
+  - Firebase/Auth (4.1.1):
+    - Firebase/Core
+    - FirebaseAuth (= 4.1.1)
   - Firebase/Core (4.1.1):
     - FirebaseAnalytics (= 4.0.3)
     - FirebaseCore (= 4.0.6)
+  - Firebase/Database (4.1.1):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.0.2)
+  - Firebase/RemoteConfig (4.1.1):
+    - Firebase/Core
+    - FirebaseRemoteConfig (= 2.0.2)
+  - Firebase/Storage (4.1.1):
+    - Firebase/Core
+    - FirebaseStorage (= 2.0.1)
   - FirebaseAnalytics (4.0.3):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
+  - FirebaseAuth (4.1.1):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.6):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
+  - FirebaseDatabase (4.0.2):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.2):
     - FirebaseCore (~> 4.0)
+  - FirebaseRemoteConfig (2.0.2):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - Protobuf (~> 3.1)
+  - FirebaseStorage (2.0.1):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.11)
   - JWSwiftTools (1.1.14)
+  - leveldb-library (1.18.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Protobuf (3.4.0)
 
 DEPENDENCIES:
   - Cartography
+  - Firebase/Auth
   - Firebase/Core
-  - JWSwiftTools
+  - Firebase/Database
+  - Firebase/RemoteConfig
+  - Firebase/Storage
+  - JWSwiftTools (from `~/Documents/Projects/JWSwiftTools`)
+
+EXTERNAL SOURCES:
+  JWSwiftTools:
+    :path: "~/Documents/Projects/JWSwiftTools"
 
 SPEC CHECKSUMS:
   Cartography: d295eb25ab54bb57eecd8c2f04e9648c850f1281
   Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseAuth: f8b07aa83de60d606b4eadd81484b3ac2097ea3e
   FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
+  FirebaseDatabase: 4d1a10639a42cae26e094296951b53c689e5e191
   FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
+  FirebaseRemoteConfig: 5b3e3301ef2f237b1b588e8ef3211b5a22e9e15d
+  FirebaseStorage: 661fc1f8d4131891d256b62e82a45ace8b3f0c3b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  JWSwiftTools: c07152e274af4fbb834b350fc54ab52369a41f80
+  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  JWSwiftTools: a0c44371c65be2725df931c81cda4790239c9e18
+  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
 
-PODFILE CHECKSUM: 9c1403b781b83c2b9d0c5a4bb8bc462a0b3d90e6
+PODFILE CHECKSUM: c93c0813f65b64294d1300391a0574aa8cbe5143
 
 COCOAPODS: 1.2.1

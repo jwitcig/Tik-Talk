@@ -9,7 +9,11 @@ target 'Tik Talk' do
 
   pod 'Cartography'
   pod 'Firebase/Core'
-  pod 'JWSwiftTools'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
+  pod 'JWSwiftTools', :path => '~/Documents/Projects/JWSwiftTools'
 
   target 'Tik TalkTests' do
     inherit! :search_paths

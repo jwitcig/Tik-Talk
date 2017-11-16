@@ -10,13 +10,25 @@
 		3B1515AC1772098B23171542 /* Pods_Tik_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC59A7F1A8B26F34EFA2E60D /* Pods_Tik_Talk.framework */; };
 		65E3C6059CE56AB44B52922F /* Pods_Tik_TalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5E612CC6DCAFAEC6243941 /* Pods_Tik_TalkUITests.framework */; };
 		8B0AB6171FAF7D8A00B43B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */; };
-		8B0AB6191FAF7D8A00B43B37 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6181FAF7D8A00B43B37 /* FirstViewController.swift */; };
-		8B0AB61B1FAF7D8A00B43B37 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB61A1FAF7D8A00B43B37 /* SecondViewController.swift */; };
+		8B0AB6191FAF7D8A00B43B37 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6181FAF7D8A00B43B37 /* TimelineViewController.swift */; };
+		8B0AB61B1FAF7D8A00B43B37 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB61A1FAF7D8A00B43B37 /* CreatePostViewController.swift */; };
 		8B0AB61E1FAF7D8A00B43B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */; };
 		8B0AB6201FAF7D8A00B43B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B0AB61F1FAF7D8A00B43B37 /* Assets.xcassets */; };
 		8B0AB6231FAF7D8A00B43B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0AB6211FAF7D8A00B43B37 /* LaunchScreen.storyboard */; };
 		8B0AB62E1FAF7D8A00B43B37 /* Tik_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB62D1FAF7D8A00B43B37 /* Tik_TalkTests.swift */; };
 		8B0AB6391FAF7D8A00B43B37 /* Tik_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */; };
+		8B0AB6471FAF823700B43B37 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6461FAF823700B43B37 /* Post.swift */; };
+		8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6481FAF83D000B43B37 /* Helpers.swift */; };
+		8B2503961FAF91CB00117288 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2503951FAF91CB00117288 /* User.swift */; };
+		8B2503981FAF93D800117288 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2503971FAF93D800117288 /* Group.swift */; };
+		8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */; };
+		8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */; };
+		8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */; };
+		8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */; };
+		8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4A1FBE338E005DFF36 /* Podfile */; };
+		8BC0CD4D1FBE3BF5005DFF36 /* Voter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */; };
+		8BF7CD971FB8C01F00F90626 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CD961FB8C01F00F90626 /* Database.swift */; };
+		8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CD981FB8C11200F90626 /* Storage.swift */; };
 		F7F6F87729D1C0E74564A224 /* Pods_Tik_TalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +55,8 @@
 		4982F8AFB516734E36F2B19D /* Pods-Tik Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik Talk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0AB6131FAF7D8A00B43B37 /* Tik Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tik Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B0AB6181FAF7D8A00B43B37 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8B0AB61A1FAF7D8A00B43B37 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8B0AB6181FAF7D8A00B43B37 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		8B0AB61A1FAF7D8A00B43B37 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		8B0AB61D1FAF7D8A00B43B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B0AB61F1FAF7D8A00B43B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B0AB6221FAF7D8A00B43B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +67,18 @@
 		8B0AB6341FAF7D8A00B43B37 /* Tik TalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tik TalkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tik_TalkUITests.swift; sourceTree = "<group>"; };
 		8B0AB63A1FAF7D8A00B43B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B0AB6461FAF823700B43B37 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8B0AB6481FAF83D000B43B37 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8B2503951FAF91CB00117288 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B2503971FAF93D800117288 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8BC0CD4A1FBE338E005DFF36 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voter.swift; sourceTree = "<group>"; };
+		8BF7CD961FB8C01F00F90626 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		8BF7CD981FB8C11200F90626 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tik_TalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF820D540263B1845E19A8D0 /* Pods-Tik Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik Talk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk.release.xcconfig"; sourceTree = "<group>"; };
 		CC0D0C4CD60EDAA03AF80B6E /* Pods-Tik TalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik TalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik TalkUITests/Pods-Tik TalkUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +141,7 @@
 		8B0AB60A1FAF7D8A00B43B37 = {
 			isa = PBXGroup;
 			children = (
+				8BC0CD4A1FBE338E005DFF36 /* Podfile */,
 				8B0AB6151FAF7D8A00B43B37 /* Tik Talk */,
 				8B0AB62C1FAF7D8A00B43B37 /* Tik TalkTests */,
 				8B0AB6371FAF7D8A00B43B37 /* Tik TalkUITests */,
@@ -140,9 +165,20 @@
 			isa = PBXGroup;
 			children = (
 				8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */,
-				8B0AB6181FAF7D8A00B43B37 /* FirstViewController.swift */,
-				8B0AB61A1FAF7D8A00B43B37 /* SecondViewController.swift */,
+				8BF7CD961FB8C01F00F90626 /* Database.swift */,
+				8BF7CD981FB8C11200F90626 /* Storage.swift */,
+				8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */,
+				8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */,
+				8B0AB6181FAF7D8A00B43B37 /* TimelineViewController.swift */,
+				8B0AB61A1FAF7D8A00B43B37 /* CreatePostViewController.swift */,
+				8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */,
+				8B0AB6461FAF823700B43B37 /* Post.swift */,
+				8B2503971FAF93D800117288 /* Group.swift */,
+				8B2503951FAF91CB00117288 /* User.swift */,
+				8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */,
+				8B0AB6481FAF83D000B43B37 /* Helpers.swift */,
 				8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */,
+				8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */,
 				8B0AB61F1FAF7D8A00B43B37 /* Assets.xcassets */,
 				8B0AB6211FAF7D8A00B43B37 /* LaunchScreen.storyboard */,
 				8B0AB6241FAF7D8A00B43B37 /* Info.plist */,
@@ -284,7 +320,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */,
 				8B0AB6231FAF7D8A00B43B37 /* LaunchScreen.storyboard in Resources */,
+				8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */,
+				8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */,
 				8B0AB6201FAF7D8A00B43B37 /* Assets.xcassets in Resources */,
 				8B0AB61E1FAF7D8A00B43B37 /* Main.storyboard in Resources */,
 			);
@@ -449,9 +488,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B0AB61B1FAF7D8A00B43B37 /* SecondViewController.swift in Sources */,
+				8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */,
+				8B2503981FAF93D800117288 /* Group.swift in Sources */,
+				8B0AB61B1FAF7D8A00B43B37 /* CreatePostViewController.swift in Sources */,
+				8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */,
 				8B0AB6171FAF7D8A00B43B37 /* AppDelegate.swift in Sources */,
-				8B0AB6191FAF7D8A00B43B37 /* FirstViewController.swift in Sources */,
+				8B2503961FAF91CB00117288 /* User.swift in Sources */,
+				8BC0CD4D1FBE3BF5005DFF36 /* Voter.swift in Sources */,
+				8B0AB6191FAF7D8A00B43B37 /* TimelineViewController.swift in Sources */,
+				8BF7CD971FB8C01F00F90626 /* Database.swift in Sources */,
+				8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */,
+				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
+				8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
