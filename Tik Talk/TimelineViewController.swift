@@ -21,13 +21,11 @@ class TimelineViewController: UIViewController {
         
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
         
-        display(posts: [PostGenerator.fakePost(), PostGenerator.fakePost()])
-        
-        Database.posts.observe(.value) { snapshot in
-            guard let data = snapshot.children.allObjects as? [DataSnapshot] else { return }
-                
-            let posts = data.map {
-                Post(id: $0.key, dictionary: $0.value as? [String : Any] ?? [:])
+        let maxTime = Date().addingTimeInterval(60*60*24).timeIntervalSince1970
+        Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: maxTime).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents else { return }
+            let posts = documents.map {
+                Post(id: $0.documentID, dictionary: $0.data())
             }
             
             self.display(posts: posts)

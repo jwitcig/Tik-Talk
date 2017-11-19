@@ -27,16 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             guard error == nil else {
                 Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                    User.currentUser = User(id: user!.uid, handle: handle)
+                    User.currentUser = User(id: user!.uid, handle: handle, other: nil)
                     
-                    Database.referenceForUser(withID: user!.uid).updateChildValues(User.currentUser!.dictionary)
+                    Firestore.users.document(user!.uid).setData(User.currentUser!.dictionary)
                 }
                 return
             }
             
-            User.currentUser = User(id: user!.uid, handle: handle)
+            User.currentUser = User(id: user!.uid, handle: handle, other: nil)
 
-            Database.referenceForUser(withID: user!.uid).updateChildValues(User.currentUser!.dictionary)
+            Firestore.users.document(user!.uid).setData(User.currentUser!.dictionary)
         }
         
         return true

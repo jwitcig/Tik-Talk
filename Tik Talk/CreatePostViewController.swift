@@ -45,16 +45,23 @@ class CreatePostViewController: UIViewController {
         guard isFormValid else { return }
         guard let userID = User.currentUser?.id else { return }
         
-        let ref = Database.posts.childByAutoId()
-    
+        let postDoc = Firestore.posts.document()
+        
         let savePost: (String?)->Void = { mediaUrl in
-            let post = Post(id: ref.key,
+            let post = Post(id: postDoc.documentID,
                             body: self.textField.text,
                             url: mediaUrl,
                             timestamp: Date(),
-                            creatorHandle: userID)
+                            creatorID: userID)
             
-            ref.setValue(post.dictionary)
+            let batch = postDoc.firestore.batch()
+            batch.setData(post.dictionary, forDocument: postDoc)
+            batch.commit {
+                guard $0 == nil else {
+                    print("Error: \($0!)")
+                    return
+                }
+            }
         }
         
         guard let data = media else {
@@ -65,7 +72,7 @@ class CreatePostViewController: UIViewController {
         let meta = StorageMetadata()
         meta.contentType = "image/jpeg"
         
-        Storage.post(withID: ref.key).putData(data, metadata: meta, completion: { metadata, error in
+        Storage.post(withID: postDoc.documentID).putData(data, metadata: meta, completion: { metadata, error in
     
             guard error == nil else {
                 self.view.backgroundColor = .red

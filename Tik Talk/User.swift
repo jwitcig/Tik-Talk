@@ -8,20 +8,46 @@
 
 import UIKit
 
+import Firebase
+
 class User {
     static var currentUser: User?
     
     let id: String
     let handle: String
+    let email: String?
+    let bio: String?
+    let birthday: String?
+    
+    let friendsCount: Int
     
     var dictionary: [String : Any] {
         return [
-            "handle" : handle
+            "handle" : handle,
+             "email" : email ?? "",
+               "bio" : bio ?? "",
+           "birthday": birthday ?? "",
         ]
     }
     
-    init(id: String, handle: String) {
+    convenience init(id: String, handle: String, other: [String : Any]?) {
+        var dictionary = other ?? [:]
+        dictionary["handle"] = handle
+        self.init(id: id, dictionary: dictionary)
+    }
+    
+    init(id: String, dictionary: [String : Any]) {
         self.id = id
-        self.handle = handle
+        self.handle = dictionary["handle"] as! String
+        
+        self.email = dictionary["email"] as? String
+        self.bio = dictionary["bio"] as? String
+        self.birthday = dictionary["birthday"] as? String
+        
+        self.friendsCount = dictionary["friendsCount"] as? Int ?? 0
+    }
+    
+    convenience init(document: DocumentSnapshot) {
+        self.init(id: document.documentID, dictionary: document.data())
     }
 }
