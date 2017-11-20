@@ -25,12 +25,16 @@
 		8B4FEED21FC151D4000CFA48 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEED11FC151D4000CFA48 /* AccountViewController.swift */; };
 		8B4FEED41FC2015E000CFA48 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEED31FC2015E000CFA48 /* FriendsViewController.swift */; };
 		8B4FEED61FC20D6A000CFA48 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEED51FC20D6A000CFA48 /* PostsViewController.swift */; };
+		8B4FEED81FC35D52000CFA48 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEED71FC35D52000CFA48 /* Database.swift */; };
+		8B4FEEDA1FC37713000CFA48 /* Database+Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEED91FC37713000CFA48 /* Database+Posts.swift */; };
+		8B4FEEDC1FC37741000CFA48 /* Database+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEEDB1FC37741000CFA48 /* Database+Users.swift */; };
+		8B4FEEDE1FC3775C000CFA48 /* Database+Votes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEEDD1FC3775C000CFA48 /* Database+Votes.swift */; };
+		8B4FEEE01FC37A8B000CFA48 /* Database+Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FEEDF1FC37A8B000CFA48 /* Database+Groups.swift */; };
 		8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */; };
 		8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */; };
 		8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */; };
 		8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */; };
 		8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4A1FBE338E005DFF36 /* Podfile */; };
-		8BC0CD4D1FBE3BF5005DFF36 /* Voter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */; };
 		8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CD981FB8C11200F90626 /* Storage.swift */; };
 		F7F6F87729D1C0E74564A224 /* Pods_Tik_TalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,12 +82,16 @@
 		8B4FEED11FC151D4000CFA48 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8B4FEED31FC2015E000CFA48 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		8B4FEED51FC20D6A000CFA48 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		8B4FEED71FC35D52000CFA48 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		8B4FEED91FC37713000CFA48 /* Database+Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Posts.swift"; sourceTree = "<group>"; };
+		8B4FEEDB1FC37741000CFA48 /* Database+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Users.swift"; sourceTree = "<group>"; };
+		8B4FEEDD1FC3775C000CFA48 /* Database+Votes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Votes.swift"; sourceTree = "<group>"; };
+		8B4FEEDF1FC37A8B000CFA48 /* Database+Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Groups.swift"; sourceTree = "<group>"; };
 		8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8BC0CD4A1FBE338E005DFF36 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voter.swift; sourceTree = "<group>"; };
 		8BF7CD981FB8C11200F90626 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B127E6280EF3CE491AEA7E4A /* Pods_Tik_TalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tik_TalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF820D540263B1845E19A8D0 /* Pods-Tik Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tik Talk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tik Talk/Pods-Tik Talk.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +180,11 @@
 			children = (
 				8B0AB6161FAF7D8A00B43B37 /* AppDelegate.swift */,
 				8B4981CE1FC0A956001F6379 /* Firestore.swift */,
+				8B4FEED71FC35D52000CFA48 /* Database.swift */,
+				8B4FEED91FC37713000CFA48 /* Database+Posts.swift */,
+				8B4FEEDB1FC37741000CFA48 /* Database+Users.swift */,
+				8B4FEEDD1FC3775C000CFA48 /* Database+Votes.swift */,
+				8B4FEEDF1FC37A8B000CFA48 /* Database+Groups.swift */,
 				8BF7CD981FB8C11200F90626 /* Storage.swift */,
 				8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */,
 				8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */,
@@ -184,7 +197,6 @@
 				8B0AB6461FAF823700B43B37 /* Post.swift */,
 				8B2503971FAF93D800117288 /* Group.swift */,
 				8B2503951FAF91CB00117288 /* User.swift */,
-				8BC0CD4C1FBE3BF5005DFF36 /* Voter.swift */,
 				8B0AB6481FAF83D000B43B37 /* Helpers.swift */,
 				8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */,
 				8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */,
@@ -497,7 +509,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4FEEDC1FC37741000CFA48 /* Database+Users.swift in Sources */,
 				8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */,
+				8B4FEEDA1FC37713000CFA48 /* Database+Posts.swift in Sources */,
+				8B4FEEE01FC37A8B000CFA48 /* Database+Groups.swift in Sources */,
 				8B2503981FAF93D800117288 /* Group.swift in Sources */,
 				8B4FEED21FC151D4000CFA48 /* AccountViewController.swift in Sources */,
 				8B0AB61B1FAF7D8A00B43B37 /* CreatePostViewController.swift in Sources */,
@@ -507,10 +522,11 @@
 				8B4981CF1FC0A956001F6379 /* Firestore.swift in Sources */,
 				8B2503961FAF91CB00117288 /* User.swift in Sources */,
 				8B4FEED61FC20D6A000CFA48 /* PostsViewController.swift in Sources */,
-				8BC0CD4D1FBE3BF5005DFF36 /* Voter.swift in Sources */,
 				8B0AB6191FAF7D8A00B43B37 /* TimelineViewController.swift in Sources */,
 				8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */,
 				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
+				8B4FEED81FC35D52000CFA48 /* Database.swift in Sources */,
+				8B4FEEDE1FC3775C000CFA48 /* Database+Votes.swift in Sources */,
 				8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

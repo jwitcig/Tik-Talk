@@ -22,11 +22,15 @@ class SignUpViewController: UIViewController {
     @IBAction func submitPressed(sender: Any) {
         guard let handle = handleField.text else { return }
         
-        let document = Firestore.users.document()
-    
-        let user = User(id: document.documentID, handle: handle, other: nil)
+        let user = User(id: Database.Users.newModel().id,
+                    handle: handle,
+                     other: nil)
         
-        document.setData(user.dictionary)
+        Database.Users.create(user, success: {
+            
+        }, failure: { error in
+            print("Error: \(error)")
+        })
     }
 }
 

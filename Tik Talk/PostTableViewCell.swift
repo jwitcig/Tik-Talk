@@ -15,19 +15,31 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var voteUpButton: UIButton!
     @IBOutlet weak var voteDownButton: UIButton!
-
+    
+    @IBOutlet weak var imageStackView: UIStackView!
+    @IBOutlet weak var imageStackViewHeightConstraint: NSLayoutConstraint!
+    private var imageStackViewHeightConstraintConstant: CGFloat = 0
+    
     var voteBlock: ((Vote)->())?
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageStackViewHeightConstraintConstant = imageStackViewHeightConstraint.constant
+        imageStackViewHeightConstraint.constant = 0
+    }
+    
+    func add(images: [UIImage]) {
+        imageStackViewHeightConstraint.constant = imageStackViewHeightConstraintConstant
+        
+        for image in images {
+            let imageView = UIImageView(image: image)
+            imageStackView.addArrangedSubview(imageView)
+        }
     }
     
     @IBAction func vote(sender: UIButton) {

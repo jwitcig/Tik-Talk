@@ -29,14 +29,12 @@
                                             <constraint firstAttribute="width" constant="10" id="HUo-me-xOW"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGi-yb-krH">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rm-Qk-8lJ">
                                         <rect key="frame" x="10" y="0.0" width="355" height="667"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="9pv-A4-QxB" id="o8S-Vj-bOk"/>
-                                            <outlet property="delegate" destination="9pv-A4-QxB" id="Wux-Cg-zQV"/>
+                                            <segue destination="AbW-hU-H0u" kind="embed" id="tPL-g1-Xlr"/>
                                         </connections>
-                                    </tableView>
+                                    </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84f-Xk-gbl">
                                         <rect key="frame" x="365" y="0.0" width="10" height="667"/>
                                         <color key="backgroundColor" red="0.95184808969497681" green="0.11026861518621445" blue="0.096311502158641815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,13 +55,10 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timeline" image="first" id="acW-dT-cKf"/>
-                    <connections>
-                        <outlet property="tableView" destination="IGi-yb-krH" id="mTq-ai-T4P"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="750" y="-1162"/>
         </scene>
         <!--Posts View Controller-->
         <scene sceneID="Iec-rR-QLP">
@@ -97,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5P-RU-3Ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="806"/>
+            <point key="canvasLocation" x="1879" y="-846"/>
         </scene>
         <!--Account-->
         <scene sceneID="9J9-BP-tA8">
@@ -148,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiy-Aw-uBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="1712.2938530734634"/>
+            <point key="canvasLocation" x="750" y="-484"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="yMC-Yz-NNh">
@@ -208,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHx-W8-fHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="1712"/>
+            <point key="canvasLocation" x="2606" y="-484"/>
         </scene>
         <!--Create-->
         <scene sceneID="wg7-f3-ORb">
@@ -270,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="750" y="229"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="GIt-fK-Dyk">
@@ -329,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeV-gV-Hyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1018"/>
+            <point key="canvasLocation" x="750" y="896"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -349,11 +344,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-10" y="-153"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oTe-Qw-GMo"/>
+    </inferredMetricsTieBreakers>
 </document>

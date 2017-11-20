@@ -6,17 +6,25 @@
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
+import MobileCoreServices
 import UIKit
 
 import Firebase
 import FirebaseStorage
+
+struct Media {
+    var data: Data?
+    var url: URL?
+    var contentType: String
+    var fileExtension: String
+}
 
 class CreatePostViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
-    var media: Data?
+    var media: Media?
     
     var isFormValid: Bool {
         return true
@@ -30,6 +38,7 @@ class CreatePostViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.sourceType = type
         picker.delegate = self
+        picker.mediaTypes = [kUTTypeImage, kUTTypeMovie] as [String]
         present(picker, animated: true, completion: nil)
     }
     
@@ -44,57 +53,55 @@ class CreatePostViewController: UIViewController {
     @IBAction func submitPressed(sender: Any) {
         guard isFormValid else { return }
         guard let userID = User.currentUser?.id else { return }
+
+        let post = Post(id: Database.Posts.newModel().id,
+                      body: self.textField.text,
+                       url: nil,
+                 creatorID: userID)
         
-        let postDoc = Firestore.posts.document()
-        
-        let savePost: (String?)->Void = { mediaUrl in
-            let post = Post(id: postDoc.documentID,
-                            body: self.textField.text,
-                            url: mediaUrl,
-                            timestamp: Date(),
-                            creatorID: userID)
+        Database.Posts.create(post, with: media, progress: { progress in
+            print(progress)
+        }, success: {
             
-            let batch = postDoc.firestore.batch()
-            batch.setData(post.dictionary, forDocument: postDoc)
-            batch.commit {
-                guard $0 == nil else {
-                    print("Error: \($0!)")
-                    return
-                }
-            }
+        }) { postError, uploadError in
+            
         }
-        
-        guard let data = media else {
-            savePost(nil)
-            return
-        }
-        
-        let meta = StorageMetadata()
-        meta.contentType = "image/jpeg"
-        
-        Storage.post(withID: postDoc.documentID).putData(data, metadata: meta, completion: { metadata, error in
-    
-            guard error == nil else {
-                self.view.backgroundColor = .red
-                return
-            }
-            savePost(nil)
-            self.view.backgroundColor = .green
-        })
     }
 }
 
 extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+        media = nil
+
         picker.dismiss(animated: true, completion: nil)
         
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? String else { return }
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            attach(image: image)
+            imageView.image = image
             return
         }
-        media = UIImageJPEGRepresentation(image, 0.7)
         
-        imageView.image = image
+        if mediaType == kUTTypeMovie as String {
+            guard let url = info[UIImagePickerControllerMediaURL] as? URL else { return }
+            attach(video: url)
+            return
+        }
+    }
+    
+    func attach(image: UIImage) {
+        media = Media(data: UIImageJPEGRepresentation(image, 0.7),
+                       url: nil,
+               contentType: "image/jpeg",
+             fileExtension: "")
+    }
+    
+    func attach(video url: URL) {
+        media = Media(data: nil,
+                       url: url,
+               contentType: "video/" + url.pathExtension.lowercased(),
+             fileExtension: "." + url.pathExtension.lowercased())
     }
 }
 

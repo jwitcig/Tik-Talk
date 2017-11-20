@@ -23,6 +23,10 @@ extension Firestore {
         return base.collection("users")
     }
     
+    static var groups: CollectionReference {
+        return base.collection("groups")
+    }
+    
     static func referenceForPost(withID id: String) -> DocumentReference {
         return posts.document(id)
     }

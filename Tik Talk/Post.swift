@@ -14,7 +14,25 @@ enum Vote {
     case up, down
 }
 
-class Post {
+protocol Model {
+    init(id: String, dictionary: [String : Any])
+}
+
+extension Model {
+    init(document: DocumentSnapshot) {
+        self.init(id: document.documentID, dictionary: document.data())
+    }
+    
+    static func build(from documents: [DocumentSnapshot]) -> [Self] {
+        return documents.map(Self.init)
+    }
+    
+    static func build(from snapshot: QuerySnapshot) -> [Self] {
+        return build(from: snapshot.documents)
+    }
+}
+
+class Post: Model {
     let id: String
     let body: String?
     let url: String?
@@ -35,17 +53,17 @@ class Post {
         return maxCharacterCount - (body ?? "").count
     }
     
-    var dictionary: [String: Any?] {
+    var dictionary: [String: Any] {
         return [
-            "body": body,
-            "url" : url,
+            "body": body as Any,
+            "url" : url as Any,
             "timestamp" : timestamp.timeIntervalSince1970,
             "creatorID" : creatorID,
             "votes": votes.dictionary
         ]
     }
     
-    init(id: String, body: String?, url: String?, timestamp: Date, creatorID: String) {
+    init(id: String, body: String?, url: String?, timestamp: Date = Date(), creatorID: String) {
         self.id = id
         self.body = body
         self.url = url
@@ -53,13 +71,13 @@ class Post {
         self.creatorID = creatorID
         
         let initialPostTime = RemoteConfig.remoteConfig().configValue(forKey: "InitialPostTime").numberValue?.floatValue ?? 120
-
-        let takeDownTime = Date().addingTimeInterval(TimeInterval(60*initialPostTime))
+        
+        let takeDownTime = timestamp.addingTimeInterval(TimeInterval(60*initialPostTime))
         self.votes = Votes(postID: id,
                      takeDownTime: takeDownTime)
     }
     
-    init(id: String, dictionary: [String: Any]) {
+    required init(id: String, dictionary: [String: Any]) {
         self.id = id
         self.body = dictionary["body"] as? String
         self.url = dictionary["url"] as? String
@@ -69,15 +87,17 @@ class Post {
         let votingData =  dictionary["votes"] as! [String : Any]
         self.votes = Votes(postID: id, dictionary: votingData)
     }
-    
-    convenience init(document: DocumentSnapshot) {
-        self.init(id: document.documentID, dictionary: document.data())
-    }
 
     func isValid() -> Bool {
         return charactersRemaining >= 0
     }
- }
+    
+    class Generator {
+        static func fake() -> Post {
+            return Post(id: randomString(length: 64), body: randomString(length: 120), url: nil, timestamp: Date(), creatorID: randomString(length: 10))
+        }
+    }
+}
 
 class Votes {
     let postID: String
@@ -93,11 +113,7 @@ class Votes {
         ]
     }
     
-    convenience init(postID: String, takeDownTime: Date) {
-        self.init(postID: postID, up: 0, down: 0, takeDownTime: takeDownTime)
-    }
-    
-    init(postID: String, up: Int, down: Int, takeDownTime: Date) {
+    init(postID: String, up: Int = 0, down: Int = 0, takeDownTime: Date) {
         self.postID = postID
         self.up = up
         self.down = down
@@ -112,8 +128,4 @@ class Votes {
     }
 }
 
-class PostGenerator {
-    static func fakePost() -> Post {
-        return Post(id: randomString(length: 64), body: randomString(length: 120), url: nil, timestamp: Date(), creatorID: randomString(length: 10))
-    }
-}
+

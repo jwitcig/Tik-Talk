@@ -10,7 +10,7 @@ import UIKit
 
 import Firebase
 
-class User {
+class User: Model {
     static var currentUser: User?
     
     let id: String
@@ -36,7 +36,7 @@ class User {
         self.init(id: id, dictionary: dictionary)
     }
     
-    init(id: String, dictionary: [String : Any]) {
+    required init(id: String, dictionary: [String : Any]) {
         self.id = id
         self.handle = dictionary["handle"] as! String
         
@@ -45,9 +45,5 @@ class User {
         self.birthday = dictionary["birthday"] as? String
         
         self.friendsCount = dictionary["friendsCount"] as? Int ?? 0
-    }
-    
-    convenience init(document: DocumentSnapshot) {
-        self.init(id: document.documentID, dictionary: document.data())
     }
 }

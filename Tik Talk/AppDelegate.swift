@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
         
+        RemoteConfig.remoteConfig().fetch { status, error in
+            RemoteConfig.remoteConfig().activateFetched()
+        }
+        
         let handle = "jwitcig"
         let email = "\(handle)@tiktalk.com"
         let password = handle

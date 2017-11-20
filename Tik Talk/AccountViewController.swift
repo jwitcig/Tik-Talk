@@ -19,23 +19,21 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
 
         guard let user = User.currentUser else { return }
-        Firestore.reference(for: user).getDocument { snapshot, error in
-            guard let document = snapshot else { return }
+        
+        Database.Users.accountInfo(for: user, success: {
+            self.handleLabel.text = $0.handle
+            self.friendsButton.setTitle("\($0.friendsCount) friends", for: .normal)
+        }, failure: { error in
             
-            let user = User(document: document)
-            self.handleLabel.text = user.handle
-            self.friendsButton.setTitle("\(user.friendsCount) friends", for: .normal)  
-        }
+        })
         
         guard let postsViewController = childViewControllers.first as? PostsViewController else { return }
-        
-        Firestore.posts.whereField("creatorID", isEqualTo: user.id).getDocuments { snapshot, error in
-            guard let collection = snapshot else { return }
+       
+        Database.Posts.all(for: user, success: {
+            postsViewController.display(posts: $0)
+        }, failure: { error in
             
-            let posts = collection.documents.map { Post(document: $0) }
-            
-            postsViewController.display(posts: posts)
-        }
+        })
     }
     
     @IBAction func friendsPressed(sender: Any) {

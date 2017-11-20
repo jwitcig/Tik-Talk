@@ -19,16 +19,6 @@ class PostsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
-        
-        let maxTime = Date().addingTimeInterval(60*60*24).timeIntervalSince1970
-        Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: maxTime).getDocuments { snapshot, error in
-            guard let documents = snapshot?.documents else { return }
-            let posts = documents.map {
-                Post(id: $0.documentID, dictionary: $0.data())
-            }
-            
-            self.display(posts: posts)
-        }
     }
     
     func display(posts: [Post]) {
@@ -64,7 +54,7 @@ extension PostsViewController: UITableViewDelegate {
         }
         
         cell.voteBlock = {
-            Voter.cast(vote: $0, for: post)
+            Database.Votes.cast($0, for: post)
         }
         
         return cell

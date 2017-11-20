@@ -22,11 +22,11 @@ class FriendsViewController: UIViewController {
         super.viewDidLoad()
 
         guard let user = User.currentUser else { return }
-        Firestore.friends(for: user).getDocuments { snapshot, error in
-            guard let collection = snapshot else { return }
-            let friends = collection.documents.map { User(document: $0) }
-            
-            self.display(friends: friends)
+    
+        Database.Users.friends(for: user, success: {
+            self.display(friends: $0)
+        }) {
+            print("Error: \($0)")
         }
     }
     
