@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Firebase
-
 class PostsViewController: UIViewController {
     var posts: [Post] = []
     
@@ -18,7 +16,7 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
+        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.postTableViewCellIdentifier)
     }
     
     func display(posts: [Post]) {
@@ -54,7 +52,7 @@ extension PostsViewController: UITableViewDelegate {
         }
         
         cell.voteBlock = {
-            Database.Votes.cast($0, for: post)
+            Database.Votes.cast($0, for: post, by: User.currentUser!)
         }
         
         return cell

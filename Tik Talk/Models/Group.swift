@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Group: Model {
+struct Group: Model {
     let id: String
     let name: String
     let creatorID: String
@@ -18,10 +18,11 @@ class Group: Model {
         return [
             "name" : name,
             "creatorID" : creatorID,
+            "timestamp" : timestamp.timeIntervalSince1970,
         ]
     }
     
-    convenience init(id: String, name: String, creator: User, timestamp: Date = Date()) {
+    init(id: String, name: String, creator: User, timestamp: Date = Date()) {
         self.init(id: id, name: name, creatorID: creator.id, timestamp: timestamp)
     }
     
@@ -32,13 +33,15 @@ class Group: Model {
         self.timestamp = timestamp
     }
 
-    required init(id: String, dictionary: [String: Any]) {
+    init(id: String, dictionary: [String: Any]) {
         self.id = id
         self.name = dictionary["name"] as! String
         self.creatorID = dictionary["creatorID"] as! String
         self.timestamp = Date(timeIntervalSince1970: dictionary["timestamp"] as! TimeInterval)
     }
-   
+}
+
+extension Group {
     class Generator {
         static func fake() -> Group {
             return Group(id: randomString(length: 20), name: randomString(length: 20), creatorID: randomString(length: 20))

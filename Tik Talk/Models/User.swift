@@ -10,7 +10,7 @@ import UIKit
 
 import Firebase
 
-class User: Model {
+struct User: Model {
     static var currentUser: User?
     
     let id: String
@@ -30,13 +30,13 @@ class User: Model {
         ]
     }
     
-    convenience init(id: String, handle: String, other: [String : Any]?) {
+    init(id: String, handle: String, other: [String : Any]?) {
         var dictionary = other ?? [:]
         dictionary["handle"] = handle
         self.init(id: id, dictionary: dictionary)
     }
     
-    required init(id: String, dictionary: [String : Any]) {
+    init(id: String, dictionary: [String : Any]) {
         self.id = id
         self.handle = dictionary["handle"] as! String
         

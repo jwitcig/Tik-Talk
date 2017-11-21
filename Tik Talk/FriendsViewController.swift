@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Firebase
-
 class FriendsViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!

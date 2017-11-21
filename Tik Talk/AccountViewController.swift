@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Firebase
-
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var handleLabel: UILabel!

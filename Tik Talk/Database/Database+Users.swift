@@ -45,7 +45,7 @@ extension Database {
                     failure($1!)
                     return
                 }
-                success(ModelType.build(from: snapshot))
+                success(User.build(from: snapshot))
             }
         }
     }

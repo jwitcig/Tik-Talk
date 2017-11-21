@@ -9,9 +9,6 @@
 import MobileCoreServices
 import UIKit
 
-import Firebase
-import FirebaseStorage
-
 struct Media {
     var data: Data?
     var url: URL?

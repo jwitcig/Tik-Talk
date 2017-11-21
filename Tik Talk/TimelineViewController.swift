@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Firebase
-
 class TimelineViewController: UIViewController {
 
     var posts: [Post] = []
