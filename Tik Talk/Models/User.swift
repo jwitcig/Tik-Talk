@@ -16,23 +16,22 @@ struct User: Model {
     let id: String
     let handle: String
     let email: String?
-    let bio: String?
-    let birthday: String?
     
     let friendsCount: Int
+    
+    var profile: Profile?
     
     var dictionary: [String : Any] {
         return [
             "handle" : handle,
              "email" : email ?? "",
-               "bio" : bio ?? "",
-           "birthday": birthday ?? "",
         ]
     }
     
-    init(id: String, handle: String, other: [String : Any]?) {
+    init(id: String, handle: String, profile: Profile? = nil, other: [String : Any]?) {
         var dictionary = other ?? [:]
         dictionary["handle"] = handle
+        dictionary["profile"] = profile?.dictionary
         self.init(id: id, dictionary: dictionary)
     }
     
@@ -41,9 +40,13 @@ struct User: Model {
         self.handle = dictionary["handle"] as! String
         
         self.email = dictionary["email"] as? String
-        self.bio = dictionary["bio"] as? String
-        self.birthday = dictionary["birthday"] as? String
         
         self.friendsCount = dictionary["friendsCount"] as? Int ?? 0
+
+        if let data = dictionary["profile"] as? [String : Any] {
+            self.profile = Profile(dictionary: data)
+        } else {
+            self.profile = nil
+        }
     }
 }

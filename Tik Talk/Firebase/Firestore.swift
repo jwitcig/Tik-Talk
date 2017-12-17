@@ -43,6 +43,10 @@ extension Firestore {
         return Firestore.referenceForUser(withID: user.id)
     }
     
+    static func reference(for group: Group) -> DocumentReference {
+        return Firestore.groups.document(group.id)
+    }
+    
     static func friends(for user: User) -> CollectionReference {
         return Firestore.reference(for: user).collection("friends")
     }

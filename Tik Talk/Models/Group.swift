@@ -13,12 +13,14 @@ struct Group: Model {
     let name: String
     let creatorID: String
     let timestamp: Date
+    let memberCount: Int
 
     var dictionary: [String: Any] {
         return [
             "name" : name,
             "creatorID" : creatorID,
-            "timestamp" : timestamp.timeIntervalSince1970,
+            "timestamp" : timestamp.utc,
+            "memberCount" : memberCount,
         ]
     }
     
@@ -31,13 +33,15 @@ struct Group: Model {
         self.name = name
         self.creatorID = creatorID
         self.timestamp = timestamp
+        self.memberCount = 0
     }
 
     init(id: String, dictionary: [String: Any]) {
         self.id = id
         self.name = dictionary["name"] as! String
         self.creatorID = dictionary["creatorID"] as! String
-        self.timestamp = Date(timeIntervalSince1970: dictionary["timestamp"] as! TimeInterval)
+        self.timestamp = Date(utc: dictionary["timestamp"] as! String)
+        self.memberCount = dictionary["memberCount"] as! Int
     }
 }
 

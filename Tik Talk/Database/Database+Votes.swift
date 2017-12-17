@@ -33,7 +33,7 @@ extension Database {
                 
                 transaction.updateData([
                     "votes."+vote.rawValue : newVoteCount,
-                    "votes.takeDownTime" : newTakeDownTime.timeIntervalSince1970,
+                    "votes.takeDownTime" : newTakeDownTime.utc,
                 ], forDocument: postRef)
                 transaction.setData(["vote" : vote.rawValue], forDocument: voterDocRef)
                

@@ -24,7 +24,6 @@ class PostTableViewCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
     
     override func awakeFromNib() {
@@ -35,10 +34,9 @@ class PostTableViewCell: UITableViewCell {
     
     func add(images: [UIImage]) {
         imageStackViewHeightConstraint.constant = imageStackViewHeightConstraintConstant
-        
-        for image in images {
-            let imageView = UIImageView(image: image)
-            imageStackView.addArrangedSubview(imageView)
+                
+        images.forEach {
+            self.imageStackView.addArrangedSubview(UIImageView(image: $0))
         }
     }
     

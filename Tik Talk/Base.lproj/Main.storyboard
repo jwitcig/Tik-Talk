@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -205,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="2606" y="-484"/>
         </scene>
-        <!--Create-->
+        <!--Post-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="CreatePostViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
@@ -257,7 +257,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="imageView" destination="9zA-jw-o7D" id="kQs-53-b1y"/>
                         <outlet property="textField" destination="7h1-g1-0vp" id="UMH-nK-cxe"/>
@@ -326,6 +326,93 @@
             </objects>
             <point key="canvasLocation" x="750" y="896"/>
         </scene>
+        <!--Group-->
+        <scene sceneID="tYT-xP-V93">
+            <objects>
+                <viewController id="5us-MO-Vpr" customClass="CreateGroupViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FOG-Za-GI0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGl-ls-RqN">
+                                <rect key="frame" x="165" y="304" width="44" height="30"/>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="createPressedWithSender:" destination="5us-MO-Vpr" eventType="touchUpInside" id="d3F-58-MLQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="group name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s1E-ga-4No">
+                                <rect key="frame" x="94" y="144.5" width="187.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YGl-ls-RqN" firstAttribute="centerX" secondItem="l9A-5q-DtT" secondAttribute="centerX" id="8Yy-zx-J96"/>
+                            <constraint firstItem="s1E-ga-4No" firstAttribute="centerY" secondItem="l9A-5q-DtT" secondAttribute="centerY" multiplier="0.5" id="Hr3-FX-TT6"/>
+                            <constraint firstItem="s1E-ga-4No" firstAttribute="centerX" secondItem="l9A-5q-DtT" secondAttribute="centerX" id="S8r-bs-eOg"/>
+                            <constraint firstItem="s1E-ga-4No" firstAttribute="width" secondItem="FOG-Za-GI0" secondAttribute="width" multiplier="0.5" id="SLr-L4-ZHJ"/>
+                            <constraint firstItem="YGl-ls-RqN" firstAttribute="centerY" secondItem="l9A-5q-DtT" secondAttribute="centerY" id="cyF-v3-mtt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l9A-5q-DtT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Group" id="wu1-lL-lX4"/>
+                    <connections>
+                        <outlet property="createButton" destination="YGl-ls-RqN" id="TvB-Ll-33e"/>
+                        <outlet property="nameField" destination="s1E-ga-4No" id="J1c-yO-3U5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEy-89-YA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="1553"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="TqE-eB-yWf">
+            <objects>
+                <viewController id="g13-CW-kxW" customClass="SearchViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1nb-5l-uhP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-LZ-o5P">
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="web-3D-Dd4">
+                                <rect key="frame" x="0.0" y="50" width="375" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="g13-CW-kxW" id="Hiq-d5-h55"/>
+                                    <outlet property="delegate" destination="g13-CW-kxW" id="rM7-LQ-uIz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="D1b-LZ-o5P" firstAttribute="top" secondItem="J03-Nb-OZw" secondAttribute="top" id="4vV-m3-utn"/>
+                            <constraint firstItem="web-3D-Dd4" firstAttribute="leading" secondItem="J03-Nb-OZw" secondAttribute="leading" id="Dbk-TE-sJK"/>
+                            <constraint firstItem="D1b-LZ-o5P" firstAttribute="leading" secondItem="J03-Nb-OZw" secondAttribute="leading" id="G2g-KR-1mR"/>
+                            <constraint firstItem="J03-Nb-OZw" firstAttribute="trailing" secondItem="D1b-LZ-o5P" secondAttribute="trailing" id="jJO-3E-QbX"/>
+                            <constraint firstItem="web-3D-Dd4" firstAttribute="top" secondItem="D1b-LZ-o5P" secondAttribute="bottom" id="mTQ-YK-wd9"/>
+                            <constraint firstItem="J03-Nb-OZw" firstAttribute="trailing" secondItem="web-3D-Dd4" secondAttribute="trailing" id="ri9-Yh-PnH"/>
+                            <constraint firstItem="J03-Nb-OZw" firstAttribute="bottom" secondItem="web-3D-Dd4" secondAttribute="bottom" id="u7e-zf-aB7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J03-Nb-OZw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" id="ohR-Qp-hYU"/>
+                    <connections>
+                        <outlet property="searchField" destination="D1b-LZ-o5P" id="OzX-GK-DbV"/>
+                        <outlet property="tableView" destination="web-3D-Dd4" id="qxY-VE-QCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Bc-Nx-RED" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="2253"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -340,6 +427,8 @@
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="tJR-II-eej" kind="relationship" relationship="viewControllers" id="ZvQ-co-EJh"/>
                         <segue destination="uPS-Zh-9tR" kind="relationship" relationship="viewControllers" id="HKk-a8-d4D"/>
+                        <segue destination="5us-MO-Vpr" kind="relationship" relationship="viewControllers" id="As9-j3-at3"/>
+                        <segue destination="g13-CW-kxW" kind="relationship" relationship="viewControllers" id="Dhb-UR-CgD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

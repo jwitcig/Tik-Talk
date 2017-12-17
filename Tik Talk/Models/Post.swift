@@ -20,6 +20,7 @@ struct Post: Model {
     let url: String?
     let timestamp: Date
     let creatorID: String
+    let groupID: String?
     
     var votes: Votes
     
@@ -27,18 +28,20 @@ struct Post: Model {
         return [
             "body": body as Any,
             "url" : url as Any,
-            "timestamp" : timestamp.timeIntervalSince1970,
+            "timestamp" : timestamp.utc,
             "creatorID" : creatorID,
-            "votes": votes.dictionary
+            "groupID" : groupID as Any,
+            "votes" : votes.dictionary,
         ]
     }
     
-    init(id: String, body: String?, url: String?, timestamp: Date = Date(), creatorID: String) {
+    init(id: String, body: String?, url: String?, timestamp: Date = Date(), creatorID: String, groupID: String?) {
         self.id = id
         self.body = body
         self.url = url
         self.timestamp = timestamp
         self.creatorID = creatorID
+        self.groupID = groupID
         self.votes = Votes(postID: id,
                      takeDownTime: timestamp.addingTimeInterval(Config.initialPostTime))
     }
@@ -47,9 +50,10 @@ struct Post: Model {
         self.id = id
         self.body = dictionary["body"] as? String
         self.url = dictionary["url"] as? String
-        self.timestamp = Date(timeIntervalSince1970: dictionary["timestamp"] as! TimeInterval)
+        self.timestamp = Date(utc: dictionary["timestamp"] as! String)
         self.creatorID = dictionary["creatorID"] as! String
-       
+        self.groupID = dictionary["groupID"] as? String
+
         let votingData =  dictionary["votes"] as! [String : Any]
         self.votes = Votes(postID: id, dictionary: votingData)
     }
@@ -80,7 +84,7 @@ extension Post {
 extension Post {
     class Generator {
         static func fake() -> Post {
-            return Post(id: randomString(length: 64), body: randomString(length: 120), url: nil, timestamp: Date(), creatorID: randomString(length: 10))
+            return Post(id: randomString(length: 64), body: randomString(length: 120), url: nil, timestamp: Date(), creatorID: randomString(length: 10), groupID: nil)
         }
     }
 }
@@ -95,7 +99,7 @@ struct Votes {
         return [
             "up" : up,
             "down" : down,
-            "takeDownTime" : takeDownTime.timeIntervalSince1970,
+            "takeDownTime" : takeDownTime.utc,
         ]
     }
     
@@ -110,7 +114,7 @@ struct Votes {
         self.postID = postID
         self.up = dictionary["up"] as! Int
         self.down = dictionary["down"] as! Int
-        self.takeDownTime = Date(timeIntervalSince1970: dictionary["takeDownTime"] as! TimeInterval)
+        self.takeDownTime = Date(utc: dictionary["takeDownTime"] as! String)
     }
 }
 

@@ -91,6 +91,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - UIDropDown (1.1.1)
 
 DEPENDENCIES:
   - Cartography
@@ -100,6 +101,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - JWSwiftTools (from `~/Documents/Projects/JWSwiftTools`)
+  - UIDropDown
 
 EXTERNAL SOURCES:
   JWSwiftTools:
@@ -127,7 +129,8 @@ SPEC CHECKSUMS:
   leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: e490eef82b5aba51617e2f1a7a7d0bb093c7d0b1
+PODFILE CHECKSUM: 62e4f3f39579d6483a4f724d4d12bec43ba50aa2
 
 COCOAPODS: 1.2.1

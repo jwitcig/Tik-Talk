@@ -15,6 +15,8 @@ target 'Tik Talk' do
   pod 'Firebase/Storage'
   pod 'JWSwiftTools', :path => '~/Documents/Projects/JWSwiftTools'
 
+  pod 'UIDropDown'
+
   target 'Tik TalkTests' do
     inherit! :search_paths
     # Pods for testing

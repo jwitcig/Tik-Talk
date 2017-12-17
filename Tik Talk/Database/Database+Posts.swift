@@ -69,8 +69,7 @@ extension Database {
         }
         
         static func live(success: @escaping ([Post])->(), failure: @escaping (Error?)->()) {
-            let present = Date().timeIntervalSince1970
-            Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: present).getDocuments {
+            Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: Date().utc).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return

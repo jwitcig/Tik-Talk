@@ -33,16 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Auth.auth().signIn(withEmail: email, password: password) { user, error in
                     User.currentUser = User(id: user!.uid, handle: handle, other: nil)
                     
-                    Firestore.users.document(user!.uid).setData(User.currentUser!.dictionary)
+                    let profile = Profile(bio: "my name is jonah", birthday: "12/30/1996", friendsCount: 0)
+                    User.currentUser?.profile = profile
+                    Database.Users.create(User.currentUser!, success: {}, failure: {
+                        print("OMG: \($0)")
+                    })
                 }
                 return
             }
             
             User.currentUser = User(id: user!.uid, handle: handle, other: nil)
 
-            Firestore.users.document(user!.uid).setData(User.currentUser!.dictionary)
+            let profile = Profile(bio: "my name is jonah", birthday: "12/30/1996", friendsCount: 0)
+            User.currentUser?.profile = profile
+            Database.Users.create(User.currentUser!, success: {}, failure: {_ in})
         }
-        
         return true
     }
 

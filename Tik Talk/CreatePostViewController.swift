@@ -9,6 +9,9 @@
 import MobileCoreServices
 import UIKit
 
+import Cartography
+import UIDropDown
+
 struct Media {
     var data: Data?
     var url: URL?
@@ -20,8 +23,12 @@ class CreatePostViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    
+
+    var dropdown: UIDropDown?
+
     var media: Media?
+    
+    var selectedGroupID: String?
     
     var isFormValid: Bool {
         return true
@@ -29,6 +36,29 @@ class CreatePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let user = User.currentUser else { return }
+        
+        Database.Groups.all(containing: user, success: { groups in
+            let dropdown = UIDropDown()
+            dropdown.placeholder = "Group"
+            dropdown.options = groups.map { $0.name }
+            dropdown.didSelect { option, index in
+                self.selectedGroupID = groups[index].id
+                _ = dropdown.resign()
+            }
+            self.view.addSubview(dropdown)
+            
+            constrain(dropdown, self.view) {
+                $0.centerX == $1.centerX
+                $0.centerY == $1.centerY * 1.5
+                $0.width == $1.width / 2
+                $0.height == 44
+            }
+
+        }, failure: {
+            print("Error fetching user's groups: \($0)")
+        })
     }
     
     func showImagePicker(forType type: UIImagePickerControllerSourceType) {
@@ -52,16 +82,17 @@ class CreatePostViewController: UIViewController {
         guard let userID = User.currentUser?.id else { return }
 
         let post = Post(id: Database.Posts.newModel().id,
-                      body: self.textField.text,
+                      body: textField.text,
                        url: nil,
-                 creatorID: userID)
+                 creatorID: userID,
+                   groupID: selectedGroupID)
         
         Database.Posts.create(post, with: media, progress: { progress in
             print(progress)
         }, success: {
             
         }) { postError, uploadError in
-            
+            print("Post Error: \(postError)\nUpload Error: \(uploadError)")
         }
     }
 }

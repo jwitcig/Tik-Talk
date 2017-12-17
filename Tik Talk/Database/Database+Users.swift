@@ -20,8 +20,19 @@ extension Database {
         }
         
         static func create(_ user: User, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
-            Firestore.users.document(user.id).setData(user.dictionary) {
-                guard $0 == nil  else  {
+            
+            let userDoc = Firestore.users.document(user.id)
+            let profileDoc = userDoc.collection("profile").document()
+            
+            let write = Firestore.base.batch()
+            write.setData(user.dictionary, forDocument: userDoc)
+            
+            if let profile = user.profile {
+                write.setData(profile.dictionary, forDocument: profileDoc)
+            }
+            
+            write.commit {
+                guard $0 == nil else {
                     failure($0!)
                     return
                 }
@@ -46,6 +57,19 @@ extension Database {
                     return
                 }
                 success(User.build(from: snapshot))
+            }
+        }
+    
+        static func whose(handleStartsWith handle: String, success: @escaping ([User])->(), failure: @escaping (Error)->()) {
+            Firestore.users.order(by: "handle")
+                .start(at: [handle])
+                .end(at: [handle+"z"])
+                .getDocuments {
+                    guard let snapshot = $0 else {
+                        failure($1!)
+                        return
+                    }
+                    success(User.build(from: snapshot))
             }
         }
     }
