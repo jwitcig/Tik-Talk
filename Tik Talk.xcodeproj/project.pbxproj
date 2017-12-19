@@ -36,7 +36,6 @@
 		8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */; };
 		8BB26FB31FC4B2E400492587 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB26FB21FC4B2E400492587 /* Model.swift */; };
 		8BB26FB81FC4B92A00492587 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB26FB71FC4B92A00492587 /* Configuration.swift */; };
-		8BB26FBA1FC528BC00492587 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB26FB91FC528BC00492587 /* Profile.swift */; };
 		8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4A1FBE338E005DFF36 /* Podfile */; };
 		8BF13CDC1FE44ABA00F08854 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF13CDB1FE44ABA00F08854 /* CreateGroupViewController.swift */; };
 		8BF13CDE1FE46EFE00F08854 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF13CDD1FE46EFE00F08854 /* SearchViewController.swift */; };
@@ -98,7 +97,6 @@
 		8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8BB26FB21FC4B2E400492587 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8BB26FB71FC4B92A00492587 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		8BB26FB91FC528BC00492587 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8BC0CD4A1FBE338E005DFF36 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BF13CDB1FE44ABA00F08854 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		8BF13CDD1FE46EFE00F08854 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				8B0AB6461FAF823700B43B37 /* Post.swift */,
 				8B2503971FAF93D800117288 /* Group.swift */,
 				8B2503951FAF91CB00117288 /* User.swift */,
-				8BB26FB91FC528BC00492587 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -568,7 +565,6 @@
 				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
 				8BF13CDE1FE46EFE00F08854 /* SearchViewController.swift in Sources */,
 				8B4FEED81FC35D52000CFA48 /* Database.swift in Sources */,
-				8BB26FBA1FC528BC00492587 /* Profile.swift in Sources */,
 				8B4FEEDE1FC3775C000CFA48 /* Database+Votes.swift in Sources */,
 				8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */,
 				8BF13CDC1FE44ABA00F08854 /* CreateGroupViewController.swift in Sources */,

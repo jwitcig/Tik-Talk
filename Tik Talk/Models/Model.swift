@@ -8,8 +8,4 @@
 
 import Foundation
 
-import Firebase
-
-protocol Model {
-    init(id: String, dictionary: [String : Any])
-}
+protocol Model: FirestoreConstructable { }

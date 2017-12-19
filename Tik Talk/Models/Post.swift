@@ -15,6 +15,11 @@ enum Vote: String {
 }
 
 struct Post: Model {
+    struct Reference: ModelReference {
+        let id: String
+        let dictionary: [String : Any]
+    }
+    
     let id: String
     let body: String?
     let url: String?

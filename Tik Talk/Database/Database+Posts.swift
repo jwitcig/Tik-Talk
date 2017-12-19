@@ -13,10 +13,9 @@ import Firebase
 extension Database {
     class Posts {
         typealias ModelType = Post
-        typealias PostReference = ModelReference
 
-        static func newModel() -> PostReference {
-            return Firestore.posts.document()
+        static func newModel() -> Post.Reference {
+            return Post.Reference(reference: Firestore.posts.document())
         }
         
         static func create(_ post: Post, with media: Media? = nil,

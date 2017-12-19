@@ -17,10 +17,9 @@ enum GroupAction {
 extension Database {
     class Groups {
         typealias ModelType = Group
-        typealias GroupReference = ModelReference
 
-        static func newModel() -> GroupReference {
-            return Firestore.groups.document()
+        static func newModel() -> Group.Reference {
+            return Group.Reference(reference: Firestore.groups.document())
         }
     
         static func create(_ group: Group, success: @escaping ()->(), failure: @escaping (Error)->()) {
@@ -43,13 +42,13 @@ extension Database {
             }
         }
         
-        static func all(containing user: User, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
-            Firestore.groups.getDocuments {
+        static func all(containing user: User, success: @escaping ([Group.Reference])->(), failure: @escaping (Error)->()) {
+            Firestore.reference(for: user).collection("groups").getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return
                 }
-                success(Group.build(from: snapshot))
+                success(Group.Reference.build(from: snapshot))
             }
         }
         
@@ -98,9 +97,15 @@ extension Database {
                         "memberCount" : group.memberCount + 1,
                     ], forDocument: groupRef)
 
-                    transaction.setData([user.handle : Date().utc], forDocument: memberRef)
+                    transaction.setData([
+                        "handle" : user.handle,
+                        "joinDate" : Date().utc,
+                    ], forDocument: memberRef)
                     
-                    transaction.setData([group.name : Date().utc], forDocument: associationRef)
+                    transaction.setData([
+                        "name" : group.name,
+                        "joinDate" : Date().utc,
+                    ], forDocument: associationRef)
                 case .leave:
                     transaction.updateData([
                         "memberCount" : group.memberCount - 1,

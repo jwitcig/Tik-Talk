@@ -33,10 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Auth.auth().signIn(withEmail: email, password: password) { user, error in
                     User.currentUser = User(id: user!.uid, handle: handle, other: nil)
                     
-                    let profile = Profile(bio: "my name is jonah", birthday: "12/30/1996", friendsCount: 0)
-                    User.currentUser?.profile = profile
                     Database.Users.create(User.currentUser!, success: {}, failure: {
                         print("OMG: \($0)")
+                    })
+                    
+                    
+                    
+                    Database.Groups.all(containing: User.currentUser!, success: {
+                        print("Groups : \($0)")
+                    }, failure: {
+                        print("Error! : \($0)")
                     })
                 }
                 return
@@ -44,8 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             User.currentUser = User(id: user!.uid, handle: handle, other: nil)
 
-            let profile = Profile(bio: "my name is jonah", birthday: "12/30/1996", friendsCount: 0)
-            User.currentUser?.profile = profile
             Database.Users.create(User.currentUser!, success: {}, failure: {_ in})
         }
         return true

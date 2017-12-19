@@ -76,4 +76,47 @@ extension SearchViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case GroupCategory:
+            guard let group = groups?[indexPath.row] else { return }
+            guard let user = User.currentUser else { return }
+            
+            let alert = UIAlertController(title: "Join \(group.name)", message: "Are you sure you would like to join \(group.name)?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                Database.Groups.join(group, user: user, success: {
+                    alert.dismiss(animated: true, completion: nil)
+                }, failure: {
+                    print("Error joining \(group.name) : \($0)")
+                })
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            present(alert, animated: true, completion: nil)
+            
+        case UserCategory:
+            guard let user = users?[indexPath.row] else { return }
+            guard let currentUser = User.currentUser else { return }
+            
+            let alert = UIAlertController(title: "Add @\(user.handle)?", message: "Are you sure you would like to add @\(user.handle) as a friend?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                Database.Users.sendFriendRequest(to: user.reference, from: currentUser, success: {
+                    alert.dismiss(animated: true, completion: nil)
+                }, failure: {
+                    print("Error adding \(user.id) : \($0)")
+                })
+                
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            present(alert, animated: true, completion: nil)
+            
+        default:
+            fatalError("Unimplemented section: \(indexPath.section)")
+        }
+    }
 }

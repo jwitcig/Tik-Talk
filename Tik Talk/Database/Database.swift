@@ -10,21 +10,14 @@ import Foundation
 
 import Firebase
 
-protocol ModelReference {
+protocol FirestoreConstructable {
     var id: String { get }
+    var dictionary: [String : Any] { get }
+    
+    init(id: String, dictionary: [String : Any])
 }
 
-extension DocumentReference: ModelReference {
-    var id: String {
-        return documentID
-    }
-}
-
-class Database { }
-
-// ***** Firebase specific *****
-
-extension Model {
+extension FirestoreConstructable {
     init(document: DocumentSnapshot) {
         self.init(id: document.documentID, dictionary: document.data())
     }
@@ -37,4 +30,13 @@ extension Model {
         return build(from: snapshot.documents)
     }
 }
+
+protocol ModelReference: FirestoreConstructable { }
+extension ModelReference {
+    init(reference: DocumentReference) {
+        self.init(id: reference.documentID, dictionary: [:])
+    }
+}
+
+class Database { }
 

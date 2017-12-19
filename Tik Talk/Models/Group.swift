@@ -9,6 +9,14 @@
 import UIKit
 
 struct Group: Model {
+    struct Reference: ModelReference {
+        let id: String
+        let dictionary: [String : Any]
+        var name: String {
+            return dictionary["name"] as! String
+        }
+    }
+    
     let id: String
     let name: String
     let creatorID: String

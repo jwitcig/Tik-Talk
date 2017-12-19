@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController {
         let user = User(id: Database.Users.newModel().id,
                     handle: handle,
                      other: nil)
-        
         Database.Users.create(user, success: {
             
         }, failure: { error in

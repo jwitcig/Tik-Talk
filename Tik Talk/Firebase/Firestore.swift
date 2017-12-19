@@ -26,6 +26,10 @@ extension Firestore {
     static var groups: CollectionReference {
         return base.collection("groups")
     }
+
+    static var friendRequests: CollectionReference {
+        return base.collection("friendRequests")
+    }
     
     static func referenceForPost(withID id: String) -> DocumentReference {
         return posts.document(id)
@@ -51,4 +55,3 @@ extension Firestore {
         return Firestore.reference(for: user).collection("friends")
     }
 }
-

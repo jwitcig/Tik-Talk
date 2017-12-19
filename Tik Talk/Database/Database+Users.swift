@@ -13,24 +13,39 @@ import Firebase
 extension Database {
     class Users {
         typealias ModelType = User
-        typealias UserReference = ModelReference
         
-        static func newModel() -> UserReference {
-            return Firestore.users.document()
+        static func newModel() -> User.Reference {
+            return User.Reference(reference: Firestore.users.document())
         }
         
         static func create(_ user: User, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
             
             let userDoc = Firestore.users.document(user.id)
-            let profileDoc = userDoc.collection("profile").document()
             
             let write = Firestore.base.batch()
             write.setData(user.dictionary, forDocument: userDoc)
             
-            if let profile = user.profile {
-                write.setData(profile.dictionary, forDocument: profileDoc)
+            write.commit {
+                guard $0 == nil else {
+                    failure($0!)
+                    return
+                }
+                success()
             }
+        }
+        
+        static func save(_ user: User, privateData: [String : Any]? = nil, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
             
+            let userDoc = Firestore.users.document(user.id)
+            let privateDoc = userDoc.collection("data").document("private")
+            
+            let write = Firestore.base.batch()
+            write.setData(user.dictionary, forDocument: userDoc)
+            
+            if let privateData = privateData {
+                write.setData(privateData, forDocument: privateDoc)
+            }
+
             write.commit {
                 guard $0 == nil else {
                     failure($0!)
@@ -57,6 +72,23 @@ extension Database {
                     return
                 }
                 success(User.build(from: snapshot))
+            }
+        }
+        
+        static func sendFriendRequest(to recipient: User.Reference, from sender: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+            
+            print(sender.id)
+            print(recipient.id)
+            
+            Firestore.friendRequests.addDocument(data: [
+                "sender" : sender.id,
+                "recipient" : recipient.id,
+            ]) {
+                guard $0 == nil else {
+                    failure($0!)
+                    return
+                }
+                success()
             }
         }
     
