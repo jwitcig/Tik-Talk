@@ -1,52 +1,43 @@
 //
-//  FriendRequest.swift
+//  Friend.swift
 //  Tik Talk
 //
-//  Created by Developer on 12/19/17.
+//  Created by Jonah Witcig on 12/20/17.
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
 import Foundation
 
-protocol FriendRequestRef {
+protocol FriendRef {
     var id: String { get }
 }
 
-struct FriendRequest: Model, FriendRequestRef {
-    enum Target {
-        case sender, recipient
-    }
-    
-    struct Reference: ModelReference, FriendRequestRef {
+struct Friend: Model, FriendRef {
+    struct Reference: ModelReference, FriendRef {
         let id: String
         let dictionary: [String : Any]
     }
-    
     let id: String
     
-    let isRecipient: Bool
     let userReference: User.Reference
     
     let timestamp: Date
     
     var dictionary: [String : Any] {
         return [
-            "isRecipient" : isRecipient,
             "timestamp" : timestamp,
             "userReference" : userReference.dictionary,
         ]
     }
     
-    init(associatedUser user: User.Reference, isRecipient: Bool) {
+    init(user: User.Reference) {
         self.id = user.id
-        self.isRecipient = isRecipient
         self.userReference = user
         self.timestamp = Date()
     }
     
     init(id: String, dictionary: [String : Any]) {
         self.id = id
-        self.isRecipient = dictionary["isRecipient"] as! Bool
         self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
         self.timestamp = dictionary["timestamp"] as! Date
     }

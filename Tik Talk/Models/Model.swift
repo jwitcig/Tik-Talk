@@ -6,7 +6,7 @@
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
-import Foundation
+import Firebase
 
 protocol Model: FirestoreConstructable {
     associatedtype Reference: ModelReference
@@ -15,5 +15,9 @@ protocol Model: FirestoreConstructable {
 extension Model {
     var reference: Reference {
         return Reference(id: id, dictionary: dictionary)
+    }
+    
+    static func uniqueID() -> String {
+        return Firestore.uniqueID()
     }
 }

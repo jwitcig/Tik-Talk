@@ -6,9 +6,7 @@
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
-import UIKit
-
-import Firebase
+import Foundation
 
 protocol UserRef {
     var id: String { get }
@@ -22,7 +20,7 @@ struct User: Model, UserRef {
             return dictionary["name"] as! String
         }
     }
-    
+   
     static var currentUser: User?
     
     let id: String

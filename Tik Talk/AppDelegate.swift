@@ -36,18 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     Database.Users.create(User.currentUser!, success: {}, failure: {
                         print("OMG: \($0)")
                     })
-                    
-                    
-                    let batch = Firestore.base.batch()
-                    
-                    let one = Firestore.referenceForUser(withID: "dIAcmKcoEgffISA59TAeLLkTvYo1").collection("friends").document("rhSVET3oXLex245Gr6JcXjynBZi2")
-                    let two = Firestore.referenceForUser(withID: "rhSVET3oXLex245Gr6JcXjynBZi2").collection("friends").document("dIAcmKcoEgffISA59TAeLLkTvYo1")
-                    batch.setData(["aye": true], forDocument: one)
-                    batch.setData(["yo": true], forDocument: two)
-
-                    batch.commit {
-                        print("Errrrrrror : \($0)")
-                    }
                 }
                 return
             }

@@ -31,6 +31,14 @@ extension Firestore {
         return base.collection("friendRequests")
     }
     
+    static var conversations: CollectionReference {
+        return base.collection("conversations")
+    }
+    
+    static func uniqueID() -> String {
+        return Firestore.base.collection("").document().documentID
+    }
+    
     static func referenceForPost(withID id: String) -> DocumentReference {
         return posts.document(id)
     }

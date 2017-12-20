@@ -14,10 +14,6 @@ extension Database {
     class Users {
         typealias ModelType = User
         
-        static func new() -> UserRef {
-            return User.Reference(reference: Firestore.users.document())
-        }
-        
         static func create(_ user: User, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
             
             let userDoc = Firestore.users.document(user.id)

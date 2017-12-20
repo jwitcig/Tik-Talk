@@ -33,8 +33,12 @@ extension FirestoreConstructable {
 
 protocol ModelReference: FirestoreConstructable { }
 extension ModelReference {
+    init(id: String) {
+        self.init(id: id, dictionary: [:])
+    }
+    
     init(reference: DocumentReference) {
-        self.init(id: reference.documentID, dictionary: [:])
+        self.init(id: reference.documentID)
     }
 }
 

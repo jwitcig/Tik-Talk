@@ -1,8 +1,8 @@
 //
-//  Database+Groups.swift
+//  Database+Conversation.swift
 //  Tik Talk
 //
-//  Created by Developer on 11/20/17.
+//  Created by Jonah Witcig on 12/20/17.
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
@@ -10,13 +10,9 @@ import Foundation
 
 import Firebase
 
-enum GroupAction {
-    case join, leave
-}
-
 extension Database {
-    class Groups {
-        typealias ModelType = Group
+    class Conversations {
+        typealias ModelType = Conversation
     
         static func create(_ group: Group, success: @escaping ()->(), failure: @escaping (Error)->()) {
             Firestore.groups.document(group.id).setData(group.dictionary) {
@@ -58,21 +54,21 @@ extension Database {
             }
         }
         
-        static func whose(nameStartsWith name: String, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {            
+        static func whose(nameStartsWith name: String, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
             Firestore.groups.order(by: "name")
-                            .start(at: [name])
-                            .end(at: [name+"z"])
-                            .getDocuments {
-                guard let snapshot = $0 else {
-                    failure($1!)
-                    return
-                }
-                success(Group.build(from: snapshot))
+                .start(at: [name])
+                .end(at: [name+"z"])
+                .getDocuments {
+                    guard let snapshot = $0 else {
+                        failure($1!)
+                        return
+                    }
+                    success(Group.build(from: snapshot))
             }
         }
         
         static func perform(_ action: GroupAction, on group: GroupRef, by user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
-        
+            
             let associationRef = Firestore.reference(for: user).collection("groups").document(group.id)
             let groupRef = Firestore.reference(for: group)
             let memberRef = groupRef.collection("members").document(user.id)
@@ -91,21 +87,21 @@ extension Database {
                 case .join:
                     transaction.updateData([
                         "memberCount" : group.memberCount + 1,
-                    ], forDocument: groupRef)
-
+                        ], forDocument: groupRef)
+                    
                     transaction.setData([
                         "handle" : user.handle,
                         "joinDate" : Date(),
-                    ], forDocument: memberRef)
+                        ], forDocument: memberRef)
                     
                     transaction.setData([
                         "name" : group.name,
                         "joinDate" : Date(),
-                    ], forDocument: associationRef)
+                        ], forDocument: associationRef)
                 case .leave:
                     transaction.updateData([
                         "memberCount" : group.memberCount - 1,
-                    ], forDocument: groupRef)
+                        ], forDocument: groupRef)
                     transaction.deleteDocument(memberRef)
                     transaction.deleteDocument(associationRef)
                 }

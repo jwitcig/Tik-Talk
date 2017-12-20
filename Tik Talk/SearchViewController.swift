@@ -102,8 +102,8 @@ extension SearchViewController: UITableViewDelegate {
             
             let alert = UIAlertController(title: "Add @\(user.handle)?", message: "Are you sure you would like to add @\(user.handle) as a friend?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                let request = FriendRequest(associatedUser: user, isRecipient: true, handle: user.handle)
-                let copy = FriendRequest(associatedUser: currentUser, isRecipient: false, handle: currentUser.handle)
+                let request = FriendRequest(associatedUser: user.reference, isRecipient: true)
+                let copy = FriendRequest(associatedUser: currentUser.reference, isRecipient: false)
                 
                 Database.FriendRequests.create(pair: (request, copy), success: {
                     alert.dismiss(animated: true, completion: nil)

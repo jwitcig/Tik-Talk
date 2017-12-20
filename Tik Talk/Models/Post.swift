@@ -6,9 +6,7 @@
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
-import UIKit
-
-import Firebase
+import Foundation
 
 enum Vote: String {
     case up, down
@@ -45,7 +43,7 @@ struct Post: Model, PostRef {
     }
     
     init(body: String?, url: String?, timestamp: Date = Date(), creator: UserRef, group: GroupRef?) {
-        self.id = Database.Posts.new().id
+        self.id = Post.uniqueID()
         self.body = body
         self.url = url
         self.timestamp = timestamp

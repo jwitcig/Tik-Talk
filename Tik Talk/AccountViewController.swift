@@ -41,7 +41,11 @@ class AccountViewController: UIViewController {
         print(user.handle)
         Database.FriendRequests.listThose(to: user, success: {
             for request in $0 {
-                print("Friend request from \(request.handle)")
+                Database.FriendRequests.accept(request, forCurrentUser: user.reference, success: {
+                    print("Friends!")
+                }, failure: {
+                    print("Error creating friendship: \($0)")
+                })
             }
         }, failure: {
             print("Error fetching friend requests: \($0)")

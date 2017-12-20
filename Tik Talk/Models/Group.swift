@@ -6,7 +6,7 @@
 //  Copyright © 2017 JwitApps. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol GroupRef {
     var id: String { get }
@@ -37,7 +37,7 @@ struct Group: Model, GroupRef {
     }
     
     init(name: String, creator: UserRef) {
-        self.id = Database.Groups.new().id
+        self.id = Group.uniqueID()
         self.name = name
         self.creatorID = creator.id
         self.timestamp = Date()

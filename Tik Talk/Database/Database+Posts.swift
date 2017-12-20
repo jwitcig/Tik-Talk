@@ -13,10 +13,6 @@ import Firebase
 extension Database {
     class Posts {
         typealias ModelType = Post
-
-        static func new() -> PostRef {
-            return Post.Reference(reference: Firestore.posts.document())
-        }
         
         static func create(_ post: Post, with media: Media? = nil,
                            progress: ((Float)->Void)? = nil,
