@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var handleField: UITextField!
@@ -19,15 +21,25 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitPressed(sender: Any) {
         guard let handle = handleField.text else { return }
+        let email = "\(handle)@tiktalk.com"
+        let password = handle
         
-        let user = User(id: Database.Users.newModel().id,
-                    handle: handle,
-                     other: nil)
-        Database.Users.create(user, success: {
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+          
+            guard error == nil else {
+                Auth.auth().signIn(withEmail: email, password: password) { user, error in
+                    User.currentUser = User(id: user!.uid, handle: handle, other: nil)
+                    
+                    Database.Users.create(User.currentUser!, success: {}, failure: {
+                        print("OMG: \($0)")
+                    })
+                }
+                return
+            }
+            User.currentUser = User(id: user!.uid, handle: handle, other: nil)
             
-        }, failure: { error in
-            print("Error: \(error)")
-        })
+            Database.Users.create(User.currentUser!, success: {}, failure: {_ in})
+        }
     }
 }
 

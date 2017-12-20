@@ -14,8 +14,12 @@ enum Vote: String {
     case up, down
 }
 
-struct Post: Model {
-    struct Reference: ModelReference {
+protocol PostRef {
+    var id: String { get }
+}
+
+struct Post: Model, PostRef {
+    struct Reference: ModelReference, PostRef {
         let id: String
         let dictionary: [String : Any]
     }
@@ -33,20 +37,20 @@ struct Post: Model {
         return [
             "body": body as Any,
             "url" : url as Any,
-            "timestamp" : timestamp.utc,
+            "timestamp" : timestamp,
             "creatorID" : creatorID,
             "groupID" : groupID as Any,
             "votes" : votes.dictionary,
         ]
     }
     
-    init(id: String, body: String?, url: String?, timestamp: Date = Date(), creatorID: String, groupID: String?) {
-        self.id = id
+    init(body: String?, url: String?, timestamp: Date = Date(), creator: UserRef, group: GroupRef?) {
+        self.id = Database.Posts.new().id
         self.body = body
         self.url = url
         self.timestamp = timestamp
-        self.creatorID = creatorID
-        self.groupID = groupID
+        self.creatorID = creator.id
+        self.groupID = group?.id
         self.votes = Votes(postID: id,
                      takeDownTime: timestamp.addingTimeInterval(Config.initialPostTime))
     }
@@ -55,7 +59,7 @@ struct Post: Model {
         self.id = id
         self.body = dictionary["body"] as? String
         self.url = dictionary["url"] as? String
-        self.timestamp = Date(utc: dictionary["timestamp"] as! String)
+        self.timestamp = dictionary["timestamp"] as! Date
         self.creatorID = dictionary["creatorID"] as! String
         self.groupID = dictionary["groupID"] as? String
 
@@ -83,14 +87,6 @@ extension Post {
     
     func isValid() -> Bool {
         return charactersRemaining >= 0
-    }
-}
-
-extension Post {
-    class Generator {
-        static func fake() -> Post {
-            return Post(id: randomString(length: 64), body: randomString(length: 120), url: nil, timestamp: Date(), creatorID: randomString(length: 10), groupID: nil)
-        }
     }
 }
 

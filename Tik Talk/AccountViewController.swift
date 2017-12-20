@@ -34,6 +34,20 @@ class AccountViewController: UIViewController {
         })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard let user = User.currentUser else { return }
+        print(user.handle)
+        Database.FriendRequests.listThose(to: user, success: {
+            for request in $0 {
+                print("Friend request from \(request.handle)")
+            }
+        }, failure: {
+            print("Error fetching friend requests: \($0)")
+        })
+    }
+    
     @IBAction func friendsPressed(sender: Any) {
         guard let friendsController = storyboard?.instantiateViewController(withIdentifier: "FriendsViewController") as? FriendsViewController else { return }
         

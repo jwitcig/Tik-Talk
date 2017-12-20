@@ -28,7 +28,7 @@ class CreatePostViewController: UIViewController {
 
     var media: Media?
     
-    var selectedGroupID: String?
+    var selectedGroup: GroupRef?
     
     var isFormValid: Bool {
         return true
@@ -39,12 +39,12 @@ class CreatePostViewController: UIViewController {
         
         guard let user = User.currentUser else { return }
         
-        Database.Groups.all(containing: user, success: { groups in
+        Database.Groups.all(containing: user.reference, success: { groups in
             let dropdown = UIDropDown()
             dropdown.placeholder = "Group"
             dropdown.options = groups.map { $0.name }
             dropdown.didSelect { option, index in
-                self.selectedGroupID = groups[index].id
+                self.selectedGroup = groups[index]
                 _ = dropdown.resign()
             }
             self.view.addSubview(dropdown)
@@ -79,20 +79,19 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func submitPressed(sender: Any) {
         guard isFormValid else { return }
-        guard let userID = User.currentUser?.id else { return }
+        guard let user = User.currentUser else { return }
 
-        let post = Post(id: Database.Posts.newModel().id,
-                      body: textField.text,
-                       url: nil,
-                 creatorID: userID,
-                   groupID: selectedGroupID)
+        let post = Post(body: textField.text,
+                         url: nil,
+                     creator: user,
+                       group: selectedGroup)
         
         Database.Posts.create(post, with: media, progress: { progress in
             print(progress)
         }, success: {
-            
-        }) { postError, uploadError in
-            print("Post Error: \(postError)\nUpload Error: \(uploadError)")
+            print("Posted!")
+        }) {
+            print("Post Error: \($0)\nUpload Error: \($1)")
         }
     }
 }

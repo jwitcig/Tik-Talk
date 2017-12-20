@@ -32,9 +32,7 @@ class CreateGroupViewController: UIViewController {
         guard let user = User.currentUser else { return }
         guard let name = nameField.text else { return }
         
-        let group = Group(id: Database.Groups.newModel().id,
-                        name: name,
-                     creator: user)
+        let group = Group(name: name, creator: user)
         
         Database.Groups.create(group, success: {
             print("Successfully created \(name)!")

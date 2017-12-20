@@ -8,4 +8,12 @@
 
 import Foundation
 
-protocol Model: FirestoreConstructable { }
+protocol Model: FirestoreConstructable {
+    associatedtype Reference: ModelReference
+}
+
+extension Model {
+    var reference: Reference {
+        return Reference(id: id, dictionary: dictionary)
+    }
+}

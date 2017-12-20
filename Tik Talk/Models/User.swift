@@ -10,8 +10,12 @@ import UIKit
 
 import Firebase
 
-struct User: Model {
-    struct Reference: ModelReference {
+protocol UserRef {
+    var id: String { get }
+}
+
+struct User: Model, UserRef {
+    struct Reference: ModelReference, UserRef {
         let id: String
         let dictionary: [String : Any]
         var name: String {

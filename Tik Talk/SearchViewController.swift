@@ -102,12 +102,14 @@ extension SearchViewController: UITableViewDelegate {
             
             let alert = UIAlertController(title: "Add @\(user.handle)?", message: "Are you sure you would like to add @\(user.handle) as a friend?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                Database.Users.sendFriendRequest(to: user.reference, from: currentUser, success: {
+                let request = FriendRequest(associatedUser: user, isRecipient: true, handle: user.handle)
+                let copy = FriendRequest(associatedUser: currentUser, isRecipient: false, handle: currentUser.handle)
+                
+                Database.FriendRequests.create(pair: (request, copy), success: {
                     alert.dismiss(animated: true, completion: nil)
                 }, failure: {
                     print("Error adding \(user.id) : \($0)")
                 })
-                
                 alert.dismiss(animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in

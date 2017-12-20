@@ -14,7 +14,7 @@ extension Database {
     class Posts {
         typealias ModelType = Post
 
-        static func newModel() -> Post.Reference {
+        static func new() -> PostRef {
             return Post.Reference(reference: Firestore.posts.document())
         }
         
@@ -77,7 +77,7 @@ extension Database {
             }
         }
         
-        static func all(for user: User, success: @escaping ([Post])->(), failure: @escaping (Error)->()) {
+        static func all(for user: UserRef, success: @escaping ([Post])->(), failure: @escaping (Error)->()) {
             Firestore.posts.whereField("creatorID", isEqualTo: user.id).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)

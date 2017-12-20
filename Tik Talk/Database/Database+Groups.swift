@@ -18,7 +18,7 @@ extension Database {
     class Groups {
         typealias ModelType = Group
 
-        static func newModel() -> Group.Reference {
+        static func new() -> GroupRef {
             return Group.Reference(reference: Firestore.groups.document())
         }
     
@@ -42,7 +42,7 @@ extension Database {
             }
         }
         
-        static func all(containing user: User, success: @escaping ([Group.Reference])->(), failure: @escaping (Error)->()) {
+        static func all(containing user: UserRef, success: @escaping ([Group.Reference])->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: user).collection("groups").getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
@@ -52,7 +52,7 @@ extension Database {
             }
         }
         
-        static func all(createdBy user: User, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
+        static func all(createdBy user: UserRef, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
             Firestore.groups.whereField("creatorID", isEqualTo: user.id).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
@@ -75,7 +75,7 @@ extension Database {
             }
         }
         
-        static func perform(_ action: GroupAction, on group: Group, by user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func perform(_ action: GroupAction, on group: GroupRef, by user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
         
             let associationRef = Firestore.reference(for: user).collection("groups").document(group.id)
             let groupRef = Firestore.reference(for: group)
@@ -99,12 +99,12 @@ extension Database {
 
                     transaction.setData([
                         "handle" : user.handle,
-                        "joinDate" : Date().utc,
+                        "joinDate" : Date(),
                     ], forDocument: memberRef)
                     
                     transaction.setData([
                         "name" : group.name,
-                        "joinDate" : Date().utc,
+                        "joinDate" : Date(),
                     ], forDocument: associationRef)
                 case .leave:
                     transaction.updateData([
@@ -123,11 +123,11 @@ extension Database {
             }
         }
         
-        static func join(_ group: Group, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func join(_ group: GroupRef, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
             perform(.join, on: group, by: user, success: success, failure: failure)
         }
         
-        static func leave(_ group: Group, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func leave(_ group: GroupRef, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
             perform(.leave, on: group, by: user, success: success, failure: failure)
         }
     }

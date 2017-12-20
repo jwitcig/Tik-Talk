@@ -8,8 +8,12 @@
 
 import UIKit
 
-struct Group: Model {
-    struct Reference: ModelReference {
+protocol GroupRef {
+    var id: String { get }
+}
+
+struct Group: Model, GroupRef {
+    struct Reference: ModelReference, GroupRef {
         let id: String
         let dictionary: [String : Any]
         var name: String {
@@ -27,20 +31,16 @@ struct Group: Model {
         return [
             "name" : name,
             "creatorID" : creatorID,
-            "timestamp" : timestamp.utc,
+            "timestamp" : timestamp,
             "memberCount" : memberCount,
         ]
     }
     
-    init(id: String, name: String, creator: User, timestamp: Date = Date()) {
-        self.init(id: id, name: name, creatorID: creator.id, timestamp: timestamp)
-    }
-    
-    init(id: String, name: String, creatorID: String, timestamp: Date = Date()) {
-        self.id = id
+    init(name: String, creator: UserRef) {
+        self.id = Database.Groups.new().id
         self.name = name
-        self.creatorID = creatorID
-        self.timestamp = timestamp
+        self.creatorID = creator.id
+        self.timestamp = Date()
         self.memberCount = 0
     }
 
@@ -50,13 +50,5 @@ struct Group: Model {
         self.creatorID = dictionary["creatorID"] as! String
         self.timestamp = Date(utc: dictionary["timestamp"] as! String)
         self.memberCount = dictionary["memberCount"] as! Int
-    }
-}
-
-extension Group {
-    class Generator {
-        static func fake() -> Group {
-            return Group(id: randomString(length: 20), name: randomString(length: 20), creatorID: randomString(length: 20))
-        }
     }
 }

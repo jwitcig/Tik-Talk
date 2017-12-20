@@ -35,7 +35,7 @@ extension Firestore {
         return posts.document(id)
     }
     
-    static func reference(for post: Post) -> DocumentReference {
+    static func reference(for post: PostRef) -> DocumentReference {
         return Firestore.referenceForPost(withID: post.id)
     }
        
@@ -43,15 +43,15 @@ extension Firestore {
         return users.document(id)
     }
     
-    static func reference(for user: User) -> DocumentReference {
+    static func reference(for user: UserRef) -> DocumentReference {
         return Firestore.referenceForUser(withID: user.id)
     }
     
-    static func reference(for group: Group) -> DocumentReference {
+    static func reference(for group: GroupRef) -> DocumentReference {
         return Firestore.groups.document(group.id)
     }
     
-    static func friends(for user: User) -> CollectionReference {
+    static func friends(for user: UserRef) -> CollectionReference {
         return Firestore.reference(for: user).collection("friends")
     }
 }

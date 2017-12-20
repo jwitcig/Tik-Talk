@@ -14,7 +14,7 @@ extension Database {
     class Users {
         typealias ModelType = User
         
-        static func newModel() -> User.Reference {
+        static func new() -> UserRef {
             return User.Reference(reference: Firestore.users.document())
         }
         
@@ -55,7 +55,7 @@ extension Database {
             }
         }
         
-        static func accountInfo(for user: User, success: @escaping (User)->(), failure: @escaping (Error)->()) {
+        static func accountInfo(for user: UserRef, success: @escaping (User)->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: user).getDocument {
                 guard let document = $0 else {
                     failure($1!)
@@ -65,30 +65,13 @@ extension Database {
             }
         }
         
-        static func friends(for user: User, success: @escaping ([User])->(), failure: @escaping (Error)->()) {
+        static func friends(for user: UserRef, success: @escaping ([User])->(), failure: @escaping (Error)->()) {
             Firestore.friends(for: user).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return
                 }
                 success(User.build(from: snapshot))
-            }
-        }
-        
-        static func sendFriendRequest(to recipient: User.Reference, from sender: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
-            
-            print(sender.id)
-            print(recipient.id)
-            
-            Firestore.friendRequests.addDocument(data: [
-                "sender" : sender.id,
-                "recipient" : recipient.id,
-            ]) {
-                guard $0 == nil else {
-                    failure($0!)
-                    return
-                }
-                success()
             }
         }
     
