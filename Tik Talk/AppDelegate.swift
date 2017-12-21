@@ -29,20 +29,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             
-            guard error == nil else {
+            guard let user = user, error == nil else {
                 Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                    User.currentUser = User(id: user!.uid, handle: handle, other: nil)
+                    User.current = User(id: user!.uid, handle: handle, other: nil)
                     
-                    Database.Users.create(User.currentUser!, success: {}, failure: {
+                    Database.Users.create(User.current, success: {}, failure: {
                         print("OMG: \($0)")
                     })
                 }
                 return
             }
             
-            User.currentUser = User(id: user!.uid, handle: handle, other: nil)
+            User.current = User(id: user.uid, handle: handle, other: nil)
 
-            Database.Users.create(User.currentUser!, success: {}, failure: {_ in})
+            Database.Users.create(User.current, success: {}, failure: {_ in})
         }
         return true
     }

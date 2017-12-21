@@ -15,10 +15,8 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let user = User.currentUser else { return }
         
-        Database.Users.accountInfo(for: user, success: {
+        Database.Users.accountInfo(for: User.current, success: {
             self.handleLabel.text = $0.handle
             self.friendsButton.setTitle("\($0.friendsCount) friends", for: .normal)
         }, failure: { error in
@@ -27,7 +25,7 @@ class AccountViewController: UIViewController {
         
         guard let postsViewController = childViewControllers.first as? PostsViewController else { return }
        
-        Database.Posts.all(for: user, success: {
+        Database.Posts.all(for: User.current, success: {
             postsViewController.display(posts: $0)
         }, failure: { error in
             
@@ -37,11 +35,9 @@ class AccountViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        guard let user = User.currentUser else { return }
-        print(user.handle)
-        Database.FriendRequests.listThose(to: user, success: {
+        Database.FriendRequests.listThose(to: User.current, success: {
             for request in $0 {
-                Database.FriendRequests.accept(request, forCurrentUser: user.reference, success: {
+                Database.FriendRequests.accept(request, forCurrentUser: User.current.reference, success: {
                     print("Friends!")
                 }, failure: {
                     print("Error creating friendship: \($0)")

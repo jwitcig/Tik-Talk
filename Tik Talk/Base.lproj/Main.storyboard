@@ -121,14 +121,23 @@
                                     <segue destination="AbW-hU-H0u" kind="embed" id="oTe-Qw-GMo"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5n-xC-GTg">
+                                <rect key="frame" x="285" y="20" width="70" height="30"/>
+                                <state key="normal" title="messages"/>
+                                <connections>
+                                    <segue destination="QKp-vn-9hY" kind="show" id="vjy-GT-Poi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="n1a-JB-bco" firstAttribute="trailing" secondItem="m5n-xC-GTg" secondAttribute="trailing" constant="20" id="G5C-7c-fCw"/>
                             <constraint firstItem="0F3-b8-NSa" firstAttribute="centerY" secondItem="n1a-JB-bco" secondAttribute="centerY" multiplier="0.25" id="J2x-Pl-JsU"/>
                             <constraint firstItem="aMF-Rj-8rR" firstAttribute="top" secondItem="0F3-b8-NSa" secondAttribute="bottom" constant="30" id="K2i-Tz-Gr8"/>
                             <constraint firstItem="aMF-Rj-8rR" firstAttribute="centerX" secondItem="0F3-b8-NSa" secondAttribute="centerX" id="Kvd-tD-UPe"/>
                             <constraint firstItem="n1a-JB-bco" firstAttribute="bottom" secondItem="7GH-rM-QKV" secondAttribute="bottom" id="MM3-Df-pCe"/>
                             <constraint firstItem="7GH-rM-QKV" firstAttribute="top" secondItem="aMF-Rj-8rR" secondAttribute="bottom" constant="80" id="MRb-h1-gVZ"/>
+                            <constraint firstItem="m5n-xC-GTg" firstAttribute="top" secondItem="n1a-JB-bco" secondAttribute="top" id="Yg4-Za-DjQ"/>
                             <constraint firstItem="7GH-rM-QKV" firstAttribute="leading" secondItem="n1a-JB-bco" secondAttribute="leading" id="ass-r9-COR"/>
                             <constraint firstItem="n1a-JB-bco" firstAttribute="trailing" secondItem="7GH-rM-QKV" secondAttribute="trailing" id="bmi-Di-ar0"/>
                             <constraint firstItem="0F3-b8-NSa" firstAttribute="centerX" secondItem="n1a-JB-bco" secondAttribute="centerX" id="kx0-oE-ff3"/>
@@ -247,6 +256,7 @@
                             <constraint firstItem="9zA-jw-o7D" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="Esf-pW-Zfa"/>
                             <constraint firstItem="9zA-jw-o7D" firstAttribute="top" secondItem="7h1-g1-0vp" secondAttribute="bottom" constant="8" id="G0W-rR-IFZ"/>
                             <constraint firstItem="ePo-ha-4ZA" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="G39-x1-Y1q"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="APC-Hw-8Pd" secondAttribute="trailing" constant="66" id="GjA-QE-z9V"/>
                             <constraint firstItem="APC-Hw-8Pd" firstAttribute="centerY" secondItem="ePo-ha-4ZA" secondAttribute="centerY" id="Ivy-md-Ghe"/>
                             <constraint firstItem="ePo-ha-4ZA" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="Jfl-Ud-2cC"/>
                             <constraint firstItem="ePo-ha-4ZA" firstAttribute="top" secondItem="9zA-jw-o7D" secondAttribute="bottom" id="KJj-ED-Fz9"/>
@@ -326,20 +336,59 @@
             </objects>
             <point key="canvasLocation" x="750" y="896"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversations View Controller-->
         <scene sceneID="Y9o-BI-fyN">
             <objects>
-                <viewController id="QKp-vn-9hY" sceneMemberID="viewController">
+                <viewController id="QKp-vn-9hY" customClass="ConversationsViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tnz-Dq-opT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-gj-N0a">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QKp-vn-9hY" id="IBd-DU-MMe"/>
+                                    <outlet property="delegate" destination="QKp-vn-9hY" id="bhQ-2R-B1T"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWb-Ci-Ddd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Messages" id="BQS-gt-cuQ">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="pI3-2u-mff">
+                                            <connections>
+                                                <action selector="backPressedWithSender:" destination="QKp-vn-9hY" id="Fiu-os-3oL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ZZv-vS-6zx">
+                                            <connections>
+                                                <action selector="newMessagePressedWithSender:" destination="QKp-vn-9hY" id="cI8-yc-ZL3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BlE-gj-N0a" firstAttribute="leading" secondItem="bvb-o0-XMu" secondAttribute="leading" id="8qo-ea-AlL"/>
+                            <constraint firstItem="tWb-Ci-Ddd" firstAttribute="leading" secondItem="tnz-Dq-opT" secondAttribute="leading" id="Jef-cZ-hRu"/>
+                            <constraint firstItem="BlE-gj-N0a" firstAttribute="top" secondItem="tWb-Ci-Ddd" secondAttribute="bottom" id="Tbq-Pc-d2V"/>
+                            <constraint firstItem="bvb-o0-XMu" firstAttribute="bottom" secondItem="BlE-gj-N0a" secondAttribute="bottom" id="WTe-EP-XkQ"/>
+                            <constraint firstItem="bvb-o0-XMu" firstAttribute="trailing" secondItem="BlE-gj-N0a" secondAttribute="trailing" id="lJZ-s5-Hmh"/>
+                            <constraint firstItem="bvb-o0-XMu" firstAttribute="trailing" secondItem="tWb-Ci-Ddd" secondAttribute="trailing" id="tTV-0t-vdv"/>
+                            <constraint firstItem="tWb-Ci-Ddd" firstAttribute="top" secondItem="bvb-o0-XMu" secondAttribute="top" id="xaA-8T-t7N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bvb-o0-XMu"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="BlE-gj-N0a" id="dfb-5x-y1y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5q-HN-sVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="-201"/>
+            <point key="canvasLocation" x="1877.5999999999999" y="-201.04947526236884"/>
         </scene>
         <!--Group-->
         <scene sceneID="tYT-xP-V93">
@@ -426,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bc-Nx-RED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="2253"/>
+            <point key="canvasLocation" x="748" y="2340"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

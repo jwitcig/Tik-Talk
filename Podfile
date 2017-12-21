@@ -13,9 +13,10 @@ target 'Tik Talk' do
   pod 'Firebase/Firestore'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
-  pod 'JWSwiftTools', :path => '~/Documents/Projects/JWSwiftTools'
+  pod 'JWSwiftTools', :git => 'https://github.com/jwitcig/SwiftTools'
 
   pod 'UIDropDown'
+  pod "SlackTextViewController"
 
   target 'Tik TalkTests' do
     inherit! :search_paths

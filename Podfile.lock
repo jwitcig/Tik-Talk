@@ -5,22 +5,22 @@ PODS:
   - BoringSSL/Implementation (9.1):
     - BoringSSL/Interface (= 9.1)
   - BoringSSL/Interface (9.1)
-  - Cartography (2.0.0)
-  - Firebase/Auth (4.6.0):
+  - Cartography (3.0.1)
+  - Firebase/Auth (4.7.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.3.2)
-  - Firebase/Core (4.6.0):
+    - FirebaseAuth (= 4.4.0)
+  - Firebase/Core (4.7.0):
     - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.11)
-  - Firebase/Firestore (4.6.0):
+    - FirebaseCore (= 4.0.12)
+  - Firebase/Firestore (4.7.0):
     - Firebase/Core
-    - FirebaseFirestore (= 0.9.2)
-  - Firebase/RemoteConfig (4.6.0):
+    - FirebaseFirestore (= 0.9.3)
+  - Firebase/RemoteConfig (4.7.0):
     - Firebase/Core
     - FirebaseRemoteConfig (= 2.1.0)
-  - Firebase/Storage (4.6.0):
+  - Firebase/Storage (4.7.0):
     - Firebase/Core
-    - FirebaseStorage (= 2.0.2)
+    - FirebaseStorage (= 2.1.0)
   - FirebaseABTesting (1.0.0):
     - FirebaseCore (~> 4.0)
     - Protobuf (~> 3.1)
@@ -29,27 +29,27 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.3.2):
+  - FirebaseAuth (4.4.0):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.11):
+  - FirebaseCore (4.0.12):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseFirestore (0.9.2):
+  - FirebaseFirestore (0.9.3):
     - FirebaseAnalytics (~> 4.0)
-    - FirebaseAuth (~> 4.3)
+    - FirebaseAuth (~> 4.4)
     - FirebaseCore (~> 4.0)
     - gRPC-ProtoRPC (~> 1.0)
     - leveldb-library (~> 1.18)
     - Protobuf (~> 3.1)
-  - FirebaseInstanceID (2.0.6)
+  - FirebaseInstanceID (2.0.7)
   - FirebaseRemoteConfig (2.1.0):
     - FirebaseABTesting (~> 1.0)
     - FirebaseAnalytics (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - Protobuf (~> 3.1)
-  - FirebaseStorage (2.0.2):
+  - FirebaseStorage (2.1.0):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -63,27 +63,27 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
-  - gRPC (1.7.1):
-    - gRPC-RxLibrary (= 1.7.1)
-    - gRPC/Main (= 1.7.1)
-  - gRPC-Core (1.7.1):
-    - gRPC-Core/Implementation (= 1.7.1)
-    - gRPC-Core/Interface (= 1.7.1)
-  - gRPC-Core/Implementation (1.7.1):
+  - gRPC (1.8.0):
+    - gRPC-RxLibrary (= 1.8.0)
+    - gRPC/Main (= 1.8.0)
+  - gRPC-Core (1.8.0):
+    - gRPC-Core/Implementation (= 1.8.0)
+    - gRPC-Core/Interface (= 1.8.0)
+  - gRPC-Core/Implementation (1.8.0):
     - BoringSSL (~> 9.0)
-    - gRPC-Core/Interface (= 1.7.1)
+    - gRPC-Core/Interface (= 1.8.0)
     - nanopb (~> 0.3)
-  - gRPC-Core/Interface (1.7.1)
-  - gRPC-ProtoRPC (1.7.1):
-    - gRPC (= 1.7.1)
-    - gRPC-RxLibrary (= 1.7.1)
+  - gRPC-Core/Interface (1.8.0)
+  - gRPC-ProtoRPC (1.8.0):
+    - gRPC (= 1.8.0)
+    - gRPC-RxLibrary (= 1.8.0)
     - Protobuf (~> 3.0)
-  - gRPC-RxLibrary (1.7.1)
-  - gRPC/Main (1.7.1):
-    - gRPC-Core (= 1.7.1)
-    - gRPC-RxLibrary (= 1.7.1)
+  - gRPC-RxLibrary (1.8.0)
+  - gRPC/Main (1.8.0):
+    - gRPC-Core (= 1.8.0)
+    - gRPC-RxLibrary (= 1.8.0)
   - GTMSessionFetcher/Core (1.1.12)
-  - JWSwiftTools (1.1.14)
+  - JWSwiftTools (1.1.15)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -91,6 +91,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - SlackTextViewController (1.9.6)
   - UIDropDown (1.1.1)
 
 DEPENDENCIES:
@@ -100,37 +101,44 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/RemoteConfig
   - Firebase/Storage
-  - JWSwiftTools (from `~/Documents/Projects/JWSwiftTools`)
+  - JWSwiftTools (from `https://github.com/jwitcig/SwiftTools`)
+  - SlackTextViewController
   - UIDropDown
 
 EXTERNAL SOURCES:
   JWSwiftTools:
-    :path: "~/Documents/Projects/JWSwiftTools"
+    :git: https://github.com/jwitcig/SwiftTools
+
+CHECKOUT OPTIONS:
+  JWSwiftTools:
+    :commit: 2f69d46924f0f80fbda1cafc741fad0856a07201
+    :git: https://github.com/jwitcig/SwiftTools
 
 SPEC CHECKSUMS:
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
-  Cartography: d295eb25ab54bb57eecd8c2f04e9648c850f1281
-  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
-  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
-  FirebaseFirestore: a24dfccb54f883d82ee4cc086623fc2058e143b8
-  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  FirebaseAuth: cdeee95b528958dbb7dcf220ad0fb804d3a284b0
+  FirebaseCore: 6cf108b63997bc08c04a1ffa55a3ac0d71a59ffc
+  FirebaseFirestore: 0b62fdbe420f2f88b6b2037ba4d92bbd4525e04a
+  FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
   FirebaseRemoteConfig: 451fe8e9c43ac1e7a137ad2a42189bfc8c2c3ebc
-  FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
+  FirebaseStorage: '0930e97994dc79b404179bdfafb6b16f59433a82'
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  gRPC: b56decfd0094854d2ccfe80c8fb767237dace3be
-  gRPC-Core: 95c4968ae43d29219226f22b656d9f625904281e
-  gRPC-ProtoRPC: b7259f51cbc19b77c7a38d96f52a00c3a4ea1637
-  gRPC-RxLibrary: 4f46343e74e74a7ee8373ffeeaf772dfb330cbd7
+  gRPC: cc3f797b97bf221a9e535e8e012a6f99b1d7f797
+  gRPC-Core: 250fd60016c4e4c413279f4002679b0e14e7df26
+  gRPC-ProtoRPC: 5b934b29a95b94b0f871d4fc361ff52269476765
+  gRPC-RxLibrary: 7c57a1b2ff2f9cafb0face35bbfa0a326281295d
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  JWSwiftTools: a0c44371c65be2725df931c81cda4790239c9e18
-  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
+  JWSwiftTools: 93268aa9fa5bd473e59906c1df33c79f60cd2aa8
+  leveldb-library: '08cba283675b7ed2d99629a4bc5fd052cd2bb6a5'
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  SlackTextViewController: b854e62c1c156336bc4fd409c6ca79b5773e8f9d
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
 
-PODFILE CHECKSUM: 62e4f3f39579d6483a4f724d4d12bec43ba50aa2
+PODFILE CHECKSUM: f446f6108d3710cd2bc5484dc3cbd8ac0e37d9c0
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0.rc.1

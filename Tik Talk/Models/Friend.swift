@@ -32,13 +32,15 @@ struct Friend: Model, FriendRef {
     
     init(user: User.Reference) {
         self.id = user.id
-        self.userReference = user
         self.timestamp = Date()
+
+        self.userReference = user
     }
     
     init(id: String, dictionary: [String : Any]) {
         self.id = id
-        self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
         self.timestamp = dictionary["timestamp"] as! Date
+
+        self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
     }
 }

@@ -36,7 +36,7 @@ extension Firestore {
     }
     
     static func uniqueID() -> String {
-        return Firestore.base.collection("").document().documentID
+        return Firestore.base.collection("0").document().documentID
     }
     
     static func referenceForPost(withID id: String) -> DocumentReference {

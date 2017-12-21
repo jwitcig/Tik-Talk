@@ -28,22 +28,24 @@ struct Conversation: Model, ConversationRef {
         return [
             "timestamp" : timestamp,
             "participants" : participants.reduce(into: [:]) {$0[$1.key] = $1.value.dictionary},
+            "participantIDs" : participants.reduce(into: [:]) {$0[$1.key] = true},
         ]
     }
     
     init(participants: [User.Reference], group: GroupRef? = nil) {
         self.id = group?.id ?? Conversation.uniqueID()
-        self.participants = participants.reduce(into: [:]) { $0[$1.id] = $1 }
         self.timestamp = Date()
+
+        self.participants = participants.reduce(into: [:]) { $0[$1.id] = $1 }
     }
     
     init(id: String, dictionary: [String : Any]) {
         self.id = id
-        
+        self.timestamp = dictionary["timestamp"] as! Date
+
         let participantData = dictionary["participants"] as! [String : [String : Any]]
         self.participants = participantData.reduce(into: [:]) {
             $0[$1.key] = User.Reference(id: $1.key, dictionary: $1.value)
         }
-        self.timestamp = dictionary["timestamp"] as! Date
     }
 }

@@ -35,6 +35,9 @@
 		8B86BB481FEB16F60077F8CC /* Database+Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB471FEB16F60077F8CC /* Database+Conversation.swift */; };
 		8B86BB4A1FEB19790077F8CC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB491FEB19790077F8CC /* Message.swift */; };
 		8B86BB4C1FEB1ABB0077F8CC /* Database+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB4B1FEB1ABB0077F8CC /* Database+Messages.swift */; };
+		8B86BB4E1FEB217A0077F8CC /* ConversationsViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */; };
+		8B86BB501FEB34940077F8CC /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */; };
+		8B86BB521FEB4FE80077F8CC /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */; };
 		8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */; };
 		8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */; };
 		8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */; };
@@ -103,6 +106,9 @@
 		8B86BB471FEB16F60077F8CC /* Database+Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Conversation.swift"; sourceTree = "<group>"; };
 		8B86BB491FEB19790077F8CC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8B86BB4B1FEB1ABB0077F8CC /* Database+Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Messages.swift"; sourceTree = "<group>"; };
+		8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController..swift; sourceTree = "<group>"; };
+		8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 				8B4FEED11FC151D4000CFA48 /* AccountViewController.swift */,
 				8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */,
 				8B4FEED31FC2015E000CFA48 /* FriendsViewController.swift */,
+				8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */,
+				8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */,
+				8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */,
 				8BB26FB41FC4B4E400492587 /* Models */,
 				8B0AB6481FAF83D000B43B37 /* Helpers.swift */,
 				8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */,
@@ -481,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5DF671055F3CD3B680422FB9 /* [CP] Check Pods Manifest.lock */ = {
@@ -496,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		86C815949AF36D86A98BC7D2 /* [CP] Check Pods Manifest.lock */ = {
@@ -511,7 +520,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		879CEBFBEC4E3B91CF37B2E1 /* [CP] Embed Pods Frameworks */ = {
@@ -579,6 +588,8 @@
 				8B4FEED41FC2015E000CFA48 /* FriendsViewController.swift in Sources */,
 				8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */,
 				8BB26FB81FC4B92A00492587 /* Configuration.swift in Sources */,
+				8B86BB4E1FEB217A0077F8CC /* ConversationsViewController..swift in Sources */,
+				8B86BB501FEB34940077F8CC /* MessagesViewController.swift in Sources */,
 				8B0AB6171FAF7D8A00B43B37 /* AppDelegate.swift in Sources */,
 				8B86BB441FEADD090077F8CC /* Friend.swift in Sources */,
 				8B4981CF1FC0A956001F6379 /* Firestore.swift in Sources */,
@@ -590,6 +601,7 @@
 				8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */,
 				8BB26FB31FC4B2E400492587 /* Model.swift in Sources */,
 				8B86BB481FEB16F60077F8CC /* Database+Conversation.swift in Sources */,
+				8B86BB521FEB4FE80077F8CC /* MessageTableViewCell.swift in Sources */,
 				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
 				8BF13CDE1FE46EFE00F08854 /* SearchViewController.swift in Sources */,
 				8B4FEED81FC35D52000CFA48 /* Database.swift in Sources */,

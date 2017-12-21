@@ -52,7 +52,7 @@ extension PostsViewController: UITableViewDelegate {
         }
         
         cell.voteBlock = {
-            Database.Votes.cast($0, for: post, by: User.currentUser!)
+            Database.Votes.cast($0, for: post, by: User.current)
         }
         
         return cell

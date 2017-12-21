@@ -18,10 +18,8 @@ class FriendsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let user = User.currentUser else { return }
     
-        Database.Users.friends(for: user, success: {
+        Database.Users.friends(for: User.current, success: {
             self.display(friends: $0)
         }) {
             print("Error: \($0)")

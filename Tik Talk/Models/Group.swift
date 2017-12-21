@@ -38,17 +38,19 @@ struct Group: Model, GroupRef {
     
     init(name: String, creator: UserRef) {
         self.id = Group.uniqueID()
-        self.name = name
-        self.creatorID = creator.id
         self.timestamp = Date()
+        self.creatorID = creator.id
+
+        self.name = name
         self.memberCount = 0
     }
 
     init(id: String, dictionary: [String: Any]) {
         self.id = id
-        self.name = dictionary["name"] as! String
-        self.creatorID = dictionary["creatorID"] as! String
         self.timestamp = Date(utc: dictionary["timestamp"] as! String)
+        self.creatorID = dictionary["creatorID"] as! String
+
+        self.name = dictionary["name"] as! String
         self.memberCount = dictionary["memberCount"] as! Int
     }
 }

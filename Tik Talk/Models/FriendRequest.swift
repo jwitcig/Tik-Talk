@@ -39,15 +39,17 @@ struct FriendRequest: Model, FriendRequestRef {
     
     init(associatedUser user: User.Reference, isRecipient: Bool) {
         self.id = user.id
+        self.timestamp = Date()
+
         self.isRecipient = isRecipient
         self.userReference = user
-        self.timestamp = Date()
     }
     
     init(id: String, dictionary: [String : Any]) {
         self.id = id
+        self.timestamp = dictionary["timestamp"] as! Date
+
         self.isRecipient = dictionary["isRecipient"] as! Bool
         self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
-        self.timestamp = dictionary["timestamp"] as! Date
     }
 }

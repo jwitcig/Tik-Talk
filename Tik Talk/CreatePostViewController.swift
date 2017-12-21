@@ -37,9 +37,7 @@ class CreatePostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let user = User.currentUser else { return }
-        
-        Database.Groups.all(containing: user.reference, success: { groups in
+        Database.Groups.all(containing: User.current, success: { groups in
             let dropdown = UIDropDown()
             dropdown.placeholder = "Group"
             dropdown.options = groups.map { $0.name }
@@ -79,11 +77,10 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func submitPressed(sender: Any) {
         guard isFormValid else { return }
-        guard let user = User.currentUser else { return }
 
         let post = Post(body: textField.text,
                          url: nil,
-                     creator: user,
+                     creator: User.current,
                        group: selectedGroup)
         
         Database.Posts.create(post, with: media, progress: { progress in
@@ -91,7 +88,8 @@ class CreatePostViewController: UIViewController {
         }, success: {
             print("Posted!")
         }) {
-            print("Post Error: \($0)\nUpload Error: \($1)")
+            print("Post Error: \(String(describing: $0))")
+            print("Upload Error: \(String(describing: $1))")
         }
     }
 }

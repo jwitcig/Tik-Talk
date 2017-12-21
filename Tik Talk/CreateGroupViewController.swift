@@ -29,9 +29,9 @@ class CreateGroupViewController: UIViewController {
 
     @IBAction func createPressed(sender: Any) {
         guard isFormValid else { return }
-        guard let user = User.currentUser else { return }
         guard let name = nameField.text else { return }
         
+        let user = User.current
         let group = Group(name: name, creator: user)
         
         Database.Groups.create(group, success: {

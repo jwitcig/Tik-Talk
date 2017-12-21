@@ -44,10 +44,11 @@ struct Post: Model, PostRef {
     
     init(body: String?, url: String?, timestamp: Date = Date(), creator: UserRef, group: GroupRef?) {
         self.id = Post.uniqueID()
-        self.body = body
-        self.url = url
         self.timestamp = timestamp
         self.creatorID = creator.id
+
+        self.body = body
+        self.url = url
         self.groupID = group?.id
         self.votes = Votes(postID: id,
                      takeDownTime: timestamp.addingTimeInterval(Config.initialPostTime))
@@ -55,10 +56,11 @@ struct Post: Model, PostRef {
     
     init(id: String, dictionary: [String: Any]) {
         self.id = id
-        self.body = dictionary["body"] as? String
-        self.url = dictionary["url"] as? String
         self.timestamp = dictionary["timestamp"] as! Date
         self.creatorID = dictionary["creatorID"] as! String
+
+        self.body = dictionary["body"] as? String
+        self.url = dictionary["url"] as? String
         self.groupID = dictionary["groupID"] as? String
 
         let votingData =  dictionary["votes"] as! [String : Any]
@@ -98,7 +100,7 @@ struct Votes {
         return [
             "up" : up,
             "down" : down,
-            "takeDownTime" : takeDownTime.utc,
+            "takeDownTime" : takeDownTime,
         ]
     }
     
@@ -113,7 +115,7 @@ struct Votes {
         self.postID = postID
         self.up = dictionary["up"] as! Int
         self.down = dictionary["down"] as! Int
-        self.takeDownTime = Date(utc: dictionary["takeDownTime"] as! String)
+        self.takeDownTime = dictionary["takeDownTime"] as! Date
     }
 }
 

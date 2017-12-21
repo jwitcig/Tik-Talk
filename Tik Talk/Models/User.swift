@@ -21,7 +21,7 @@ struct User: Model, UserRef {
         }
     }
    
-    static var currentUser: User?
+    static var current = User(id: "", dictionary: [:])
     
     let id: String
     let handle: String
