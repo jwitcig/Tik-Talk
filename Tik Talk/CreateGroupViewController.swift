@@ -37,7 +37,7 @@ class CreateGroupViewController: UIViewController {
         Database.Groups.create(group, success: {
             print("Successfully created \(name)!")
             
-            Database.Groups.join(group, user: user, success: {
+            Database.Groups.join(group, who: user, success: {
                 print("Successfully joined \(name)!")
             }, failure: {
                 print("Error joining group: \($0)")

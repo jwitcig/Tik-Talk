@@ -15,12 +15,8 @@ extension Database {
         typealias ModelType = User
         
         static func create(_ user: User, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
-            
-            let userDoc = Firestore.users.document(user.id)
-            
-            let write = Firestore.base.batch()
-            write.setData(user.dictionary, forDocument: userDoc)
-            
+            let write = Firestore.batch()
+            write.setData(user, forDocument: Firestore.reference(for: user))
             write.commit {
                 guard $0 == nil else {
                     failure($0!)
@@ -32,11 +28,11 @@ extension Database {
         
         static func save(_ user: User, privateData: [String : Any]? = nil, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
             
-            let userDoc = Firestore.users.document(user.id)
+            let userDoc = Firestore.reference(for: user)
             let privateDoc = userDoc.collection("data").document("private")
             
-            let write = Firestore.base.batch()
-            write.setData(user.dictionary, forDocument: userDoc)
+            let write = Firestore.batch()
+            write.setData(user, forDocument: userDoc)
             
             if let privateData = privateData {
                 write.setData(privateData, forDocument: privateDoc)

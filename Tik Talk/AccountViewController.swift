@@ -15,7 +15,7 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         Database.Users.accountInfo(for: User.current, success: {
             self.handleLabel.text = $0.handle
             self.friendsButton.setTitle("\($0.friendsCount) friends", for: .normal)
@@ -23,11 +23,9 @@ class AccountViewController: UIViewController {
             
         })
         
-        guard let postsViewController = childViewControllers.first as? PostsViewController else { return }
+        guard let postsController = childViewControllers.first as? PostsViewController else { return }
        
-        Database.Posts.all(for: User.current, success: {
-            postsViewController.display(posts: $0)
-        }, failure: { error in
+        Database.Posts.all(for: User.current, success: postsController.display, failure: { error in
             
         })
     }

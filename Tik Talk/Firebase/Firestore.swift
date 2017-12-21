@@ -26,7 +26,7 @@ extension Firestore {
     static var groups: CollectionReference {
         return base.collection("groups")
     }
-
+    
     static var friendRequests: CollectionReference {
         return base.collection("friendRequests")
     }
@@ -34,11 +34,9 @@ extension Firestore {
     static var conversations: CollectionReference {
         return base.collection("conversations")
     }
-    
-    static func uniqueID() -> String {
-        return Firestore.base.collection("0").document().documentID
-    }
-    
+}
+
+extension Firestore {
     static func referenceForPost(withID id: String) -> DocumentReference {
         return posts.document(id)
     }
@@ -61,5 +59,19 @@ extension Firestore {
     
     static func friends(for user: UserRef) -> CollectionReference {
         return Firestore.reference(for: user).collection("friends")
+    }
+    
+    static func reference(for conversation: ConversationRef) -> DocumentReference {
+        return conversations.document(conversation.id)
+    }
+}
+
+extension Firestore {
+    static func batch() -> WriteBatch {
+        return base.batch()
+    }
+    
+    static func uniqueID() -> String {
+        return Firestore.base.collection("0").document().documentID
     }
 }

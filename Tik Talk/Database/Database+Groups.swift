@@ -19,7 +19,7 @@ extension Database {
         typealias ModelType = Group
     
         static func create(_ group: Group, success: @escaping ()->(), failure: @escaping (Error)->()) {
-            Firestore.groups.document(group.id).setData(group.dictionary) {
+            Firestore.reference(for: group).setData(group) {
                 guard $0 == nil  else  {
                     failure($0!)
                     return
@@ -119,11 +119,11 @@ extension Database {
             }
         }
         
-        static func join(_ group: GroupRef, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func join(_ group: GroupRef, who user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
             perform(.join, on: group, by: user, success: success, failure: failure)
         }
         
-        static func leave(_ group: GroupRef, user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func leave(_ group: GroupRef, who user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
             perform(.leave, on: group, by: user, success: success, failure: failure)
         }
     }

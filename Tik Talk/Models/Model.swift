@@ -10,6 +10,8 @@ import Firebase
 
 protocol Model: FirestoreConstructable {
     associatedtype Reference: ModelReference
+
+    var id: String { get }
 }
 
 extension Model {
@@ -19,5 +21,18 @@ extension Model {
     
     static func uniqueID() -> String {
         return Firestore.uniqueID()
+    }
+}
+
+protocol ModelReference: FirestoreConstructable {
+    var id: String { get }
+}
+extension ModelReference {
+    init(id: String) {
+        self.init(id: id, dictionary: [:])
+    }
+    
+    init(reference: DocumentReference) {
+        self.init(id: reference.documentID)
     }
 }

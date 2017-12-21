@@ -20,10 +20,8 @@ extension Database {
                            failure: ((Error?, Error?)->Void)? = nil) {
             // failure(post error, upload error)
             
-            let document = Firestore.posts.document(post.id)
-            
             let savePost: (String?)->Void = { mediaURL in
-                document.setData(post.dictionary) {
+                Firestore.reference(for: post).setData(post) {
                     guard $0 == nil else {
                         failure?($0, nil)
                         return
@@ -64,7 +62,7 @@ extension Database {
         }
         
         static func live(success: @escaping ([Post])->(), failure: @escaping (Error?)->()) {
-            Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: Date().utc).getDocuments {
+            Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: Date()).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return

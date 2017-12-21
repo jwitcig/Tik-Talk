@@ -26,16 +26,16 @@ class SearchViewController: UIViewController {
     }
     
     @objc func searchTextChanged(_ sender: Any) {
-        guard let searchText = searchField.text else { return }
+        guard let search = searchField.text else { return }
         
-        Database.Users.whose(handleStartsWith: searchText, success: {
+        Database.Users.whose(handleStartsWith: search, success: {
             self.users = $0
             self.tableView.reloadData()
         }) {
             print("Error fetching users: \($0)")
         }
         
-        Database.Groups.whose(nameStartsWith: searchText, success: {
+        Database.Groups.whose(nameStartsWith: search, success: {
             self.groups = $0
             self.tableView.reloadData()
         }) {
@@ -85,7 +85,7 @@ extension SearchViewController: UITableViewDelegate {
             
             let alert = UIAlertController(title: "Join \(group.name)", message: "Are you sure you would like to join \(group.name)?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                Database.Groups.join(group, user: currentUser, success: {
+                Database.Groups.join(group, who: currentUser, success: {
                     alert.dismiss(animated: true, completion: nil)
                 }, failure: {
                     print("Error joining \(group.name) : \($0)")

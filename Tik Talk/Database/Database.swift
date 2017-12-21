@@ -31,16 +31,22 @@ extension FirestoreConstructable {
     }
 }
 
-protocol ModelReference: FirestoreConstructable { }
-extension ModelReference {
-    init(id: String) {
-        self.init(id: id, dictionary: [:])
-    }
-    
-    init(reference: DocumentReference) {
-        self.init(id: reference.documentID)
+class Database { }
+
+extension CollectionReference {
+    func addDocument(data: FirestoreConstructable, completion: ((Error?) -> Void)? = nil) {
+        addDocument(data: data.dictionary, completion: completion)
     }
 }
 
-class Database { }
+extension DocumentReference {
+    func setData(_ data: FirestoreConstructable, completion: ((Error?) -> Void)? = nil) {
+        setData(data.dictionary, completion: completion)
+    }
+}
 
+extension WriteBatch {
+    func setData(_ data: FirestoreConstructable, forDocument document: DocumentReference) {
+        setData(data.dictionary, forDocument: document)
+    }
+}

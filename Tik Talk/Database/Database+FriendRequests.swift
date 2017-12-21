@@ -21,13 +21,17 @@ extension Database {
                 return
             }
             
-            let copy1 = Firestore.referenceForUser(withID: requests.1.id).collection("friendRequests").document(requests.0.id)
-            let copy2 = Firestore.referenceForUser(withID: requests.0.id).collection("friendRequests").document(requests.1.id)
+            let copy1 = Firestore.referenceForUser(withID: requests.1.id)
+                                 .collection("friendRequests")
+                                 .document(requests.0.id)
+            let copy2 = Firestore.referenceForUser(withID: requests.0.id)
+                                 .collection("friendRequests")
+                                 .document(requests.1.id)
 
             
-            let write = Firestore.base.batch()
-            write.setData(requests.0.dictionary, forDocument: copy1)
-            write.setData(requests.1.dictionary, forDocument: copy2)
+            let write = Firestore.batch()
+            write.setData(requests.0, forDocument: copy1)
+            write.setData(requests.1, forDocument: copy2)
             write.commit {
                 guard $0 == nil else {
                     failure($0!)
@@ -69,10 +73,9 @@ extension Database {
             let request1 = userRef.collection("friendRequests").document(currentUser.id)
             let request2 = currentUserRef.collection("friendRequests").document(request.userReference.id)
             
-            let write = Firestore.base.batch()
-            
-            write.setData(Friend(user: request.userReference).dictionary, forDocument: copy1)
-            write.setData(Friend(user: currentUser).dictionary, forDocument: copy2)
+            let write = Firestore.batch()
+            write.setData(Friend(user: request.userReference), forDocument: copy1)
+            write.setData(Friend(user: currentUser), forDocument: copy2)
             write.deleteDocument(request1)
             write.deleteDocument(request2)
             

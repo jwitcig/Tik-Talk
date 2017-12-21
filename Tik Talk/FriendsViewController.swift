@@ -19,9 +19,7 @@ class FriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        Database.Users.friends(for: User.current, success: {
-            self.display(friends: $0)
-        }) {
+        Database.Users.friends(for: User.current, success: display) {
             print("Error: \($0)")
         }
     }
@@ -54,8 +52,7 @@ extension FriendsViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            guard let friend = filteredFriends?[indexPath.row] else { fatalError("Could not find friend") }
-            cell.textLabel?.text = friend.handle
+            cell.textLabel?.text = filteredFriends?[indexPath.row].handle
         case 1:
             break
         default:
@@ -75,11 +72,11 @@ extension FriendsViewController: UITableViewDelegate {
 extension FriendsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let friends = friends else { return }
-        filteredFriends = filter(friends: friends, searchText: searchText)
+        filteredFriends = filter(friends, searchText: searchText)
         tableView.reloadData()
     }
     
-    func filter(friends: [User], searchText: String) -> [User] {
+    func filter(_ friends: [User], searchText: String) -> [User] {
         guard !searchText.isEmpty else { return friends }
         return friends.filter {
             $0.handle.lowercased().contains(searchText.lowercased())

@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: password) { user, error in
                     User.current = User(id: user!.uid, handle: handle, other: nil)
                     
-                    Database.Users.create(User.current, success: {}, failure: {
+                    Database.Users.create(User.current, success: { }, failure: {
                         print("OMG: \($0)")
                     })
                 }

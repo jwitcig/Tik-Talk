@@ -83,8 +83,8 @@ class CreatePostViewController: UIViewController {
                      creator: User.current,
                        group: selectedGroup)
         
-        Database.Posts.create(post, with: media, progress: { progress in
-            print(progress)
+        Database.Posts.create(post, with: media, progress: {
+            print($0)
         }, success: {
             print("Posted!")
         }) {

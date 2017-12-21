@@ -15,7 +15,7 @@ extension Database {
         typealias ModelType = Message
         
         static func create(_ message: Message, in conversation: ConversationRef, success: @escaping ()->(), failure: @escaping (Error)->()) {
-            Firestore.conversations.document(conversation.id).collection("messages").document(message.id).setData(message.dictionary) {
+            Firestore.reference(for: conversation).collection("messages").document(message.id).setData(message) {
                 guard $0 == nil  else  {
                     failure($0!)
                     return
@@ -25,7 +25,7 @@ extension Database {
         }
         
         static func those(in conversation: ConversationRef, success: @escaping ([Message])->(), failure: @escaping (Error)->()) {
-            Firestore.conversations.document(conversation.id).collection("messages").getDocuments {
+            Firestore.reference(for: conversation).collection("messages").getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return
