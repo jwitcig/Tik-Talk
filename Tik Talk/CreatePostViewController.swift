@@ -30,10 +30,6 @@ class CreatePostViewController: UIViewController {
     
     var selectedGroup: GroupRef?
     
-    var isFormValid: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,12 +72,12 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func submitPressed(sender: Any) {
-        guard isFormValid else { return }
-
         let post = Post(body: textField.text,
-                         url: nil,
-                     creator: User.current,
-                       group: selectedGroup)
+                        url: nil,
+                        creator: User.current,
+                        group: selectedGroup)
+        
+        guard Post.Validator(post: post).validate() else { return }
         
         Database.Posts.create(post, with: media, progress: {
             print($0)

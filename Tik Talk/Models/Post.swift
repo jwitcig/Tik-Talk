@@ -17,6 +17,22 @@ protocol PostRef {
 }
 
 struct Post: Model, PostRef {
+    struct Validator {
+        let post: Post
+        
+        var maxCharacterCount: Int {
+            return post.hasMultiMedia ? 140 : 280
+        }
+        
+        var charactersRemaining: Int {
+            return maxCharacterCount - (post.body ?? "").count
+        }
+        
+        func validate() -> Bool {
+            return charactersRemaining >= 0
+        }
+    }
+    
     struct Reference: ModelReference, PostRef {
         let id: String
         let dictionary: [String : Any]
@@ -28,6 +44,8 @@ struct Post: Model, PostRef {
     let timestamp: Date
     let creatorID: String
     let groupID: String?
+    
+    var hasBeenValidated = false
     
     var votes: Votes
     
@@ -73,20 +91,8 @@ extension Post {
         return url != nil
     }
     
-    var maxCharacterCount: Int {
-        return hasMultiMedia ? 80 : 150
-    }
-    
-    var charactersRemaining: Int {
-        return maxCharacterCount - (body ?? "").count
-    }
-    
     var takeDownTime: Date {
         return votes.takeDownTime
-    }
-    
-    func isValid() -> Bool {
-        return charactersRemaining >= 0
     }
 }
 
