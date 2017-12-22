@@ -8,16 +8,14 @@
 
 import Foundation
 
-protocol FriendRequestRef {
-    var id: String { get }
-}
+protocol FriendRequestReference: ModelReference { }
 
-struct FriendRequest: Model, FriendRequestRef {
+struct FriendRequest: Model, FriendRequestReference {
     enum Target {
         case sender, recipient
     }
     
-    struct Reference: ModelReference, FriendRequestRef {
+    struct Core: ModelCore, FriendRequestReference {
         let id: String
         let dictionary: [String : Any]
     }
@@ -25,7 +23,7 @@ struct FriendRequest: Model, FriendRequestRef {
     let id: String
     
     let isRecipient: Bool
-    let userReference: User.Reference
+    let userCore: User.Core
     
     let timestamp: Date
     
@@ -33,16 +31,16 @@ struct FriendRequest: Model, FriendRequestRef {
         return [
             "isRecipient" : isRecipient,
             "timestamp" : timestamp,
-            "userReference" : userReference.dictionary,
+            "userCore" : userCore.dictionary,
         ]
     }
     
-    init(associatedUser user: User.Reference, isRecipient: Bool) {
+    init(associatedUser user: User.Core, isRecipient: Bool) {
         self.id = user.id
         self.timestamp = Date()
 
         self.isRecipient = isRecipient
-        self.userReference = user
+        self.userCore = user
     }
     
     init(id: String, dictionary: [String : Any]) {
@@ -50,6 +48,6 @@ struct FriendRequest: Model, FriendRequestRef {
         self.timestamp = dictionary["timestamp"] as! Date
 
         self.isRecipient = dictionary["isRecipient"] as! Bool
-        self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
+        self.userCore = User.Core(id: id, dictionary: dictionary["userCore"] as! [String : Any])
     }
 }

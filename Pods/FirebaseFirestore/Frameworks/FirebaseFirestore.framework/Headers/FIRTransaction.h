@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class FIRDocumentReference;
@@ -27,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @see FIRFirestore#transaction:completion:
  */
-NS_SWIFT_NAME(Transaction)
+FIR_SWIFT_NAME(Transaction)
 @interface FIRTransaction : NSObject
 
 /**   */
@@ -45,7 +47,7 @@ NS_SWIFT_NAME(Transaction)
 // clang-format off
 - (FIRTransaction *)setData:(NSDictionary<NSString *, id> *)data
                 forDocument:(FIRDocumentReference *)document
-    NS_SWIFT_NAME(setData(_:forDocument:));
+    FIR_SWIFT_NAME(setData(_:forDocument:));
 // clang-format on
 
 /**
@@ -62,7 +64,7 @@ NS_SWIFT_NAME(Transaction)
 - (FIRTransaction *)setData:(NSDictionary<NSString *, id> *)data
                 forDocument:(FIRDocumentReference *)document
                     options:(FIRSetOptions *)options
-    NS_SWIFT_NAME(setData(_:forDocument:options:));
+    FIR_SWIFT_NAME(setData(_:forDocument:options:));
 // clang-format on
 
 /**
@@ -77,7 +79,7 @@ NS_SWIFT_NAME(Transaction)
 // clang-format off
 - (FIRTransaction *)updateData:(NSDictionary<id, id> *)fields
                    forDocument:(FIRDocumentReference *)document
-    NS_SWIFT_NAME(updateData(_:forDocument:));
+    FIR_SWIFT_NAME(updateData(_:forDocument:));
 // clang-format on
 
 /**
@@ -87,7 +89,7 @@ NS_SWIFT_NAME(Transaction)
  * @return This `FIRTransaction` instance. Used for chaining method calls.
  */
 - (FIRTransaction *)deleteDocument:(FIRDocumentReference *)document
-    NS_SWIFT_NAME(deleteDocument(_:));
+    FIR_SWIFT_NAME(deleteDocument(_:));
 
 /**
  * Reads the document referenced by `document`.
@@ -97,7 +99,7 @@ NS_SWIFT_NAME(Transaction)
  */
 - (FIRDocumentSnapshot *_Nullable)getDocument:(FIRDocumentReference *)document
                                         error:(NSError *__autoreleasing *)error
-    NS_SWIFT_NAME(getDocument(_:));
+    FIR_SWIFT_NAME(getDocument(_:));
 
 @end
 

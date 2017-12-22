@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -25,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Latitude values are in the range of [-90, 90].
  * Longitude values are in the range of [-180, 180].
  */
-NS_SWIFT_NAME(GeoPoint)
+FIR_SWIFT_NAME(GeoPoint)
 @interface FIRGeoPoint : NSObject <NSCopying>
 
 /**   */

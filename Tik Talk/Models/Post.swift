@@ -12,11 +12,9 @@ enum Vote: String {
     case up, down
 }
 
-protocol PostRef {
-    var id: String { get }
-}
+protocol PostReference: ModelReference { }
 
-struct Post: Model, PostRef {
+struct Post: Model, PostReference {
     struct Validator {
         let post: Post
         
@@ -33,7 +31,7 @@ struct Post: Model, PostRef {
         }
     }
     
-    struct Reference: ModelReference, PostRef {
+    struct Core: ModelCore, PostReference {
         let id: String
         let dictionary: [String : Any]
     }
@@ -45,7 +43,7 @@ struct Post: Model, PostRef {
     let creatorID: String
     let groupID: String?
     
-    var hasBeenValidated = false
+    var hasBeenValidated: Bool
     
     var votes: Votes
     
@@ -60,7 +58,7 @@ struct Post: Model, PostRef {
         ]
     }
     
-    init(body: String?, url: String?, timestamp: Date = Date(), creator: UserRef, group: GroupRef?) {
+    init(body: String?, url: String?, timestamp: Date = Date(), creator: UserReference, group: GroupReference?) {
         self.id = Post.uniqueID()
         self.timestamp = timestamp
         self.creatorID = creator.id
@@ -70,6 +68,8 @@ struct Post: Model, PostRef {
         self.groupID = group?.id
         self.votes = Votes(postID: id,
                      takeDownTime: timestamp.addingTimeInterval(Config.initialPostTime))
+        
+        self.hasBeenValidated = false
     }
     
     init(id: String, dictionary: [String: Any]) {
@@ -83,6 +83,8 @@ struct Post: Model, PostRef {
 
         let votingData =  dictionary["votes"] as! [String : Any]
         self.votes = Votes(postID: id, dictionary: votingData)
+        
+        self.hasBeenValidated = true
     }
 }
 

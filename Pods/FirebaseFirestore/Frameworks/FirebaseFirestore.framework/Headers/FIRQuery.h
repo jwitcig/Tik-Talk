@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
 #import "FIRListenerRegistration.h"
 
 @class FIRFieldPath;
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Options for use with `[FIRQuery addSnapshotListener]` to control the behavior of the snapshot
  * listener.
  */
-NS_SWIFT_NAME(QueryListenOptions)
+FIR_SWIFT_NAME(QueryListenOptions)
 @interface FIRQueryListenOptions : NSObject
 
 + (instancetype)options NS_SWIFT_UNAVAILABLE("Use initializer");
@@ -48,7 +49,7 @@ NS_SWIFT_NAME(QueryListenOptions)
  * @return The receiver is returned for optional method chaining.
  */
 - (instancetype)includeQueryMetadataChanges:(BOOL)includeQueryMetadataChanges
-    NS_SWIFT_NAME(includeQueryMetadataChanges(_:));
+    FIR_SWIFT_NAME(includeQueryMetadataChanges(_:));
 
 @property(nonatomic, assign, readonly) BOOL includeDocumentMetadataChanges;
 
@@ -61,7 +62,7 @@ NS_SWIFT_NAME(QueryListenOptions)
  * @return The receiver is returned for optional method chaining.
  */
 - (instancetype)includeDocumentMetadataChanges:(BOOL)includeDocumentMetadataChanges
-    NS_SWIFT_NAME(includeDocumentMetadataChanges(_:));
+    FIR_SWIFT_NAME(includeDocumentMetadataChanges(_:));
 
 @end
 
@@ -72,7 +73,7 @@ typedef void (^FIRQuerySnapshotBlock)(FIRQuerySnapshot *_Nullable snapshot,
  * A `FIRQuery` refers to a Query which you can read or listen to. You can also construct
  * refined `FIRQuery` objects by adding filters and ordering.
  */
-NS_SWIFT_NAME(Query)
+FIR_SWIFT_NAME(Query)
 @interface FIRQuery : NSObject
 /**   */
 - (id)init __attribute__((unavailable("FIRQuery cannot be created directly.")));
@@ -88,7 +89,7 @@ NS_SWIFT_NAME(Query)
  *     documentSet will be `nil` only if error is `non-nil`.
  */
 - (void)getDocumentsWithCompletion:(FIRQuerySnapshotBlock)completion
-    NS_SWIFT_NAME(getDocuments(completion:));
+    FIR_SWIFT_NAME(getDocuments(completion:));
 
 /**
  * Attaches a listener for QuerySnapshot events.
@@ -98,7 +99,7 @@ NS_SWIFT_NAME(Query)
  * @return A FIRListenerRegistration that can be used to remove this listener.
  */
 - (id<FIRListenerRegistration>)addSnapshotListener:(FIRQuerySnapshotBlock)listener
-    NS_SWIFT_NAME(addSnapshotListener(_:));
+    FIR_SWIFT_NAME(addSnapshotListener(_:));
 
 /**
  * Attaches a listener for QuerySnapshot events.
@@ -112,7 +113,7 @@ NS_SWIFT_NAME(Query)
 - (id<FIRListenerRegistration>)addSnapshotListenerWithOptions:
                                    (nullable FIRQueryListenOptions *)options
                                                      listener:(FIRQuerySnapshotBlock)listener
-    NS_SWIFT_NAME(addSnapshotListener(options:listener:));
+    FIR_SWIFT_NAME(addSnapshotListener(options:listener:));
 // clang-format on
 
 #pragma mark - Filtering Data
@@ -127,7 +128,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereField:(NSString *)field
-                    isEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isEqualTo:));
+                    isEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isEqualTo:));
 // clang-format on
 
 /**
@@ -141,7 +142,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereFieldPath:(FIRFieldPath *)path
-                        isEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isEqualTo:));
+                        isEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isEqualTo:));
 // clang-format on
 
 /**
@@ -155,7 +156,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereField:(NSString *)field
-                   isLessThan:(id)value NS_SWIFT_NAME(whereField(_:isLessThan:));
+                   isLessThan:(id)value FIR_SWIFT_NAME(whereField(_:isLessThan:));
 // clang-format on
 
 /**
@@ -169,7 +170,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereFieldPath:(FIRFieldPath *)path
-                       isLessThan:(id)value NS_SWIFT_NAME(whereField(_:isLessThan:));
+                       isLessThan:(id)value FIR_SWIFT_NAME(whereField(_:isLessThan:));
 // clang-format on
 
 /**
@@ -183,7 +184,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereField:(NSString *)field
-          isLessThanOrEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isLessThanOrEqualTo:));
+          isLessThanOrEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isLessThanOrEqualTo:));
 // clang-format on
 
 /**
@@ -197,7 +198,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereFieldPath:(FIRFieldPath *)path
-              isLessThanOrEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isLessThanOrEqualTo:));
+              isLessThanOrEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isLessThanOrEqualTo:));
 // clang-format on
 
 /**
@@ -211,7 +212,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereField:(NSString *)field
-                isGreaterThan:(id)value NS_SWIFT_NAME(whereField(_:isGreaterThan:));
+                isGreaterThan:(id)value FIR_SWIFT_NAME(whereField(_:isGreaterThan:));
 // clang-format on
 
 /**
@@ -225,7 +226,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereFieldPath:(FIRFieldPath *)path
-                    isGreaterThan:(id)value NS_SWIFT_NAME(whereField(_:isGreaterThan:));
+                    isGreaterThan:(id)value FIR_SWIFT_NAME(whereField(_:isGreaterThan:));
 // clang-format on
 
 /**
@@ -239,7 +240,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereField:(NSString *)field
-       isGreaterThanOrEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isGreaterThanOrEqualTo:));
+       isGreaterThanOrEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isGreaterThanOrEqualTo:));
 // clang-format on
 
 /**
@@ -253,7 +254,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryWhereFieldPath:(FIRFieldPath *)path
-           isGreaterThanOrEqualTo:(id)value NS_SWIFT_NAME(whereField(_:isGreaterThanOrEqualTo:));
+           isGreaterThanOrEqualTo:(id)value FIR_SWIFT_NAME(whereField(_:isGreaterThanOrEqualTo:));
 // clang-format on
 
 #pragma mark - Sorting Data
@@ -264,7 +265,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryOrderedByField:(NSString *)field NS_SWIFT_NAME(order(by:));
+- (FIRQuery *)queryOrderedByField:(NSString *)field FIR_SWIFT_NAME(order(by:));
 
 /**
  * Creates and returns a new `FIRQuery` that's additionally sorted by the specified field.
@@ -273,7 +274,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryOrderedByFieldPath:(FIRFieldPath *)path NS_SWIFT_NAME(order(by:));
+- (FIRQuery *)queryOrderedByFieldPath:(FIRFieldPath *)path FIR_SWIFT_NAME(order(by:));
 
 /**
  * Creates and returns a new `FIRQuery` that's additionally sorted by the specified field,
@@ -286,7 +287,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryOrderedByField:(NSString *)field
-                       descending:(BOOL)descending NS_SWIFT_NAME(order(by:descending:));
+                       descending:(BOOL)descending FIR_SWIFT_NAME(order(by:descending:));
 // clang-format on
 
 /**
@@ -300,7 +301,7 @@ NS_SWIFT_NAME(Query)
  */
 // clang-format off
 - (FIRQuery *)queryOrderedByFieldPath:(FIRFieldPath *)path
-                           descending:(BOOL)descending NS_SWIFT_NAME(order(by:descending:));
+                           descending:(BOOL)descending FIR_SWIFT_NAME(order(by:descending:));
 // clang-format on
 
 #pragma mark - Limiting Data
@@ -312,7 +313,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryLimitedTo:(NSInteger)limit NS_SWIFT_NAME(limit(to:));
+- (FIRQuery *)queryLimitedTo:(NSInteger)limit FIR_SWIFT_NAME(limit(to:));
 
 #pragma mark - Choosing Endpoints
 /**
@@ -325,7 +326,7 @@ NS_SWIFT_NAME(Query)
  * @return The created `FIRQuery`.
  */
 - (FIRQuery *)queryStartingAtDocument:(FIRDocumentSnapshot *)document
-    NS_SWIFT_NAME(start(atDocument:));
+    FIR_SWIFT_NAME(start(atDocument:));
 
 /**
  * Creates and returns a new `FIRQuery` that starts at the provided fields relative to the order of
@@ -336,7 +337,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryStartingAtValues:(NSArray *)fieldValues NS_SWIFT_NAME(start(at:));
+- (FIRQuery *)queryStartingAtValues:(NSArray *)fieldValues FIR_SWIFT_NAME(start(at:));
 
 /**
  * Creates and returns a new `FIRQuery` that starts after the provided document (exclusive). The
@@ -348,7 +349,7 @@ NS_SWIFT_NAME(Query)
  * @return The created `FIRQuery`.
  */
 - (FIRQuery *)queryStartingAfterDocument:(FIRDocumentSnapshot *)document
-    NS_SWIFT_NAME(start(afterDocument:));
+    FIR_SWIFT_NAME(start(afterDocument:));
 
 /**
  * Creates and returns a new `FIRQuery` that starts after the provided fields relative to the order
@@ -360,7 +361,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryStartingAfterValues:(NSArray *)fieldValues NS_SWIFT_NAME(start(after:));
+- (FIRQuery *)queryStartingAfterValues:(NSArray *)fieldValues FIR_SWIFT_NAME(start(after:));
 
 /**
  * Creates and returns a new `FIRQuery` that ends before the provided document (exclusive). The end
@@ -372,7 +373,7 @@ NS_SWIFT_NAME(Query)
  * @return The created `FIRQuery`.
  */
 - (FIRQuery *)queryEndingBeforeDocument:(FIRDocumentSnapshot *)document
-    NS_SWIFT_NAME(end(beforeDocument:));
+    FIR_SWIFT_NAME(end(beforeDocument:));
 
 /**
  * Creates and returns a new `FIRQuery` that ends before the provided fields relative to the order
@@ -383,7 +384,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryEndingBeforeValues:(NSArray *)fieldValues NS_SWIFT_NAME(end(before:));
+- (FIRQuery *)queryEndingBeforeValues:(NSArray *)fieldValues FIR_SWIFT_NAME(end(before:));
 
 /**
  * Creates and returns a new `FIRQuery` that ends at the provided document (exclusive). The end
@@ -394,7 +395,8 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryEndingAtDocument:(FIRDocumentSnapshot *)document NS_SWIFT_NAME(end(atDocument:));
+- (FIRQuery *)queryEndingAtDocument:(FIRDocumentSnapshot *)document
+    FIR_SWIFT_NAME(end(atDocument:));
 
 /**
  * Creates and returns a new `FIRQuery` that ends at the provided fields relative to the order of
@@ -405,7 +407,7 @@ NS_SWIFT_NAME(Query)
  *
  * @return The created `FIRQuery`.
  */
-- (FIRQuery *)queryEndingAtValues:(NSArray *)fieldValues NS_SWIFT_NAME(end(at:));
+- (FIRQuery *)queryEndingAtValues:(NSArray *)fieldValues FIR_SWIFT_NAME(end(at:));
 
 @end
 

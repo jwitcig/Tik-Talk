@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
 #import "FIRListenerRegistration.h"
 
 @class FIRFirestore;
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Options for use with `[FIRDocumentReference addSnapshotListener]` to control the behavior of the
  * snapshot listener.
  */
-NS_SWIFT_NAME(DocumentListenOptions)
+FIR_SWIFT_NAME(DocumentListenOptions)
 @interface FIRDocumentListenOptions : NSObject
 
 + (instancetype)options NS_SWIFT_UNAVAILABLE("Use initializer");
@@ -46,7 +47,7 @@ NS_SWIFT_NAME(DocumentListenOptions)
  * @return The receiver is returned for optional method chaining.
  */
 - (instancetype)includeMetadataChanges:(BOOL)includeMetadataChanges
-    NS_SWIFT_NAME(includeMetadataChanges(_:));
+    FIR_SWIFT_NAME(includeMetadataChanges(_:));
 
 @end
 
@@ -59,7 +60,7 @@ typedef void (^FIRDocumentSnapshotBlock)(FIRDocumentSnapshot *_Nullable snapshot
  * may or may not exist. A `FIRDocumentReference` can also be used to create a
  * `FIRCollectionReference` to a subcollection.
  */
-NS_SWIFT_NAME(DocumentReference)
+FIR_SWIFT_NAME(DocumentReference)
 @interface FIRDocumentReference : NSObject
 
 /**   */
@@ -91,7 +92,7 @@ NS_SWIFT_NAME(DocumentReference)
  * @return The `FIRCollectionReference` at the specified _collectionPath_.
  */
 - (FIRCollectionReference *)collectionWithPath:(NSString *)collectionPath
-    NS_SWIFT_NAME(collection(_:));
+    FIR_SWIFT_NAME(collection(_:));
 
 #pragma mark - Writing Data
 
@@ -165,7 +166,7 @@ NS_SWIFT_NAME(DocumentReference)
 // NOTE: this is named 'deleteDocument' because 'delete' is a keyword in Objective-C++.
 /** Deletes the document referred to by this `FIRDocumentReference`. */
 // clang-format off
-- (void)deleteDocument NS_SWIFT_NAME(delete());
+- (void)deleteDocument FIR_SWIFT_NAME(delete());
 // clang-format on
 
 /**
@@ -175,7 +176,7 @@ NS_SWIFT_NAME(DocumentReference)
  */
 // clang-format off
 - (void)deleteDocumentWithCompletion:(nullable void (^)(NSError *_Nullable error))completion
-    NS_SWIFT_NAME(delete(completion:));
+    FIR_SWIFT_NAME(delete(completion:));
 // clang-format on
 
 #pragma mark - Retrieving Data
@@ -186,7 +187,7 @@ NS_SWIFT_NAME(DocumentReference)
  * @param completion a block to execute once the document has been successfully read.
  */
 - (void)getDocumentWithCompletion:(FIRDocumentSnapshotBlock)completion
-    NS_SWIFT_NAME(getDocument(completion:));
+    FIR_SWIFT_NAME(getDocument(completion:));
 
 /**
  * Attaches a listener for DocumentSnapshot events.
@@ -196,7 +197,7 @@ NS_SWIFT_NAME(DocumentReference)
  * @return A FIRListenerRegistration that can be used to remove this listener.
  */
 - (id<FIRListenerRegistration>)addSnapshotListener:(FIRDocumentSnapshotBlock)listener
-    NS_SWIFT_NAME(addSnapshotListener(_:));
+    FIR_SWIFT_NAME(addSnapshotListener(_:));
 
 /**
  * Attaches a listener for DocumentSnapshot events.
@@ -210,7 +211,7 @@ NS_SWIFT_NAME(DocumentReference)
 - (id<FIRListenerRegistration>)addSnapshotListenerWithOptions:
                                    (nullable FIRDocumentListenOptions *)options
                                                      listener:(FIRDocumentSnapshotBlock)listener
-    NS_SWIFT_NAME(addSnapshotListener(options:listener:));
+    FIR_SWIFT_NAME(addSnapshotListener(options:listener:));
 // clang-format on
 
 @end

@@ -8,12 +8,10 @@
 
 import Foundation
 
-protocol UserRef {
-    var id: String { get }
-}
+protocol UserReference: ModelReference { }
 
-struct User: Model, UserRef {
-    struct Reference: ModelReference, UserRef {
+struct User: Model, UserReference {
+    struct Core: ModelCore, UserReference {
         let id: String
         let dictionary: [String : Any]
         var handle: String {
@@ -37,10 +35,6 @@ struct User: Model, UserRef {
     var birthday: String?
     
     let friendsCount: Int
-
-    var reference: User.Reference {
-        return User.Reference(id: id, dictionary: dictionary)
-    }
     
     var dictionary: [String : Any] {
         return [

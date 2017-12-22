@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
+
 @class FIRDocumentReference;
 @class FIRSnapshotMetadata;
 
@@ -26,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  * can be extracted with the `data` property or by using subscript syntax to access a specific
  * field.
  */
-NS_SWIFT_NAME(DocumentSnapshot)
+FIR_SWIFT_NAME(DocumentSnapshot)
 @interface FIRDocumentSnapshot : NSObject
 
 /**   */

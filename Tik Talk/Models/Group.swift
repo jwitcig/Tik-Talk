@@ -8,12 +8,10 @@
 
 import Foundation
 
-protocol GroupRef {
-    var id: String { get }
-}
+protocol GroupReference: ModelReference { }
 
-struct Group: Model, GroupRef {
-    struct Reference: ModelReference, GroupRef {
+struct Group: Model, GroupReference {
+    struct Core: ModelCore, GroupReference {
         let id: String
         let dictionary: [String : Any]
         var name: String {
@@ -36,7 +34,7 @@ struct Group: Model, GroupRef {
         ]
     }
     
-    init(name: String, creator: UserRef) {
+    init(name: String, creator: UserReference) {
         self.id = Group.uniqueID()
         self.timestamp = Date()
         self.creatorID = creator.id

@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
+
 @class FIRApp;
 @class FIRCollectionReference;
 @class FIRDocumentReference;
@@ -29,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  * `FIRFirestore` represents a Firestore Database and is the entry point for all Firestore
  * operations.
  */
-NS_SWIFT_NAME(Firestore)
+FIR_SWIFT_NAME(Firestore)
 @interface FIRFirestore : NSObject
 
 #pragma mark - Initializing
@@ -42,7 +44,7 @@ NS_SWIFT_NAME(Firestore)
  *
  * @return The `FIRFirestore` instance.
  */
-+ (instancetype)firestore NS_SWIFT_NAME(firestore());
++ (instancetype)firestore FIR_SWIFT_NAME(firestore());
 
 /**
  * Creates, caches, and returns a `FIRFirestore` object for the specified _app_. Each subsequent
@@ -54,7 +56,7 @@ NS_SWIFT_NAME(Firestore)
  *
  * @return The `FIRFirestore` instance.
  */
-+ (instancetype)firestoreForApp:(FIRApp *)app NS_SWIFT_NAME(firestore(app:));
++ (instancetype)firestoreForApp:(FIRApp *)app FIR_SWIFT_NAME(firestore(app:));
 
 /**
  * Custom settings used to configure this `FIRFirestore` object.
@@ -78,7 +80,7 @@ NS_SWIFT_NAME(Firestore)
  * @return The `FIRCollectionReference` at the specified _collectionPath_.
  */
 - (FIRCollectionReference *)collectionWithPath:(NSString *)collectionPath
-    NS_SWIFT_NAME(collection(_:));
+    FIR_SWIFT_NAME(collection(_:));
 
 /**
  * Gets a `FIRDocumentReference` referring to the document at the specified path within the
@@ -89,7 +91,7 @@ NS_SWIFT_NAME(Firestore)
  *
  * @return The `FIRDocumentReference` for the specified _documentPath_.
  */
-- (FIRDocumentReference *)documentWithPath:(NSString *)documentPath NS_SWIFT_NAME(document(_:));
+- (FIRDocumentReference *)documentWithPath:(NSString *)documentPath FIR_SWIFT_NAME(document(_:));
 
 #pragma mark - Transactions and Write Batches
 

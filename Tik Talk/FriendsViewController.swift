@@ -13,18 +13,18 @@ class FriendsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var friends: [User.Reference]?
-    var filteredFriends: [User.Reference]?
+    var friends: [User.Core]?
+    var filteredFriends: [User.Core]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        Database.Users.friends(for: User.current, success: display) {
+        Cloud.Users.friends(for: User.current, success: display) {
             print("Error: \($0)")
         }
     }
     
-    func display(friends: [User.Reference]) {
+    func display(friends: [User.Core]) {
         self.friends = friends
         self.filteredFriends = friends
         tableView.reloadData()
@@ -76,7 +76,7 @@ extension FriendsViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
     
-    func filter(_ friends: [User.Reference], searchText: String) -> [User.Reference] {
+    func filter(_ friends: [User.Core], searchText: String) -> [User.Core] {
         guard !searchText.isEmpty else { return friends }
         return friends.filter {
             $0.handle.lowercased().contains(searchText.lowercased())

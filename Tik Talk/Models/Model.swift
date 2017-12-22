@@ -9,14 +9,14 @@
 import Firebase
 
 protocol Model: FirestoreConstructable, Hashable {
-    associatedtype Reference: ModelReference
+    associatedtype Core: ModelCore
 
     var id: String { get }
 }
 
 extension Model {
-    var reference: Reference {
-        return Reference(id: id, dictionary: dictionary)
+    var core: Core {
+        return Core(id: id, dictionary: dictionary)
     }
     
     static func uniqueID() -> String {
@@ -34,11 +34,11 @@ func ==<T: Model>(lhs: T, rhs: T) -> Bool {
     return lhs.id == rhs.id
 }
 
-protocol ModelReference: FirestoreConstructable, Hashable {
+protocol ModelCore: FirestoreConstructable, Hashable {
     var id: String { get }
 }
 
-extension ModelReference {
+extension ModelCore {
     init(id: String) {
         self.init(id: id, dictionary: [:])
     }
@@ -48,12 +48,16 @@ extension ModelReference {
     }
 }
 
-extension ModelReference {
+extension ModelCore {
     var hashValue: Int {
         return id.hashValue
     }
 }
 
-func ==<T: ModelReference>(lhs: T, rhs: T) -> Bool {
+func ==<T: ModelCore>(lhs: T, rhs: T) -> Bool {
     return lhs.id == rhs.id
+}
+
+protocol ModelReference {
+    var id: String { get }
 }

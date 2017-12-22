@@ -17,7 +17,7 @@ class ConversationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Database.Conversations.containing(User.current, success: {
+        Cloud.Conversations.containing(User.current, success: {
             self.conversations = $0
             self.tableView.reloadData()
         }, failure: {

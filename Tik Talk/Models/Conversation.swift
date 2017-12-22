@@ -8,19 +8,17 @@
 
 import Foundation
 
-protocol ConversationRef {
-    var id: String { get }
-}
+protocol ConversationReference: ModelReference { }
 
-struct Conversation: Model, ConversationRef {
-    struct Reference: ModelReference, ConversationRef {
+struct Conversation: Model, ConversationReference {
+    struct Core: ModelCore, ConversationReference {
         let id: String
         let dictionary: [String : Any]
     }
     
     let id: String
     
-    let participants: [String : User.Reference]
+    let participants: [String : User.Core]
     
     let timestamp: Date
     
@@ -34,7 +32,7 @@ struct Conversation: Model, ConversationRef {
         ]
     }
     
-    init(participants: [User.Reference], group: GroupRef? = nil) {
+    init(participants: [User.Core], group: GroupReference? = nil) {
         self.id = group?.id ?? Conversation.uniqueID()
         self.timestamp = Date()
 
@@ -49,7 +47,7 @@ struct Conversation: Model, ConversationRef {
 
         let participantData = dictionary["participants"] as! [String : [String : Any]]
         self.participants = participantData.reduce(into: [:]) {
-            $0[$1.key] = User.Reference(id: $1.key, dictionary: $1.value)
+            $0[$1.key] = User.Core(id: $1.key, dictionary: $1.value)
         }
         
         self.isEstablished = true

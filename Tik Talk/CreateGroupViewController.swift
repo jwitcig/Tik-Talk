@@ -34,10 +34,10 @@ class CreateGroupViewController: UIViewController {
         let user = User.current
         let group = Group(name: name, creator: user)
         
-        Database.Groups.create(group, success: {
+        Cloud.Groups.create(group, success: {
             print("Successfully created \(name)!")
             
-            Database.Groups.join(group, who: user, success: {
+            Cloud.Groups.join(group, who: user, success: {
                 print("Successfully joined \(name)!")
             }, failure: {
                 print("Error joining group: \($0)")

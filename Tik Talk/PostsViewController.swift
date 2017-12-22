@@ -45,14 +45,15 @@ extension PostsViewController: UITableViewDelegate {
         
         DispatchQueue.main.async {
             do {
-                let imageData = try Data(contentsOf: URL(string: "https://pbs.twimg.com/profile_images/874681555448475649/Rv_zD2l6_400x400.jpg")!)
+                let url = URL(string: "https://pbs.twimg.com/profile_images/874681555448475649/Rv_zD2l6_400x400.jpg")!
+                let data = try Data(contentsOf: url)
                 
-                cell.profileImageView.image = UIImage(data: imageData)
+                cell.profileImageView.image = UIImage(data: data)
             } catch { }
         }
         
         cell.voteBlock = {
-            Database.Votes.cast($0, for: post, by: User.current)
+            Cloud.Votes.cast($0, for: post, by: User.current)
         }
         
         return cell

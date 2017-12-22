@@ -10,59 +10,55 @@ import Foundation
 
 import Firebase
 
-extension Firestore {
-    static var base: Firestore {
-        return Firestore.firestore()
-    }
-    
-    static var posts: CollectionReference {
-        return base.collection("posts")
-    }
-    
-    static var users: CollectionReference {
-        return base.collection("users")
-    }
-    
-    static var groups: CollectionReference {
-        return base.collection("groups")
-    }
-    
-    static var friendRequests: CollectionReference {
-        return base.collection("friendRequests")
-    }
-    
-    static var conversations: CollectionReference {
-        return base.collection("conversations")
+func collectionName<T: Model>(for model: T.Type) -> String {
+    switch model {
+    case is Post.Type: return "posts"
+    case is User.Type: return "users"
+    case is Group.Type: return "groups"
+    case is Friend.Type: return "friends"
+    case is FriendRequest.Type: return "friendRequests"
+    case is Conversation.Type: return "conversations"
+    default: fatalError()
     }
 }
 
 extension Firestore {
-    static func referenceForPost(withID id: String) -> DocumentReference {
-        return posts.document(id)
+    static var base: Firestore {
+        return Firestore.firestore()
+    }
+}
+
+extension Firestore {
+    static func collection<T: Model>(of type: T.Type) -> CollectionReference {
+        return base.collection(collectionName(for: type))
     }
     
-    static func reference(for post: PostRef) -> DocumentReference {
+    static func referenceForPost(withID id: String) -> DocumentReference {
+        return collection(of: Post.self).document(id)
+    }
+    
+    static func reference(for post: PostReference) -> DocumentReference {
         return Firestore.referenceForPost(withID: post.id)
     }
        
     static func referenceForUser(withID id: String) -> DocumentReference {
-        return users.document(id)
+        return collection(of: User.self).document(id)
     }
     
-    static func reference(for user: UserRef) -> DocumentReference {
+    static func reference(for user: UserReference) -> DocumentReference {
         return Firestore.referenceForUser(withID: user.id)
     }
     
-    static func reference(for group: GroupRef) -> DocumentReference {
-        return Firestore.groups.document(group.id)
+    static func reference(for group: GroupReference) -> DocumentReference {
+        return collection(of: Group.self).document(group.id)
     }
     
-    static func friends(for user: UserRef) -> CollectionReference {
+    static func friends(for user: UserReference) -> CollectionReference {
         return Firestore.reference(for: user).collection("friends")
     }
     
-    static func reference(for conversation: ConversationRef) -> DocumentReference {
-        return conversations.document(conversation.id)
+    static func reference(for conversation: ConversationReference) -> DocumentReference {
+        return collection(of: Conversation.self).document(conversation.id)
     }
 }
 
@@ -72,6 +68,6 @@ extension Firestore {
     }
     
     static func uniqueID() -> String {
-        return Firestore.base.collection("0").document().documentID
+        return base.collection("0").document().documentID
     }
 }

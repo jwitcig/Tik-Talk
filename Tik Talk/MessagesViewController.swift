@@ -27,7 +27,7 @@ class MessagesViewController: SLKTextViewController {
     
     override func viewDidLoad() {
         if conversation.isEstablished {            
-            Database.Messages.listen(to: conversation, freshData: {
+            Cloud.Messages.listen(to: conversation, freshData: {
                 self.messages = $0
                 self.tableView?.reloadData()
             }, failure: {
@@ -109,7 +109,7 @@ class MessagesViewController: SLKTextViewController {
         super.didPressRightButton(sender)
         
         let sendMessage = {
-            Database.Messages.create(message, in: self.conversation, success: {
+            Cloud.Messages.create(message, in: self.conversation, success: {
                 print("Message sent!")
             }, failure: {
                 print("Error sending message: \($0)")
@@ -119,7 +119,7 @@ class MessagesViewController: SLKTextViewController {
         if conversation.isEstablished {
             sendMessage()
         } else {
-            Database.Conversations.create(conversation, success: sendMessage, failure: {
+            Cloud.Conversations.create(conversation, success: sendMessage, failure: {
                 print("Error creating conversation: \($0)")
             })
         }

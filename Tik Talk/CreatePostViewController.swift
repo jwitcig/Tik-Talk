@@ -28,12 +28,12 @@ class CreatePostViewController: UIViewController {
 
     var media: Media?
     
-    var selectedGroup: GroupRef?
+    var selectedGroup: GroupReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Database.Groups.all(containing: User.current, success: { groups in
+        Cloud.Groups.all(containing: User.current, success: { groups in
             let dropdown = UIDropDown()
             dropdown.placeholder = "Group"
             dropdown.options = groups.map { $0.name }
@@ -79,7 +79,7 @@ class CreatePostViewController: UIViewController {
         
         guard Post.Validator(post: post).validate() else { return }
         
-        Database.Posts.create(post, with: media, progress: {
+        Cloud.Posts.create(post, with: media, progress: {
             print($0)
         }, success: {
             print("Posted!")

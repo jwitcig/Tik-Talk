@@ -8,12 +8,10 @@
 
 import Foundation
 
-protocol MessageRef {
-    var id: String { get }
-}
+protocol MessageReference: ModelReference { }
 
-struct Message: Model, MessageRef {
-    struct Reference: ModelReference, MessageRef {
+struct Message: Model, MessageReference {
+    struct Core: ModelCore, MessageReference {
         let id: String
         let dictionary: [String : Any]
     }
@@ -33,7 +31,7 @@ struct Message: Model, MessageRef {
         ]
     }
     
-    init(creator: UserRef, body: String) {
+    init(creator: UserReference, body: String) {
         self.id = Message.uniqueID()
         self.timestamp = Date()
         self.creatorID = creator.id

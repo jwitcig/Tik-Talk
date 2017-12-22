@@ -32,14 +32,14 @@ class SearchViewController: UIViewController {
     @objc func searchTextChanged(_ sender: Any) {
         guard let search = searchField.text else { return }
         
-        Database.Users.whose(handleStartsWith: search, success: {
+        Cloud.Users.whose(handleStartsWith: search, success: {
             self.users = $0
             self.tableView.reloadData()
         }) {
             print("Error fetching users: \($0)")
         }
         
-        Database.Groups.whose(nameStartsWith: search, success: {
+        Cloud.Groups.whose(nameStartsWith: search, success: {
             self.groups = $0
             self.tableView.reloadData()
         }) {
@@ -89,7 +89,7 @@ extension SearchViewController: UITableViewDelegate {
             
             let alert = UIAlertController(title: "Join \(group.name)", message: "Are you sure you would like to join \(group.name)?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                Database.Groups.join(group, who: currentUser, success: {
+                Cloud.Groups.join(group, who: currentUser, success: {
                     alert.dismiss(animated: true, completion: nil)
                 }, failure: {
                     print("Error joining \(group.name) : \($0)")
@@ -105,10 +105,10 @@ extension SearchViewController: UITableViewDelegate {
             
             let alert = UIAlertController(title: "Add @\(user.handle)?", message: "Are you sure you would like to add @\(user.handle) as a friend?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                let request = FriendRequest(associatedUser: user.reference, isRecipient: true)
-                let copy = FriendRequest(associatedUser: currentUser.reference, isRecipient: false)
+                let request = FriendRequest(associatedUser: user.core, isRecipient: true)
+                let copy = FriendRequest(associatedUser: currentUser.core, isRecipient: false)
                 
-                Database.FriendRequests.create(pair: (request, copy), success: {
+                Cloud.FriendRequests.create(pair: (request, copy), success: {
                     alert.dismiss(animated: true, completion: nil)
                 }, failure: {
                     print("Error adding \(user.id) : \($0)")

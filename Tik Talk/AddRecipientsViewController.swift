@@ -14,10 +14,10 @@ class AddRecipientsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipientsLabel: UILabel!
 
-    var friends: [User.Reference]?
-    var filteredFriends: [User.Reference]?
+    var friends: [User.Core]?
+    var filteredFriends: [User.Core]?
     
-    var recipients = Set<User.Reference>() {
+    var recipients = Set<User.Core>() {
         didSet {
             var text = recipients.reduce("") {
                 $0 + "\($1.handle), "
@@ -28,12 +28,12 @@ class AddRecipientsViewController: UIViewController {
         }
     }
     
-    var resignedBlock: ((Set<User.Reference>)->())!
+    var resignedBlock: ((Set<User.Core>)->())!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Database.Users.friends(for: User.current, success: {
+        Cloud.Users.friends(for: User.current, success: {
             self.friends = $0
             self.tableView.reloadData()
         }, failure: {
@@ -57,7 +57,7 @@ class AddRecipientsViewController: UIViewController {
     }
     
     @IBAction func donePressed(sender: Any) {
-        recipients.insert(User.current.reference)
+        recipients.insert(User.current.core)
         resignedBlock(recipients)
     }
     

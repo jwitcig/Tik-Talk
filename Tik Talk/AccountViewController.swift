@@ -18,7 +18,7 @@ class AccountViewController: UIViewController {
         
         handleLabel.text = User.current.handle
     
-        Database.Users.accountInfo(for: User.current, success: {
+        Cloud.Users.accountInfo(for: User.current, success: {
             self.friendsButton.setTitle("\($0.friendsCount) friends", for: .normal)
         }, failure: {
             print("Error fetching user information: \($0)")
@@ -26,7 +26,7 @@ class AccountViewController: UIViewController {
         
         guard let postsController = childViewControllers.first as? PostsViewController else { return }
        
-        Database.Posts.all(for: User.current, success: postsController.display, failure: { error in
+        Cloud.Posts.all(for: User.current, success: postsController.display, failure: { error in
             
         })
     }
@@ -34,9 +34,10 @@ class AccountViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Database.FriendRequests.listThose(to: User.current, success: {
+        let user = User.current
+        Cloud.FriendRequests.listThose(to: user, success: {
             for request in $0 {
-                Database.FriendRequests.accept(request, forCurrentUser: User.current.reference, success: {
+                Cloud.FriendRequests.accept(request, currentUser: user.core, success: {
                     print("Friends!")
                 }, failure: {
                     print("Error creating friendship: \($0)")

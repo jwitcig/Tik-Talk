@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
 #import "FIRQuery.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  * A `FIRCollectionReference` object can be used for adding documents, getting document references,
  * and querying for documents (using the methods inherited from `FIRQuery`).
  */
-NS_SWIFT_NAME(CollectionReference)
+FIR_SWIFT_NAME(CollectionReference)
 @interface FIRCollectionReference : FIRQuery
 
 /**   */
@@ -52,7 +53,7 @@ NS_SWIFT_NAME(CollectionReference)
  *
  * @return A FIRDocumentReference pointing to a new document with an auto-generated ID.
  */
-- (FIRDocumentReference *)documentWithAutoID NS_SWIFT_NAME(document());
+- (FIRDocumentReference *)documentWithAutoID FIR_SWIFT_NAME(document());
 
 /**
  * Gets a `FIRDocumentReference` referring to the document at the specified path, relative to this
@@ -63,7 +64,7 @@ NS_SWIFT_NAME(CollectionReference)
  *
  * @return The `FIRDocumentReference` for the specified document path.
  */
-- (FIRDocumentReference *)documentWithPath:(NSString *)documentPath NS_SWIFT_NAME(document(_:));
+- (FIRDocumentReference *)documentWithPath:(NSString *)documentPath FIR_SWIFT_NAME(document(_:));
 
 /**
  * Add a new document to this collection with the specified data, assigning it  a document ID
@@ -74,7 +75,7 @@ NS_SWIFT_NAME(CollectionReference)
  * @return A `FIRDocumentReference` pointing to the newly created document.
  */
 - (FIRDocumentReference *)addDocumentWithData:(NSDictionary<NSString *, id> *)data
-    NS_SWIFT_NAME(addDocument(data:));
+    FIR_SWIFT_NAME(addDocument(data:));
 
 /**
  * Add a new document to this collection with the specified data, assigning it a document ID
@@ -86,11 +87,11 @@ NS_SWIFT_NAME(CollectionReference)
  * @return A `FIRDocumentReference` pointing to the newly created document.
  */
 // clang-format off
-// clang-format breaks the NS_SWIFT_NAME attribute
+// clang-format breaks the FIR_SWIFT_NAME attribute
 - (FIRDocumentReference *)addDocumentWithData:(NSDictionary<NSString *, id> *)data
                                    completion:
                                        (nullable void (^)(NSError *_Nullable error))completion
-    NS_SWIFT_NAME(addDocument(data:completion:));
+    FIR_SWIFT_NAME(addDocument(data:completion:));
 // clang-format on
 
 @end

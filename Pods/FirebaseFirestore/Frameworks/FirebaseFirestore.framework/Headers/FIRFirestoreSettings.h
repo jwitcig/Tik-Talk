@@ -16,10 +16,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FIRFirestoreSwiftNameSupport.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /** Settings used to configure a `FIRFirestore` instance. */
-NS_SWIFT_NAME(FirestoreSettings)
+FIR_SWIFT_NAME(FirestoreSettings)
 @interface FIRFirestoreSettings : NSObject <NSCopying>
 
 /**

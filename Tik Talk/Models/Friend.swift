@@ -8,39 +8,37 @@
 
 import Foundation
 
-protocol FriendRef {
-    var id: String { get }
-}
+protocol FriendReference: ModelReference { }
 
-struct Friend: Model, FriendRef {
-    struct Reference: ModelReference, FriendRef {
+struct Friend: Model, FriendReference {
+    struct Core: ModelCore, FriendReference {
         let id: String
         let dictionary: [String : Any]
     }
     let id: String
     
-    let userReference: User.Reference
+    let userCore: User.Core
     
     let timestamp: Date
     
     var dictionary: [String : Any] {
         return [
             "timestamp" : timestamp,
-            "userReference" : userReference.dictionary,
+            "userCore" : userCore.dictionary,
         ]
     }
     
-    init(user: User.Reference) {
+    init(user: User.Core) {
         self.id = user.id
         self.timestamp = Date()
 
-        self.userReference = user
+        self.userCore = user
     }
     
     init(id: String, dictionary: [String : Any]) {
         self.id = id
         self.timestamp = dictionary["timestamp"] as! Date
 
-        self.userReference = User.Reference(id: id, dictionary: dictionary["userReference"] as! [String : Any])
+        self.userCore = User.Core(id: id, dictionary: dictionary["userCore"] as! [String : Any])
     }
 }

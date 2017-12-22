@@ -10,6 +10,7 @@ target 'Tik Talk' do
   pod 'Cartography'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'

@@ -17,7 +17,7 @@ class TimelineViewController: UIViewController {
         
         guard let postsViewController = childViewControllers.first as? PostsViewController else { return }
        
-        Database.Posts.live(success: postsViewController.display, failure: { error in
+        Cloud.Posts.live(success: postsViewController.display, failure: { error in
             
         })
     }
