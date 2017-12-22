@@ -38,6 +38,7 @@
 		8B86BB4E1FEB217A0077F8CC /* ConversationsViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */; };
 		8B86BB501FEB34940077F8CC /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */; };
 		8B86BB521FEB4FE80077F8CC /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */; };
+		8B86BB541FEC14C30077F8CC /* AddRecipientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86BB531FEC14C30077F8CC /* AddRecipientsViewController.swift */; };
 		8B9519B11FBA46B700DFEEE4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */; };
 		8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */; };
 		8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */; };
@@ -109,6 +110,7 @@
 		8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController..swift; sourceTree = "<group>"; };
 		8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8B86BB531FEC14C30077F8CC /* AddRecipientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientsViewController.swift; sourceTree = "<group>"; };
 		8B9519B01FBA46B700DFEEE4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8B9519B21FBA46DB00DFEEE4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */,
 				8B4FEED31FC2015E000CFA48 /* FriendsViewController.swift */,
 				8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */,
+				8B86BB531FEC14C30077F8CC /* AddRecipientsViewController.swift */,
 				8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */,
 				8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */,
 				8BB26FB41FC4B4E400492587 /* Models */,
@@ -601,6 +604,7 @@
 				8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */,
 				8BB26FB31FC4B2E400492587 /* Model.swift in Sources */,
 				8B86BB481FEB16F60077F8CC /* Database+Conversation.swift in Sources */,
+				8B86BB541FEC14C30077F8CC /* AddRecipientsViewController.swift in Sources */,
 				8B86BB521FEB4FE80077F8CC /* MessageTableViewCell.swift in Sources */,
 				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
 				8BF13CDE1FE46EFE00F08854 /* SearchViewController.swift in Sources */,

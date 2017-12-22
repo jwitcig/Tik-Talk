@@ -15,6 +15,7 @@ extension Database {
         typealias ModelType = Conversation
     
         static func create(_ conversation: Conversation, success: @escaping ()->(), failure: @escaping (Error)->()) {
+            
             Firestore.reference(for: conversation).setData(conversation) {
                 guard $0 == nil  else  {
                     failure($0!)

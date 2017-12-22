@@ -33,5 +33,15 @@ extension Database {
                 success(Message.build(from: snapshot))
             }
         }
+        
+        static func listen(to conversation: ConversationRef, freshData: @escaping ([Message])->(), failure: @escaping (Error)->()) {
+            Firestore.reference(for: conversation).collection("messages").order(by: "timestamp", descending: true).addSnapshotListener {
+                guard let snapshot = $0 else {
+                    failure($1!)
+                    return
+                }
+                freshData(Message.build(from: snapshot))
+            }
+        }
     }
 }

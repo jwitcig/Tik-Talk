@@ -390,6 +390,93 @@
             </objects>
             <point key="canvasLocation" x="1877.5999999999999" y="-201.04947526236884"/>
         </scene>
+        <!--Add Recipients View Controller-->
+        <scene sceneID="8GL-hr-mDB">
+            <objects>
+                <viewController storyboardIdentifier="AddRecipientsViewController" id="HVR-5e-KAx" customClass="AddRecipientsViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QI5-Xb-1ee">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@handle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKw-aV-OPK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A2Q-S7-gbd">
+                                <rect key="frame" x="0.0" y="138" width="375" height="529"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="HVR-5e-KAx" id="pN5-R3-Ucw"/>
+                                    <outlet property="delegate" destination="HVR-5e-KAx" id="h5t-7G-qxw"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gk-Hd-HLN">
+                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRb-yL-wFU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kRb-yL-wFU" secondAttribute="bottom" id="GkD-lN-Of5"/>
+                                    <constraint firstAttribute="trailing" secondItem="kRb-yL-wFU" secondAttribute="trailing" id="Wvh-aq-OAD"/>
+                                    <constraint firstAttribute="height" constant="44" id="bFu-as-Zuv"/>
+                                    <constraint firstItem="kRb-yL-wFU" firstAttribute="top" secondItem="1gk-Hd-HLN" secondAttribute="top" id="olh-10-jpb"/>
+                                    <constraint firstItem="kRb-yL-wFU" firstAttribute="leading" secondItem="1gk-Hd-HLN" secondAttribute="leading" id="vKw-a6-wXP"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDo-8t-U2c">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Recipients" id="yxu-Zw-00R">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gIf-rj-3ua">
+                                            <connections>
+                                                <action selector="cancelPressedWithSender:" destination="HVR-5e-KAx" id="Bbv-dQ-ZMv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Next" id="CGR-KU-CGv">
+                                            <connections>
+                                                <action selector="donePressedWithSender:" destination="HVR-5e-KAx" id="VNG-X9-EfL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wDo-8t-U2c" firstAttribute="top" secondItem="oG1-Qn-MaU" secondAttribute="top" id="10T-IG-Ky9"/>
+                            <constraint firstItem="1gk-Hd-HLN" firstAttribute="leading" secondItem="QI5-Xb-1ee" secondAttribute="leading" id="68n-2q-hq8"/>
+                            <constraint firstItem="oG1-Qn-MaU" firstAttribute="trailing" secondItem="WKw-aV-OPK" secondAttribute="trailing" id="6R9-8H-0jE"/>
+                            <constraint firstItem="oG1-Qn-MaU" firstAttribute="bottom" secondItem="A2Q-S7-gbd" secondAttribute="bottom" id="Bql-JE-VjB"/>
+                            <constraint firstItem="WKw-aV-OPK" firstAttribute="top" secondItem="wDo-8t-U2c" secondAttribute="bottom" id="DTL-SM-EsB"/>
+                            <constraint firstItem="1gk-Hd-HLN" firstAttribute="top" secondItem="WKw-aV-OPK" secondAttribute="bottom" id="K3L-QT-f38"/>
+                            <constraint firstItem="oG1-Qn-MaU" firstAttribute="trailing" secondItem="1gk-Hd-HLN" secondAttribute="trailing" id="KLp-Sb-LLh"/>
+                            <constraint firstItem="oG1-Qn-MaU" firstAttribute="trailing" secondItem="wDo-8t-U2c" secondAttribute="trailing" id="N8s-OR-USQ"/>
+                            <constraint firstItem="A2Q-S7-gbd" firstAttribute="leading" secondItem="oG1-Qn-MaU" secondAttribute="leading" id="S9R-xU-hQe"/>
+                            <constraint firstItem="A2Q-S7-gbd" firstAttribute="top" secondItem="1gk-Hd-HLN" secondAttribute="bottom" id="Wfq-rI-RvY"/>
+                            <constraint firstItem="WKw-aV-OPK" firstAttribute="leading" secondItem="oG1-Qn-MaU" secondAttribute="leading" id="Ya4-bX-mu6"/>
+                            <constraint firstItem="wDo-8t-U2c" firstAttribute="leading" secondItem="QI5-Xb-1ee" secondAttribute="leading" id="Znf-29-F1o"/>
+                            <constraint firstItem="oG1-Qn-MaU" firstAttribute="trailing" secondItem="A2Q-S7-gbd" secondAttribute="trailing" id="kWg-Ha-2e5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oG1-Qn-MaU"/>
+                    </view>
+                    <connections>
+                        <outlet property="recipientsLabel" destination="kRb-yL-wFU" id="604-O7-sGM"/>
+                        <outlet property="searchField" destination="WKw-aV-OPK" id="Mpb-tx-A4c"/>
+                        <outlet property="tableView" destination="A2Q-S7-gbd" id="E1m-Qd-Bbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDt-oX-XQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2606" y="207"/>
+        </scene>
         <!--Group-->
         <scene sceneID="tYT-xP-V93">
             <objects>

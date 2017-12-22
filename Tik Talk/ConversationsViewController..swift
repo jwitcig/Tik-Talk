@@ -26,8 +26,17 @@ class ConversationsViewController: UIViewController {
     }
     
     @IBAction func newMessagePressed(sender: Any) {
-//        let messagesController = MessagesViewController()
-//        present(messagesController, animated: true, completion: nil)
+        guard let addRecipientsController = storyboard?.instantiateViewController(withIdentifier: "AddRecipientsViewController") as? AddRecipientsViewController else {
+            return
+        }
+        addRecipientsController.resignedBlock = {
+            let conversation = Conversation(participants: Array($0))
+            let messagesController = MessagesViewController(conversation: conversation)
+            addRecipientsController.dismiss(animated: true, completion: nil)
+            self.present(messagesController, animated: true, completion: {
+        })
+        }
+        present(addRecipientsController, animated: true, completion: nil)
     }
     
     @IBAction func backPressed(sender: Any) {
@@ -46,7 +55,7 @@ extension ConversationsViewController: UITableViewDataSource {
         let conversation = conversations![indexPath.row]
         
         var text = conversation.participants.reduce("") {
-            $0 + $1.value.name + ", "
+            $0 + $1.value.handle + ", "
         }
         text.removeLast()
         text.removeLast()

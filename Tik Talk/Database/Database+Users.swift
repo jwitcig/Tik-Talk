@@ -57,13 +57,17 @@ extension Database {
             }
         }
         
-        static func friends(for user: UserRef, success: @escaping ([User])->(), failure: @escaping (Error)->()) {
+        static func friends(for user: UserRef, success: @escaping ([User.Reference])->(), failure: @escaping (Error)->()) {
             Firestore.friends(for: user).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
                     return
                 }
-                success(User.build(from: snapshot))
+                
+                let references = snapshot.documents.map {
+                    User.Reference(id: $0.documentID, dictionary: $0.data()["userReference"] as! [String : Any])
+                }
+                success(references)
             }
         }
     

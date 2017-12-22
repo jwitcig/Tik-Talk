@@ -19,6 +19,10 @@ class SearchViewController: UIViewController {
     var users: [User]?
     var groups: [Group]?
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

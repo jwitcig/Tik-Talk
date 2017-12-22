@@ -16,12 +16,18 @@ struct User: Model, UserRef {
     struct Reference: ModelReference, UserRef {
         let id: String
         let dictionary: [String : Any]
-        var name: String {
-            return dictionary["name"] as! String
+        var handle: String {
+            return dictionary["handle"] as! String
         }
     }
    
-    static var current = User(id: "", dictionary: [:])
+    static var current = User(id: "", dictionary: [
+        "handle" : "",
+        "email" : "",
+        "bio" : "",
+        "birthday" : "",
+        "friendsCount" : 0,
+    ])
     
     let id: String
     let handle: String

@@ -24,6 +24,8 @@ struct Conversation: Model, ConversationRef {
     
     let timestamp: Date
     
+    var isEstablished: Bool
+    
     var dictionary: [String : Any] {
         return [
             "timestamp" : timestamp,
@@ -37,6 +39,8 @@ struct Conversation: Model, ConversationRef {
         self.timestamp = Date()
 
         self.participants = participants.reduce(into: [:]) { $0[$1.id] = $1 }
+        
+        self.isEstablished = false
     }
     
     init(id: String, dictionary: [String : Any]) {
@@ -47,5 +51,7 @@ struct Conversation: Model, ConversationRef {
         self.participants = participantData.reduce(into: [:]) {
             $0[$1.key] = User.Reference(id: $1.key, dictionary: $1.value)
         }
+        
+        self.isEstablished = true
     }
 }

@@ -15,12 +15,13 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        handleLabel.text = User.current.handle
+    
         Database.Users.accountInfo(for: User.current, success: {
-            self.handleLabel.text = $0.handle
             self.friendsButton.setTitle("\($0.friendsCount) friends", for: .normal)
-        }, failure: { error in
-            
+        }, failure: {
+            print("Error fetching user information: \($0)")
         })
         
         guard let postsController = childViewControllers.first as? PostsViewController else { return }

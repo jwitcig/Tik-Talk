@@ -26,12 +26,14 @@ class MessagesViewController: SLKTextViewController {
     }
     
     override func viewDidLoad() {
-        Database.Messages.those(in: conversation, success: {
-            self.messages = $0
-            self.tableView?.reloadData()
-        }, failure: {
-            print("Error loading messages: \($0)")
-        })
+        if conversation.isEstablished {            
+            Database.Messages.listen(to: conversation, freshData: {
+                self.messages = $0
+                self.tableView?.reloadData()
+            }, failure: {
+                print("Error loading messages: \($0)")
+            })
+        }
         
         /*
         // Register a SLKTextView subclass, if you need any special appearance and/or behavior customisation.
@@ -106,11 +108,21 @@ class MessagesViewController: SLKTextViewController {
         
         super.didPressRightButton(sender)
         
-        Database.Messages.create(message, in: conversation, success: {
-            print("Message sent!")
-        }, failure: {
-            print("Error sending message: \($0)")
-        })
+        let sendMessage = {
+            Database.Messages.create(message, in: self.conversation, success: {
+                print("Message sent!")
+            }, failure: {
+                print("Error sending message: \($0)")
+            })
+        }
+        
+        if conversation.isEstablished {
+            sendMessage()
+        } else {
+            Database.Conversations.create(conversation, success: sendMessage, failure: {
+                print("Error creating conversation: \($0)")
+            })
+        }
     }
 }
 
