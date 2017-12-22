@@ -21,11 +21,11 @@ struct FriendRequest: Model, FriendRequestReference {
     }
     
     let id: String
-    
-    let isRecipient: Bool
-    let userCore: User.Core
-    
     let timestamp: Date
+
+    let isRecipient: Bool
+   
+    let userCore: User.Core
     
     var dictionary: [String : Any] {
         return [

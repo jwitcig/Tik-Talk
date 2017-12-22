@@ -17,11 +17,10 @@ struct Message: Model, MessageReference {
     }
     
     let id: String
-    
-    let creatorID: String
-    let body: String
-    
     let timestamp: Date
+    let creatorID: String
+    
+    let body: String
     
     var dictionary: [String : Any] {
         return [

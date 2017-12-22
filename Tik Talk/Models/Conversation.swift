@@ -17,11 +17,10 @@ struct Conversation: Model, ConversationReference {
     }
     
     let id: String
-    
-    let participants: [String : User.Core]
-    
     let timestamp: Date
     
+    let participants: [String : User.Core]
+   
     var isEstablished: Bool
     
     var dictionary: [String : Any] {

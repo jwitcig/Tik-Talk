@@ -20,9 +20,10 @@ struct Group: Model, GroupReference {
     }
     
     let id: String
-    let name: String
-    let creatorID: String
     let timestamp: Date
+    let creatorID: String
+    
+    let name: String
     let memberCount: Int
 
     var dictionary: [String: Any] {
@@ -50,5 +51,15 @@ struct Group: Model, GroupReference {
 
         self.name = dictionary["name"] as! String
         self.memberCount = dictionary["memberCount"] as! Int
+    }
+}
+
+protocol ValidatesGroups: ValidatesModels {
+    var group: Group { get }
+}
+
+extension ValidatesGroups {
+    var isValid: Bool {
+        return group.name.count >= 3
     }
 }

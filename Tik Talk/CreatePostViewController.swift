@@ -19,7 +19,7 @@ struct Media {
     var fileExtension: String
 }
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, ValidatesPosts {
 
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -29,6 +29,11 @@ class CreatePostViewController: UIViewController {
     var media: Media?
     
     var selectedGroup: GroupReference?
+    
+    var model: Post { return post }
+    var post: Post {
+        return Post(body: textField.text, url: nil, creator: User.current, group: selectedGroup)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +54,6 @@ class CreatePostViewController: UIViewController {
                 $0.width == $1.width / 2
                 $0.height == 44
             }
-
         }, failure: {
             print("Error fetching user's groups: \($0)")
         })
@@ -72,12 +76,7 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func submitPressed(sender: Any) {
-        let post = Post(body: textField.text,
-                        url: nil,
-                        creator: User.current,
-                        group: selectedGroup)
-        
-        guard Post.Validator(post: post).validate() else { return }
+        guard let post = validate() else { return }
         
         Cloud.Posts.create(post, with: media, progress: {
             print($0)

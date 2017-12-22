@@ -15,9 +15,7 @@ enum GroupAction {
 }
 
 extension Cloud {
-    class Groups {
-        typealias ModelType = Group
-    
+    class Groups {    
         static func create(_ group: Group, success: @escaping ()->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: group).setData(group, completion: callback(success, failure))
         }

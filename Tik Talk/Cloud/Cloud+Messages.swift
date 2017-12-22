@@ -11,9 +11,7 @@ import Foundation
 import Firebase
 
 extension Cloud {
-    class Messages {
-        typealias ModelType = Message
-                
+    class Messages {                
         static func create(_ message: Message, in conversation: ConversationReference, success: @escaping ()->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: conversation)
                      .collection("messages")

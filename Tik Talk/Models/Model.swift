@@ -61,3 +61,18 @@ func ==<T: ModelCore>(lhs: T, rhs: T) -> Bool {
 protocol ModelReference {
     var id: String { get }
 }
+
+protocol ValidatesModels {
+    associatedtype ModelType: Model
+    
+    var model: ModelType { get }
+    var isValid: Bool { get }
+    
+    func validate() -> ModelType?
+}
+
+extension ValidatesModels {
+    func validate() -> ModelType? {
+        return isValid ? model : nil
+    }
+}

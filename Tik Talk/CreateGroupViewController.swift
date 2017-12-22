@@ -8,15 +8,14 @@
 
 import UIKit
 
-class CreateGroupViewController: UIViewController {
+class CreateGroupViewController: UIViewController, ValidatesGroups {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var createButton: UIButton!
     
-    var isFormValid: Bool {
-        guard let name = nameField.text else { return false }
-        guard name.count >= 3 else { return false }
-        return true
+    var model: Group { return group }
+    var group: Group {
+        return Group(name: nameField.text ?? "", creator: User.current)
     }
     
     override func viewDidLoad() {
@@ -28,17 +27,13 @@ class CreateGroupViewController: UIViewController {
     }
 
     @IBAction func createPressed(sender: Any) {
-        guard isFormValid else { return }
-        guard let name = nameField.text else { return }
-        
-        let user = User.current
-        let group = Group(name: name, creator: user)
+        guard let group = validate() else { return }
         
         Cloud.Groups.create(group, success: {
-            print("Successfully created \(name)!")
+            print("Successfully created \(group.name)!")
             
-            Cloud.Groups.join(group, who: user, success: {
-                print("Successfully joined \(name)!")
+            Cloud.Groups.join(group, who: User.current, success: {
+                print("Successfully joined \(group.name)!")
             }, failure: {
                 print("Error joining group: \($0)")
             })
@@ -49,6 +44,6 @@ class CreateGroupViewController: UIViewController {
     }
 
     @objc func nameFieldChanged(_ sender: Any) {
-        createButton.isEnabled = isFormValid
+        createButton.isEnabled = isValid
     }
 }

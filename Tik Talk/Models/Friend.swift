@@ -16,10 +16,9 @@ struct Friend: Model, FriendReference {
         let dictionary: [String : Any]
     }
     let id: String
-    
-    let userCore: User.Core
-    
     let timestamp: Date
+
+    let userCore: User.Core
     
     var dictionary: [String : Any] {
         return [

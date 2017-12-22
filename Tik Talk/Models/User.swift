@@ -28,12 +28,11 @@ struct User: Model, UserReference {
     ])
     
     let id: String
+    
     let handle: String
     let email: String?
-    
     let bio: String?
     var birthday: String?
-    
     let friendsCount: Int
     
     var dictionary: [String : Any] {

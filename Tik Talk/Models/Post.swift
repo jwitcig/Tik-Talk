@@ -15,37 +15,22 @@ enum Vote: String {
 protocol PostReference: ModelReference { }
 
 struct Post: Model, PostReference {
-    struct Validator {
-        let post: Post
-        
-        var maxCharacterCount: Int {
-            return post.hasMultiMedia ? 140 : 280
-        }
-        
-        var charactersRemaining: Int {
-            return maxCharacterCount - (post.body ?? "").count
-        }
-        
-        func validate() -> Bool {
-            return charactersRemaining >= 0
-        }
-    }
-    
     struct Core: ModelCore, PostReference {
         let id: String
         let dictionary: [String : Any]
     }
     
     let id: String
-    let body: String?
-    let url: String?
     let timestamp: Date
     let creatorID: String
+
+    let body: String?
+    let url: String?
     let groupID: String?
-    
+    var votes: Votes
+
     var hasBeenValidated: Bool
     
-    var votes: Votes
     
     var dictionary: [String: Any] {
         return [
@@ -133,4 +118,20 @@ extension Votes {
     }
 }
 
+protocol ValidatesPosts: ValidatesModels {
+    var post: Post { get }
+}
 
+extension ValidatesPosts {
+    var maxCharacterCount: Int {
+        return post.hasMultiMedia ? 140 : 280
+    }
+
+    var charactersRemaining: Int {
+        return maxCharacterCount - (post.body ?? "").count
+    }
+
+    var isValid: Bool {
+        return charactersRemaining >= 0
+    }
+}

@@ -11,9 +11,7 @@ import Foundation
 import Firebase
 
 extension Cloud {
-    class Conversations {
-        typealias ModelType = Conversation
-    
+    class Conversations {    
         static func create(_ conversation: Conversation, success: @escaping ()->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: conversation)
                      .setData(conversation, completion: callback(success, failure))
