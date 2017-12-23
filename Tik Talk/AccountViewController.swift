@@ -31,23 +31,6 @@ class AccountViewController: UIViewController {
         })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        let user = User.current
-        Cloud.FriendRequests.listThose(to: user, success: {
-            for request in $0 {
-                Cloud.FriendRequests.accept(request, currentUser: user.core, success: {
-                    print("Friends!")
-                }, failure: {
-                    print("Error creating friendship: \($0)")
-                })
-            }
-        }, failure: {
-            print("Error fetching friend requests: \($0)")
-        })
-    }
-    
     @IBAction func friendsPressed(sender: Any) {
         guard let friendsController = storyboard?.instantiateViewController(withIdentifier: "FriendsViewController") as? FriendsViewController else { return }
         

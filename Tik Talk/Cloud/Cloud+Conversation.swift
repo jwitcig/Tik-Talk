@@ -18,9 +18,8 @@ extension Cloud {
         }
         
         static func containing(_ user: UserReference, success: @escaping ([Conversation])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: Conversation.self)
-                     .whereField("participantIDs.\(user.id)", isEqualTo: true)
-                     .getDocuments(completion: listCallback(success, failure))
+            Firestore.conversations.whereField("participantIDs.\(user.id)", isEqualTo: true)
+                                   .getDocuments(completion: callback(success, failure))
         }
     }
 }

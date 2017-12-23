@@ -22,14 +22,14 @@ extension Cloud {
         static func those(in conversation: ConversationReference, success: @escaping ([Message])->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: conversation)
                      .collection("messages")
-                     .getDocuments(completion: listCallback(success, failure))
+                     .getDocuments(completion: callback(success, failure))
         }
         
         static func listen(to conversation: ConversationReference, freshData: @escaping ([Message])->(), failure: @escaping (Error)->()) {
             Firestore.reference(for: conversation)
                      .collection("messages")
                      .order(by: "timestamp", descending: true)
-                     .addSnapshotListener(listCallback(freshData, failure))
+                     .addSnapshotListener(callback(freshData, failure))
         }
     }
 }

@@ -12,13 +12,13 @@ import Firebase
 
 extension Cloud {
     class Users {        
-        static func create(_ user: User, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
+        static func create(_ user: User, success: @escaping Callback, failure: @escaping ErrorCallback) {
             let write = Firestore.batch()
             write.setData(user, forDocument: Firestore.reference(for: user))
             write.commit(completion: callback(success, failure))
         }
         
-        static func save(_ user: User, privateData: [String : Any]? = nil, success: @escaping ()->Void, failure: @escaping (Error)->Void) {
+        static func save(_ user: User, privateData: [String : Any]? = nil, success: @escaping Callback, failure: @escaping ErrorCallback) {
             
             let userDoc = Firestore.reference(for: user)
             let privateDoc = userDoc.collection("data").document("private")
@@ -33,11 +33,11 @@ extension Cloud {
             write.commit(completion: callback(success, failure))
         }
         
-        static func accountInfo(for user: UserReference, success: @escaping (User)->(), failure: @escaping (Error)->()) {
-            Firestore.reference(for: user).getDocument(completion: getCallback(success, failure))
+        static func accountInfo(for user: UserReference, success: @escaping GetCallback<User>, failure: @escaping ErrorCallback) {
+            Firestore.reference(for: user).getDocument(completion: callback(success, failure))
         }
         
-        static func friends(for user: UserReference, success: @escaping ([User.Core])->(), failure: @escaping (Error)->()) {
+        static func friends(for user: UserReference, success: @escaping ListCallback<User.Core>, failure: @escaping ErrorCallback) {
             Firestore.friends(for: user).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)
@@ -45,18 +45,17 @@ extension Cloud {
                 }
                 
                 let references = snapshot.documents.map {
-                    User.Core(id: $0.documentID, dictionary: $0.data()["UserReferenceerence"] as! [String : Any])
+                    User.Core(id: $0.documentID, dictionary: $0.data()["userCore"] as! [String : Any])
                 }
                 success(references)
             }
         }
     
-        static func whose(handleStartsWith handle: String, success: @escaping ([User])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: User.self)
-                     .order(by: "handle")
-                     .start(at: [handle])
-                     .end(at: [handle+"z"])
-                     .getDocuments(completion: listCallback(success, failure))
+        static func whose(handleStartsWith handle: String, success: @escaping ListCallback<User>, failure: @escaping ErrorCallback) {
+            Firestore.users.order(by: "handle")
+                           .start(at: [handle])
+                           .end(at: [handle+"z"])
+                           .getDocuments(completion: callback(success, failure))
         }
     }
 }

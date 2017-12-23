@@ -21,25 +21,23 @@ extension Cloud {
         }
         
         static func all(success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: Group.self).getDocuments(completion: listCallback(success, failure))
+            Firestore.groups.getDocuments(completion: callback(success, failure))
         }
         
         static func all(containing user: UserReference, success: @escaping ([Group.Core])->(), failure: @escaping (Error)->()) {
-            Firestore.reference(for: user).collection("groups").getDocuments(completion: listCallback(success, failure))
+            Firestore.reference(for: user).collection("groups").getDocuments(completion: callback(success, failure))
         }
         
         static func all(createdBy user: UserReference, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: Group.self)
-                     .whereField("creatorID", isEqualTo: user.id)
-                     .getDocuments(completion: listCallback(success, failure))
+            Firestore.groups.whereField("creatorID", isEqualTo: user.id)
+                            .getDocuments(completion: callback(success, failure))
         }
         
         static func whose(nameStartsWith name: String, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {            
-            Firestore.collection(of: Group.self)
-                     .order(by: "name")
-                     .start(at: [name])
-                     .end(at: [name+"z"])
-                     .getDocuments(completion: listCallback(success, failure))
+            Firestore.groups.order(by: "name")
+                            .start(at: [name])
+                            .end(at: [name+"z"])
+                            .getDocuments(completion: callback(success, failure))
         }
         
         static func perform(_ action: GroupAction, on group: GroupReference, by user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {

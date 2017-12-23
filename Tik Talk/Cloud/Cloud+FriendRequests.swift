@@ -43,15 +43,15 @@ extension Cloud {
             listThose(with: sender, as: .sender, success: success, failure: failure)
         }
         
-        private static func listThose(with user: UserReference, as target: FriendRequest.Target, success: @escaping ([FriendRequest])->(), failure: @escaping (Error)->()) {
+        private static func listThose(with user: UserReference, as target: FriendRequest.Target, success: @escaping ([FriendRequest])->(), failure: @escaping ErrorCallback) {
             
             Firestore.reference(for: user)
                      .collection("friendRequests")
                      .whereField("isRecipient", isEqualTo: target != .recipient)
-                     .getDocuments(completion: listCallback(success, failure))
+                     .getDocuments(completion: callback(success, failure))
         }
         
-        static func accept(_ request: FriendRequest, currentUser: User.Core, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func accept(_ request: FriendRequest, currentUser: User.Core, success: @escaping Callback, failure: @escaping ErrorCallback) {
         
             let UserReference = Firestore.reference(for: request.userCore)
             let currentUserReference = Firestore.reference(for: currentUser)

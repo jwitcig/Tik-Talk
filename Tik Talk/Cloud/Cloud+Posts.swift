@@ -14,7 +14,7 @@ extension Cloud {
     class Posts {        
         static func create(_ post: Post, with media: Media? = nil,
                            progress: ((Float)->Void)? = nil,
-                           success: (()->Void)? = nil,
+                           success: (Callback)? = nil,
                            failure: ((Error?, Error?)->Void)? = nil) {
             // failure(post error, upload error)
             
@@ -59,16 +59,14 @@ extension Cloud {
             }
         }
         
-        static func live(success: @escaping ([Post])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: Post.self)
-                     .whereField("votes.takeDownTime", isGreaterThan: Date())
-                     .getDocuments(completion: listCallback(success, failure))
+        static func live(success: @escaping ListCallback<Post>, failure: @escaping ErrorCallback) {
+            Firestore.posts.whereField("votes.takeDownTime", isGreaterThan: Date())
+                           .getDocuments(completion: callback(success, failure))
         }
         
-        static func all(for user: UserReference, success: @escaping ([Post])->(), failure: @escaping (Error)->()) {
-            Firestore.collection(of: Post.self)
-                     .whereField("creatorID", isEqualTo: user.id)
-                     .getDocuments(completion: listCallback(success, failure))
+        static func all(for user: UserReference, success: @escaping ListCallback<Post>, failure: @escaping ErrorCallback) {
+            Firestore.posts.whereField("creatorID", isEqualTo: user.id)
+                           .getDocuments(completion: callback(success, failure))
         }
     }
 }

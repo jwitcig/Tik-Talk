@@ -29,40 +29,6 @@ extension Firestore {
 }
 
 extension Firestore {
-    static func collection<T: Model>(of type: T.Type) -> CollectionReference {
-        return base.collection(collectionName(for: type))
-    }
-    
-    static func referenceForPost(withID id: String) -> DocumentReference {
-        return collection(of: Post.self).document(id)
-    }
-    
-    static func reference(for post: PostReference) -> DocumentReference {
-        return Firestore.referenceForPost(withID: post.id)
-    }
-       
-    static func referenceForUser(withID id: String) -> DocumentReference {
-        return collection(of: User.self).document(id)
-    }
-    
-    static func reference(for user: UserReference) -> DocumentReference {
-        return Firestore.referenceForUser(withID: user.id)
-    }
-    
-    static func reference(for group: GroupReference) -> DocumentReference {
-        return collection(of: Group.self).document(group.id)
-    }
-    
-    static func friends(for user: UserReference) -> CollectionReference {
-        return Firestore.reference(for: user).collection("friends")
-    }
-    
-    static func reference(for conversation: ConversationReference) -> DocumentReference {
-        return collection(of: Conversation.self).document(conversation.id)
-    }
-}
-
-extension Firestore {
     static func batch() -> WriteBatch {
         return base.batch()
     }
