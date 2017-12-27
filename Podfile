@@ -14,7 +14,7 @@ target 'Tik Talk' do
   pod 'Firebase/Firestore'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
-  pod 'JWSwiftTools', :git => 'https://github.com/jwitcig/SwiftTools'
+  pod 'JWSwiftTools', :path => '~/Documents/Projects/SwiftTools'
 
   pod 'UIDropDown'
   pod "SlackTextViewController"

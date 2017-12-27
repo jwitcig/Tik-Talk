@@ -8,6 +8,8 @@
 
 import Foundation
 
+import JWSwiftTools
+
 protocol GroupReference: ModelReference { }
 
 struct Group: Model, GroupReference {

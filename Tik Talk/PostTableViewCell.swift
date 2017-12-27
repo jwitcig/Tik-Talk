@@ -35,7 +35,7 @@ class PostTableViewCell: UITableViewCell {
     func add(images: [UIImage]) {
         imageStackViewHeightConstraint.constant = imageStackViewHeightConstraintConstant
         
-        images.map(UIImageView.init).forEach(imageStackView.addArrangedSubview)
+        imageStackView.addArrangedSubviews(images.map(UIImageView.init))
     }
     
     @IBAction func vote(sender: UIButton) {

@@ -9,6 +9,7 @@
 import UIKit
 
 import Firebase
+import JWSwiftTools
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -18,7 +18,6 @@
 		8B0AB62E1FAF7D8A00B43B37 /* Tik_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB62D1FAF7D8A00B43B37 /* Tik_TalkTests.swift */; };
 		8B0AB6391FAF7D8A00B43B37 /* Tik_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */; };
 		8B0AB6471FAF823700B43B37 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6461FAF823700B43B37 /* Post.swift */; };
-		8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AB6481FAF83D000B43B37 /* Helpers.swift */; };
 		8B2503961FAF91CB00117288 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2503951FAF91CB00117288 /* User.swift */; };
 		8B2503981FAF93D800117288 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2503971FAF93D800117288 /* Group.swift */; };
 		8B4981CF1FC0A956001F6379 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4981CE1FC0A956001F6379 /* Firestore.swift */; };
@@ -48,6 +47,7 @@
 		8BB3E19D1FEE0898009FB793 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */; };
 		8BB3E19F1FEE1113009FB793 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3E19E1FEE1113009FB793 /* ProfileUpdateViewController.swift */; };
 		8BB3E1A11FEEBE86009FB793 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3E1A01FEEBE86009FB793 /* SignInViewController.swift */; };
+		8BB3E1A71FF33BD7009FB793 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3E1A61FF33BD7009FB793 /* Auth.swift */; };
 		8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4A1FBE338E005DFF36 /* Podfile */; };
 		8BEE85951FE975EF00BD30F2 /* Cloud+FriendRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE85941FE975EF00BD30F2 /* Cloud+FriendRequests.swift */; };
 		8BEE85971FE977C900BD30F2 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE85961FE977C900BD30F2 /* FriendRequest.swift */; };
@@ -93,7 +93,6 @@
 		8B0AB6381FAF7D8A00B43B37 /* Tik_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tik_TalkUITests.swift; sourceTree = "<group>"; };
 		8B0AB63A1FAF7D8A00B43B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B0AB6461FAF823700B43B37 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		8B0AB6481FAF83D000B43B37 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		8B2503951FAF91CB00117288 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B2503971FAF93D800117288 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		8B4981CE1FC0A956001F6379 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		8BB3E19E1FEE1113009FB793 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		8BB3E1A01FEEBE86009FB793 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8BB3E1A61FF33BD7009FB793 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		8BC0CD4A1FBE338E005DFF36 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BEE85941FE975EF00BD30F2 /* Cloud+FriendRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cloud+FriendRequests.swift"; sourceTree = "<group>"; };
 		8BEE85961FE977C900BD30F2 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
@@ -235,7 +235,6 @@
 				8B86BB4F1FEB34940077F8CC /* MessagesViewController.swift */,
 				8B86BB511FEB4FE80077F8CC /* MessageTableViewCell.swift */,
 				8BB26FB41FC4B4E400492587 /* Models */,
-				8B0AB6481FAF83D000B43B37 /* Helpers.swift */,
 				8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */,
 				8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */,
 				8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */,
@@ -297,6 +296,7 @@
 		8BB26FB61FC4B50100492587 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				8BB3E1A61FF33BD7009FB793 /* Auth.swift */,
 				8B4981CE1FC0A956001F6379 /* Firestore.swift */,
 				8BF7CD981FB8C11200F90626 /* Storage.swift */,
 			);
@@ -598,6 +598,7 @@
 				8B86BB4C1FEB1ABB0077F8CC /* Cloud+Messages.swift in Sources */,
 				8B4FEED21FC151D4000CFA48 /* AccountViewController.swift in Sources */,
 				8B0AB61B1FAF7D8A00B43B37 /* CreatePostViewController.swift in Sources */,
+				8BB3E1A71FF33BD7009FB793 /* Auth.swift in Sources */,
 				8B4FEED41FC2015E000CFA48 /* FriendsViewController.swift in Sources */,
 				8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */,
 				8BB26FB81FC4B92A00492587 /* Configuration.swift in Sources */,
@@ -612,7 +613,6 @@
 				8B4FEED61FC20D6A000CFA48 /* PostsViewController.swift in Sources */,
 				8B0AB6191FAF7D8A00B43B37 /* TimelineViewController.swift in Sources */,
 				8BEE85971FE977C900BD30F2 /* FriendRequest.swift in Sources */,
-				8B0AB6491FAF83D000B43B37 /* Helpers.swift in Sources */,
 				8BB26FB31FC4B2E400492587 /* Model.swift in Sources */,
 				8B86BB481FEB16F60077F8CC /* Cloud+Conversation.swift in Sources */,
 				8B86BB541FEC14C30077F8CC /* AddRecipientsViewController.swift in Sources */,

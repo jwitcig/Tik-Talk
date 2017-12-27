@@ -33,8 +33,7 @@ class ConversationsViewController: UIViewController {
             let conversation = Conversation(participants: Array($0))
             let messagesController = MessagesViewController(conversation: conversation)
             addRecipientsController.dismiss(animated: true, completion: nil)
-            self.present(messagesController, animated: true, completion: {
-        })
+            self.present(messagesController, animated: true, completion: nil)
         }
         present(addRecipientsController, animated: true, completion: nil)
     }
