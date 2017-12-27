@@ -35,16 +35,16 @@ class SearchViewController: UIViewController {
         Cloud.Users.whose(handleStartsWith: search, success: {
             self.users = $0
             self.tableView.reloadData()
-        }) {
+        }, failure: {
             print("Error fetching users: \($0)")
-        }
+        })
         
         Cloud.Groups.whose(nameStartsWith: search, success: {
             self.groups = $0
             self.tableView.reloadData()
-        }) {
+        }, failure: {
             print("Error fetching groups: \($0)")
-        }
+        })
     }
 }
 

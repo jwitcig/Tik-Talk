@@ -43,40 +43,5 @@ extension Cloud {
                 
             }
         }
-        
-        static func castRRRR(_ vote: Vote, for post: PostReference, by user: UserReference) {
-            
-            let postVotesRef = Database.database().reference().child("votes/\(post.id)")
-            
-            let postRef = Firestore.reference(for: post)
-            let voterDocRef = postRef.collection("voters").document(user.id)
-            Firestore.base.runTransaction({ transaction, errorPointer in
-                let postDocument: DocumentSnapshot
-                do {
-                    postDocument = try transaction.getDocument(postRef)
-                } catch let fetchError as NSError {
-                    errorPointer?.pointee = fetchError
-                    return nil
-                }
-                
-                let serverPost = Post(document: postDocument)
-                
-                let adjustment = Config.adjustment(for: vote)
-                let newTakeDownTime = serverPost.takeDownTime.addingTimeInterval(adjustment)
-                
-                let newVoteCount = serverPost.votes.count(for: vote) + 1
-                
-                transaction.updateData([
-                    "votes."+vote.rawValue : newVoteCount,
-                    "votes.takeDownTime" : newTakeDownTime.utc,
-                    ], forDocument: postRef)
-                transaction.setData(["vote" : vote.rawValue], forDocument: voterDocRef)
-                
-                return newVoteCount
-            }) { object, error in
-                
-            }
-        }
-
     }
 }

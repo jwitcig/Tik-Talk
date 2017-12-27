@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 
 extension Cloud {
-    class Users {        
+    class Users {
         static func create(_ user: User, success: @escaping Callback, failure: @escaping ErrorCallback) {
             let write = Firestore.batch()
             write.setData(user, forDocument: Firestore.reference(for: user))
@@ -33,11 +33,11 @@ extension Cloud {
             write.commit(completion: callback(success, failure))
         }
         
-        static func accountInfo(for user: UserReference, success: @escaping GetCallback<User>, failure: @escaping ErrorCallback) {
+        static func accountInfo<U: UserReference>(for user: U, success: @escaping GetCallback<User>, failure: @escaping ErrorCallback) {
             Firestore.reference(for: user).getDocument(completion: callback(success, failure))
         }
         
-        static func friends(for user: UserReference, success: @escaping ListCallback<User.Core>, failure: @escaping ErrorCallback) {
+        static func friends<U: UserReference>(for user: U, success: @escaping ListCallback<User.Core>, failure: @escaping ErrorCallback) {
             Firestore.friends(for: user).getDocuments {
                 guard let snapshot = $0 else {
                     failure($1!)

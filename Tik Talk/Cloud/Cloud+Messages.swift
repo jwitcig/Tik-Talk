@@ -11,21 +11,21 @@ import Foundation
 import Firebase
 
 extension Cloud {
-    class Messages {                
-        static func create(_ message: Message, in conversation: ConversationReference, success: @escaping ()->(), failure: @escaping (Error)->()) {
+    class Messages<T: ConversationReference> {
+        static func create(_ message: Message, in conversation: T, success: @escaping ()->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: conversation)
                      .collection("messages")
                      .document(message.id)
                      .setData(message, completion: callback(success, failure))
         }
         
-        static func those(in conversation: ConversationReference, success: @escaping ([Message])->(), failure: @escaping (Error)->()) {
+        static func those(in conversation: T, success: @escaping ([Message])->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: conversation)
                      .collection("messages")
                      .getDocuments(completion: callback(success, failure))
         }
         
-        static func listen(to conversation: ConversationReference, freshData: @escaping ([Message])->(), failure: @escaping (Error)->()) {
+        static func listen(to conversation: T, freshData: @escaping ([Message])->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: conversation)
                      .collection("messages")
                      .order(by: "timestamp", descending: true)

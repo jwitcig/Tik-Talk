@@ -85,7 +85,7 @@ extension AddRecipientsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = filteredFriends![indexPath.row]
+        guard let user = filteredFriends?[indexPath.row] else { return }
         if recipients.contains(user) {
             recipients.remove(user)
         } else {

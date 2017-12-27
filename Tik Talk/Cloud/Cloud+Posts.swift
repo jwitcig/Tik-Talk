@@ -64,7 +64,7 @@ extension Cloud {
                            .getDocuments(completion: callback(success, failure))
         }
         
-        static func all(for user: UserReference, success: @escaping ListCallback<Post>, failure: @escaping ErrorCallback) {
+        static func all<U: UserReference>(for user: U, success: @escaping ListCallback<Post>, failure: @escaping ErrorCallback) {
             Firestore.posts.whereField("creatorID", isEqualTo: user.id)
                            .getDocuments(completion: callback(success, failure))
         }

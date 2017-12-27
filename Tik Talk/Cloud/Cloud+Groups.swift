@@ -16,31 +16,31 @@ enum GroupAction {
 
 extension Cloud {
     class Groups {    
-        static func create(_ group: Group, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func create(_ group: Group, success: @escaping ()->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: group).setData(group, completion: callback(success, failure))
         }
         
-        static func all(success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
+        static func all(success: @escaping ([Group])->(), failure: @escaping ErrorCallback) {
             Firestore.groups.getDocuments(completion: callback(success, failure))
         }
         
-        static func all(containing user: UserReference, success: @escaping ([Group.Core])->(), failure: @escaping (Error)->()) {
+        static func all<U: UserReference>(containing user: U, success: @escaping ([Group.Core])->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: user).collection("groups").getDocuments(completion: callback(success, failure))
         }
         
-        static func all(createdBy user: UserReference, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {
+        static func all<U: UserReference>(createdBy user: U, success: @escaping ([Group])->(), failure: @escaping ErrorCallback) {
             Firestore.groups.whereField("creatorID", isEqualTo: user.id)
                             .getDocuments(completion: callback(success, failure))
         }
         
-        static func whose(nameStartsWith name: String, success: @escaping ([Group])->(), failure: @escaping (Error)->()) {            
+        static func whose(nameStartsWith name: String, success: @escaping ([Group])->(), failure: @escaping ErrorCallback) {
             Firestore.groups.order(by: "name")
                             .start(at: [name])
                             .end(at: [name+"z"])
                             .getDocuments(completion: callback(success, failure))
         }
         
-        static func perform(_ action: GroupAction, on group: GroupReference, by user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func perform<G: GroupReference>(_ action: GroupAction, on group: G, by user: User, success: @escaping ()->(), failure: @escaping ErrorCallback) {
         
             let associationRef = Firestore.reference(for: user).collection("groups").document(group.id)
             let groupRef = Firestore.reference(for: group)
@@ -88,11 +88,11 @@ extension Cloud {
             }
         }
         
-        static func join(_ group: GroupReference, who user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func join<G: GroupReference>(_ group: G, who user: User, success: @escaping ()->(), failure: @escaping ErrorCallback) {
             perform(.join, on: group, by: user, success: success, failure: failure)
         }
         
-        static func leave(_ group: GroupReference, who user: User, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func leave<G: GroupReference>(_ group: G, who user: User, success: @escaping ()->(), failure: @escaping ErrorCallback) {
             perform(.leave, on: group, by: user, success: success, failure: failure)
         }
     }

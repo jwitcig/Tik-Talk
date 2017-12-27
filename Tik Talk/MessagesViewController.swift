@@ -26,7 +26,7 @@ class MessagesViewController: SLKTextViewController {
     }
     
     override func viewDidLoad() {
-        if conversation.isEstablished {            
+        if conversation.isEstablished {
             Cloud.Messages.listen(to: conversation, freshData: {
                 self.messages = $0
                 self.tableView?.reloadData()

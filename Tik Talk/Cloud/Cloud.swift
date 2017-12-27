@@ -31,11 +31,11 @@ extension FirestoreConstructable {
     }
 }
 
-class Cloud {
-    typealias Callback = () -> ()
-    typealias GetCallback<T: FirestoreConstructable> = (T) -> ()
-    typealias ListCallback<T: FirestoreConstructable> = ([T]) -> ()
-    typealias ErrorCallback = (Error) -> ()
+class Cloud {    
+    typealias Callback = () -> Void
+    typealias GetCallback<T: FirestoreConstructable> = (T) -> Void
+    typealias ListCallback<T: FirestoreConstructable> = ([T]) -> Void
+    typealias ErrorCallback = (Error) -> Void
     
     static func callback(_ success: @escaping ()->(), _ failure: @escaping (Error)->()) -> ((Error?)->()) {
         return {
@@ -73,36 +73,24 @@ extension Firestore {
         return Firestore.base
     }
     
-    static func collection<T: Model>(of type: T.Type) -> CollectionReference {
+    static func collection<T: ModelReference>(of type: T.Type) -> CollectionReference {
         return base.collection(collectionName(for: type))
+    }
+    
+    static func reference<T: ModelReference>(for reference: T) -> DocumentReference {
+        return collection(of: T.self).document(reference.id)
     }
     
     static func referenceForPost(withID id: String) -> DocumentReference {
         return collection(of: Post.self).document(id)
     }
     
-    static func reference(for post: PostReference) -> DocumentReference {
-        return referenceForPost(withID: post.id)
-    }
-    
     static func referenceForUser(withID id: String) -> DocumentReference {
         return collection(of: User.self).document(id)
     }
     
-    static func reference(for user: UserReference) -> DocumentReference {
-        return referenceForUser(withID: user.id)
-    }
-    
-    static func reference(for group: GroupReference) -> DocumentReference {
-        return collection(of: Group.self).document(group.id)
-    }
-    
-    static func friends(for user: UserReference) -> CollectionReference {
+    static func friends<T: UserReference>(for user: T) -> CollectionReference {
         return reference(for: user).collection("friends")
-    }
-    
-    static func reference(for conversation: ConversationReference) -> DocumentReference {
-        return collection(of: Conversation.self).document(conversation.id)
     }
 }
 

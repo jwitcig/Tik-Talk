@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 func randomString(length: Int) -> String {
     let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     let length = UInt32(letters.length)
@@ -37,5 +39,20 @@ extension Date {
     
     var utc: String {
         return DateFormatter.utc.string(from: self)
+    }
+}
+
+extension UIStoryboard {
+    convenience init(name: String, bundle: Bundle? = nil) {
+        self.init(name: name, bundle: nil)
+    }
+}
+
+extension Auth {
+    var hasNonAnonymousUser: Bool {
+        if let user = currentUser, !user.isAnonymous {
+            return true
+        }
+        return false
     }
 }

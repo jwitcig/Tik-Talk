@@ -17,32 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        FirebaseApp.configure()
+        configureFirebase()
         
-        RemoteConfig.remoteConfig().fetch { status, error in
-            RemoteConfig.remoteConfig().activateFetched()
-        }
-        
-        let handle = "jwitcig"
-        let email = "\(handle)@tiktalk.com"
-        let password = handle
-        
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
-            
-            guard let user = user, error == nil else {
-                Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                    User.current = User(id: user!.uid, handle: handle, other: nil)
-                    
-                    Cloud.Users.create(User.current, success: {}, failure: {
-                        print("OMG: \($0)")
-                    })
-                }
-                return
-            }
-            
-            User.current = User(id: user.uid, handle: handle, other: nil)
-
-            Cloud.Users.create(User.current, success: {}, failure: {_ in})
+        if Auth.auth().hasNonAnonymousUser {
+            window?.rootViewController = UIStoryboard(name: "SignUp").instantiateInitialViewController()
         }
         return true
     }
@@ -67,6 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+}
+
+extension AppDelegate {
+    func configureFirebase() {
+        FirebaseApp.configure()
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.fetch { status, error in
+            remoteConfig.activateFetched()
+        }
     }
 }
 

@@ -90,17 +90,21 @@ class MessageTableViewCell: UITableViewCell {
             "left" : 5,
         ]
         
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-left-[thumbnailView(tumbSize)]-right-[titleLabel(>=0)]-right-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-        
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-left-[thumbnailView(tumbSize)]-right-[bodyLabel(>=0)]-right-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-        
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-right-[thumbnailView(tumbSize)]-(>=0)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        var constraints = [
+            "H:|-left-[thumbnailView(tumbSize)]-right-[titleLabel(>=0)]-right-|",
+            "H:|-left-[thumbnailView(tumbSize)]-right-[bodyLabel(>=0)]-right-|",
+            "V:|-right-[thumbnailView(tumbSize)]-(>=0)-|",
+        ]
         
         if reuseIdentifier == MessageTableViewCell.messengerCellIdentifier {
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-right-[titleLabel(20)]-left-[bodyLabel(>=0@999)]-left-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+            constraints.append("V:|-right-[titleLabel(20)]-left-[bodyLabel(>=0@999)]-left-|")
         } else {
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[titleLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+            constraints.append("V:|[titleLabel]|")
         }
+        
+        contentView.addConstraints(constraints.flatMap {
+            NSLayoutConstraint.constraints(withVisualFormat: $0, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+        })
     }
 
     override func prepareForReuse() {

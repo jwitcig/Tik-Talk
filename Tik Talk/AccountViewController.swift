@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var handleLabel: UILabel!
@@ -29,6 +31,15 @@ class AccountViewController: UIViewController {
         Cloud.Posts.all(for: User.current, success: postsController.display, failure: { error in
             
         })
+    }
+    
+    @IBAction func signOutPressed(sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            tabBarController?.dismiss(animated: true, completion: nil)
+        } catch let error  {
+            print("Error signing out: \(error)")
+        }
     }
     
     @IBAction func friendsPressed(sender: Any) {

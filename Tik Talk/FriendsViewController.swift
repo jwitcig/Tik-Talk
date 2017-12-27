@@ -58,7 +58,6 @@ extension FriendsViewController: UITableViewDataSource {
         default:
             fatalError("Unimplemented Section: tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell")
         }
-        
         return cell
     }
 }
@@ -78,8 +77,9 @@ extension FriendsViewController: UISearchBarDelegate {
     
     func filter(_ friends: [User.Core], searchText: String) -> [User.Core] {
         guard !searchText.isEmpty else { return friends }
+        let lowercased = searchText.lowercased()
         return friends.filter {
-            $0.handle.lowercased().contains(searchText.lowercased())
+            $0.handle.lowercased().contains(lowercased)
         }
     }
 }

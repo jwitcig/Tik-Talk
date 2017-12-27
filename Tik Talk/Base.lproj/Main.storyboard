@@ -128,6 +128,13 @@
                                     <segue destination="QKp-vn-9hY" kind="show" id="vjy-GT-Poi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-WA-BZl">
+                                <rect key="frame" x="293" y="65" width="55" height="30"/>
+                                <state key="normal" title="sign out"/>
+                                <connections>
+                                    <action selector="signOutPressedWithSender:" destination="uPS-Zh-9tR" eventType="touchUpInside" id="CRr-0J-wwZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -141,6 +148,8 @@
                             <constraint firstItem="7GH-rM-QKV" firstAttribute="leading" secondItem="n1a-JB-bco" secondAttribute="leading" id="ass-r9-COR"/>
                             <constraint firstItem="n1a-JB-bco" firstAttribute="trailing" secondItem="7GH-rM-QKV" secondAttribute="trailing" id="bmi-Di-ar0"/>
                             <constraint firstItem="0F3-b8-NSa" firstAttribute="centerX" secondItem="n1a-JB-bco" secondAttribute="centerX" id="kx0-oE-ff3"/>
+                            <constraint firstItem="7Io-WA-BZl" firstAttribute="centerX" secondItem="m5n-xC-GTg" secondAttribute="centerX" id="lKC-le-uC2"/>
+                            <constraint firstItem="7Io-WA-BZl" firstAttribute="top" secondItem="m5n-xC-GTg" secondAttribute="bottom" constant="15" id="n0Y-tU-cZz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n1a-JB-bco"/>
                     </view>
@@ -276,65 +285,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="229"/>
-        </scene>
-        <!--Sign Up-->
-        <scene sceneID="GIt-fK-Dyk">
-            <objects>
-                <viewController id="tJR-II-eej" customClass="SignUpViewController" customModule="Tik_Talk" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9UH-Xx-Uiq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@handle" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-ed-nZh">
-                                <rect key="frame" x="97.5" y="144.5" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="chG-IY-G2k"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="tJR-II-eej" id="ELL-dS-eLq"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K82-KD-fUl">
-                                <rect key="frame" x="97.5" y="194.5" width="180" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="tJR-II-eej" id="33v-Ib-cQ1"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKR-Lz-JDo">
-                                <rect key="frame" x="163.5" y="304" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitPressedWithSender:" destination="tJR-II-eej" eventType="touchUpInside" id="dV8-wA-EJJ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dKR-Lz-JDo" firstAttribute="centerX" secondItem="QK6-jc-AMm" secondAttribute="centerX" id="6Zj-m9-TYb"/>
-                            <constraint firstItem="K82-KD-fUl" firstAttribute="width" secondItem="LjY-ed-nZh" secondAttribute="width" id="7CN-jg-Zb7"/>
-                            <constraint firstItem="LjY-ed-nZh" firstAttribute="centerX" secondItem="QK6-jc-AMm" secondAttribute="centerX" id="9uP-Uf-tdb"/>
-                            <constraint firstItem="K82-KD-fUl" firstAttribute="centerX" secondItem="LjY-ed-nZh" secondAttribute="centerX" id="aNK-mv-043"/>
-                            <constraint firstItem="K82-KD-fUl" firstAttribute="top" secondItem="LjY-ed-nZh" secondAttribute="bottom" constant="20" id="uZf-mq-gBc"/>
-                            <constraint firstItem="dKR-Lz-JDo" firstAttribute="centerY" secondItem="QK6-jc-AMm" secondAttribute="centerY" id="x7P-1e-ymJ"/>
-                            <constraint firstItem="LjY-ed-nZh" firstAttribute="centerY" secondItem="QK6-jc-AMm" secondAttribute="centerY" multiplier="0.5" id="y7W-PM-qJS"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QK6-jc-AMm"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Sign Up" id="57e-mu-5A8"/>
-                    <connections>
-                        <outlet property="handleField" destination="LjY-ed-nZh" id="8PT-cD-DIE"/>
-                        <outlet property="passwordField" destination="K82-KD-fUl" id="g6H-1u-e4j"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HeV-gV-Hyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="896"/>
         </scene>
         <!--Conversations View Controller-->
         <scene sceneID="Y9o-BI-fyN">
@@ -576,7 +526,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="tJR-II-eej" kind="relationship" relationship="viewControllers" id="ZvQ-co-EJh"/>
                         <segue destination="uPS-Zh-9tR" kind="relationship" relationship="viewControllers" id="HKk-a8-d4D"/>
                         <segue destination="5us-MO-Vpr" kind="relationship" relationship="viewControllers" id="As9-j3-at3"/>
                         <segue destination="g13-CW-kxW" kind="relationship" relationship="viewControllers" id="Dhb-UR-CgD"/>

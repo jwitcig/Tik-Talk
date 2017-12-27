@@ -12,12 +12,12 @@ import Firebase
 
 extension Cloud {
     class Conversations {    
-        static func create(_ conversation: Conversation, success: @escaping ()->(), failure: @escaping (Error)->()) {
+        static func create(_ conversation: Conversation, success: @escaping ()->(), failure: @escaping ErrorCallback) {
             Firestore.reference(for: conversation)
                      .setData(conversation, completion: callback(success, failure))
         }
         
-        static func containing(_ user: UserReference, success: @escaping ([Conversation])->(), failure: @escaping (Error)->()) {
+        static func containing(_ user: UserReference, success: @escaping ([Conversation])->(), failure: @escaping ErrorCallback) {
             Firestore.conversations.whereField("participantIDs.\(user.id)", isEqualTo: true)
                                    .getDocuments(completion: callback(success, failure))
         }

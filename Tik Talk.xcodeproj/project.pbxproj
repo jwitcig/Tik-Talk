@@ -45,6 +45,9 @@
 		8BAFA4581FB7DBBE00B4100E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */; };
 		8BB26FB31FC4B2E400492587 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB26FB21FC4B2E400492587 /* Model.swift */; };
 		8BB26FB81FC4B92A00492587 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB26FB71FC4B92A00492587 /* Configuration.swift */; };
+		8BB3E19D1FEE0898009FB793 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */; };
+		8BB3E19F1FEE1113009FB793 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3E19E1FEE1113009FB793 /* ProfileUpdateViewController.swift */; };
+		8BB3E1A11FEEBE86009FB793 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3E1A01FEEBE86009FB793 /* SignInViewController.swift */; };
 		8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0CD4A1FBE338E005DFF36 /* Podfile */; };
 		8BEE85951FE975EF00BD30F2 /* Cloud+FriendRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE85941FE975EF00BD30F2 /* Cloud+FriendRequests.swift */; };
 		8BEE85971FE977C900BD30F2 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE85961FE977C900BD30F2 /* FriendRequest.swift */; };
@@ -117,6 +120,9 @@
 		8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8BB26FB21FC4B2E400492587 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8BB26FB71FC4B92A00492587 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		8BB3E19E1FEE1113009FB793 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
+		8BB3E1A01FEEBE86009FB793 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8BC0CD4A1FBE338E005DFF36 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BEE85941FE975EF00BD30F2 /* Cloud+FriendRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cloud+FriendRequests.swift"; sourceTree = "<group>"; };
 		8BEE85961FE977C900BD30F2 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
@@ -220,7 +226,9 @@
 				8BF13CDB1FE44ABA00F08854 /* CreateGroupViewController.swift */,
 				8BF13CDD1FE46EFE00F08854 /* SearchViewController.swift */,
 				8B4FEED11FC151D4000CFA48 /* AccountViewController.swift */,
+				8BB3E1A01FEEBE86009FB793 /* SignInViewController.swift */,
 				8BAFA4571FB7DBBE00B4100E /* SignUpViewController.swift */,
+				8BB3E19E1FEE1113009FB793 /* ProfileUpdateViewController.swift */,
 				8B4FEED31FC2015E000CFA48 /* FriendsViewController.swift */,
 				8B86BB4D1FEB217A0077F8CC /* ConversationsViewController..swift */,
 				8B86BB531FEC14C30077F8CC /* AddRecipientsViewController.swift */,
@@ -229,6 +237,7 @@
 				8BB26FB41FC4B4E400492587 /* Models */,
 				8B0AB6481FAF83D000B43B37 /* Helpers.swift */,
 				8B0AB61C1FAF7D8A00B43B37 /* Main.storyboard */,
+				8BB3E19C1FEE0898009FB793 /* SignUp.storyboard */,
 				8BAFA4551FB7D36F00B4100E /* GoogleService-Info.plist */,
 				8B0AB61F1FAF7D8A00B43B37 /* Assets.xcassets */,
 				8B0AB6211FAF7D8A00B43B37 /* LaunchScreen.storyboard */,
@@ -413,6 +422,7 @@
 				8BC0CD4B1FBE338E005DFF36 /* Podfile in Resources */,
 				8B0AB6231FAF7D8A00B43B37 /* LaunchScreen.storyboard in Resources */,
 				8B9519B31FBA46DB00DFEEE4 /* PostTableViewCell.xib in Resources */,
+				8BB3E19D1FEE0898009FB793 /* SignUp.storyboard in Resources */,
 				8BAFA4561FB7D36F00B4100E /* GoogleService-Info.plist in Resources */,
 				8B0AB6201FAF7D8A00B43B37 /* Assets.xcassets in Resources */,
 				8B0AB61E1FAF7D8A00B43B37 /* Main.storyboard in Resources */,
@@ -594,6 +604,7 @@
 				8B86BB4E1FEB217A0077F8CC /* ConversationsViewController..swift in Sources */,
 				8B86BB501FEB34940077F8CC /* MessagesViewController.swift in Sources */,
 				8B0AB6171FAF7D8A00B43B37 /* AppDelegate.swift in Sources */,
+				8BB3E19F1FEE1113009FB793 /* ProfileUpdateViewController.swift in Sources */,
 				8B86BB441FEADD090077F8CC /* Friend.swift in Sources */,
 				8B4981CF1FC0A956001F6379 /* Firestore.swift in Sources */,
 				8BEE85951FE975EF00BD30F2 /* Cloud+FriendRequests.swift in Sources */,
@@ -609,6 +620,7 @@
 				8B0AB6471FAF823700B43B37 /* Post.swift in Sources */,
 				8BF13CDE1FE46EFE00F08854 /* SearchViewController.swift in Sources */,
 				8B4FEED81FC35D52000CFA48 /* Cloud.swift in Sources */,
+				8BB3E1A11FEEBE86009FB793 /* SignInViewController.swift in Sources */,
 				8B4FEEDE1FC3775C000CFA48 /* Cloud+Votes.swift in Sources */,
 				8BF7CD991FB8C11200F90626 /* Storage.swift in Sources */,
 				8BF13CDC1FE44ABA00F08854 /* CreateGroupViewController.swift in Sources */,

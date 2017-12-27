@@ -35,15 +35,15 @@ extension Cloud {
             write.commit(completion: callback(success, failure))
         }
         
-        static func listThose(to recipient: UserReference, success: @escaping ([FriendRequest])->(), failure: @escaping (Error)->()) {
+        static func listThose<U: UserReference>(to recipient: U, success: @escaping ([FriendRequest])->(), failure: @escaping ErrorCallback) {
             listThose(with: recipient, as: .recipient, success: success, failure: failure)
         }
         
-        static func listThose(from sender: UserReference, success: @escaping ([FriendRequest])->(), failure: @escaping (Error)->()) {
+        static func listThose<U: UserReference>(from sender: U, success: @escaping ([FriendRequest])->(), failure: @escaping (Error)->()) {
             listThose(with: sender, as: .sender, success: success, failure: failure)
         }
         
-        private static func listThose(with user: UserReference, as target: FriendRequest.Target, success: @escaping ([FriendRequest])->(), failure: @escaping ErrorCallback) {
+        private static func listThose<U: UserReference>(with user: U, as target: FriendRequest.Target, success: @escaping ([FriendRequest])->(), failure: @escaping ErrorCallback) {
             
             Firestore.reference(for: user)
                      .collection("friendRequests")

@@ -31,7 +31,6 @@ struct Post: Model, PostReference {
 
     var hasBeenValidated: Bool
     
-    
     var dictionary: [String: Any] {
         return [
             "body": body as Any,
